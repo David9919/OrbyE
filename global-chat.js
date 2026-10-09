@@ -1,3 +1,21 @@
+
+/* V157: never show gray panel */
+(function(){
+  var _orig = null;
+  function hideGray(){
+    var p = document.getElementById("globalChatPanel");
+    if(p){ p.hidden=true; p.style.display="none"; p.style.visibility="hidden"; }
+  }
+  setInterval(hideGray, 500);
+  document.addEventListener("click", function(e){
+    if(e.target.closest("#globalChatOpen")){
+      e.preventDefault(); e.stopPropagation();
+      hideGray();
+      if(typeof window.__orbyeOpenOnyx==="function") window.__orbyeOpenOnyx();
+    }
+  }, true);
+})();
+
 (() => {
   const GKEY = "orbye_global_chat_v1";
   function dedupeMsgs(list){

@@ -1,13 +1,8 @@
-ORBYE COMPLETO 1.5.6
+IMPORTANTE 1.5.7
 
-Igual que el TEST 999:
+La barra debe ser ROSA (no azul ni verde):
+"OrbyE 1.5.7 · si ves esta barra ROSA el archivo nuevo SÍ cargó"
 
-1. GitHub → tu repo de orbye-app
-2. Upload files → selecciona TODOS estos archivos
-3. Commit to main
-4. Espera Vercel Ready
-5. Abre https://orbye-app.vercel.app en INCÓGNITO
+Si NO ves la barra ROSA = no subiste este index.html
 
-Debe salir barra azul arriba: OrbyE 1.5.6
-
-Si solo subes index.html, sube TAMBIÉN los .js y chat-bg-orbye.jpg
+GitHub → Upload TODO → Commit main → Incógnito
