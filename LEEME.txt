@@ -1,14 +1,13 @@
-SOLO HAY 1 ARCHIVO: index.html
+ORBYE COMPLETO 1.5.6
 
-1. En GitHub, en tu repo de orbye-app:
-   - Borra los otros archivos si puedes (o no pasa nada)
-   - Upload: solo index.html
-   - Commit to main
+Igual que el TEST 999:
 
-2. Espera Vercel Ready
+1. GitHub → tu repo de orbye-app
+2. Upload files → selecciona TODOS estos archivos
+3. Commit to main
+4. Espera Vercel Ready
+5. Abre https://orbye-app.vercel.app en INCÓGNITO
 
-3. Abre https://orbye-app.vercel.app en INCÓGNITO
+Debe salir barra azul arriba: OrbyE 1.5.6
 
-4. Debes ver texto VERDE grande: ORBYE TEST 999
-
-Si NO lo ves, el repo de GitHub no es el correcto.
+Si solo subes index.html, sube TAMBIÉN los .js y chat-bg-orbye.jpg
