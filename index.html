@@ -3835,7 +3835,7 @@ window.__openOryn = window.__openOryn || function(){
 <body>
 
 <!-- ORBYE_NUCLEAR_V152 -->
-<div id="orbyeVerBanner" style="position:fixed;top:0;left:0;right:0;z-index:2147483646;background:#0a2;color:#fff;text-align:center;font:700 13px/32px system-ui;letter-spacing:.03em">OrbyE 1.5.2 · si no ves esta barra verde, Vercel no subió este index.html</div>
+<div id="orbyeVerBanner" style="position:fixed;top:0;left:0;right:0;z-index:2147483646;background:#0a2;color:#fff;text-align:center;font:700 13px/32px system-ui;letter-spacing:.03em">OrbyE 1.5.3 · si no ves esta barra verde, Vercel no subió este index.html</div>
 <style>
   body { padding-top: 32px !important; }
   #loginGate, .login-gate, [data-auth-gate] {
@@ -3866,17 +3866,46 @@ window.__openOryn = window.__openOryn || function(){
     background: #050510 url("chat-bg-orbye.jpg") center/cover no-repeat !important;
     display: none;
   }
-  #view-onyx-full.on { display: flex !important; flex-direction: column; }
+  #view-onyx-full.on { display: flex !important; flex-direction: row; align-items: stretch; }
   #view-onyx-full .onyx-inner {
-    max-width: 480px; margin: 12px auto; width: 96%;
-    flex: 1; display: flex; flex-direction: column;
-    background: rgba(0,0,0,.72); border: 1px solid #333; border-radius: 16px; overflow: hidden;
+    width: min(420px, 100%);
+    max-width: 420px;
+    margin: 0;
+    margin-right: auto;
+    height: 100%;
+    display: flex; flex-direction: column;
+    background: rgba(0,0,0,.78); border-right: 1px solid #333; border-radius: 0; overflow: hidden;
+  }
+  #onyxFullList .onyx-post {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    border-bottom: 1px solid #222;
+    scroll-snap-align: start;
+    position: relative;
+  }
+  #onyxFullList {
+    scroll-snap-type: y mandatory;
+  }
+  #onyxFullList .onyx-post img,
+  #onyxFullList .onyx-post video {
+    width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #000;
+    margin: 8px 0;
+  }
+  @media (max-width: 600px) {
+    #view-onyx-full .onyx-inner { width: 100%; max-width: 100%; }
   }
 </style>
 <script>
 (function(){
-  window.ORBYE_BUILD = "1.5.2-nuclear";
-  console.log("%c[OrbyE] 1.5.2-nuclear","background:#0a2;color:#fff;padding:4px 8px");
+  window.ORBYE_BUILD = "1.5.3-onyx-left";
+  console.log("%c[OrbyE] 1.5.3-onyx-left","background:#0a2;color:#fff;padding:4px 8px");
 
   var SVG = `<svg class="orbye-svg-logo" viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg" aria-label="OrbyE">
   <circle cx="60" cy="60" r="28" fill="#000"/>
@@ -3952,16 +3981,26 @@ window.__openOryn = window.__openOryn || function(){
     var box = document.getElementById("onyxFullList");
     if(!box) return;
     var list = load().filter(function(m){ return !(m.user==="OrbyE"&&/^PING_/i.test(String(m.text||""))); });
-    if(!list.length){ box.innerHTML='<p style="color:#888;text-align:center;padding:20px">Sin mensajes</p>'; return; }
+    if(!list.length){ box.innerHTML='<p style="color:#888;text-align:center;padding:20px">Sin posts aún. Escribe abajo.</p>'; return; }
+    // newest first like TikTok
+    list = list.slice().reverse();
     box.innerHTML = list.map(function(m){
-      var media = (m.media&&m.media.url) ? (m.media.type==="video"
-        ? '<video src="'+m.media.url+'" controls style="max-width:100%;border-radius:10px;margin-top:6px"></video>'
-        : '<img src="'+m.media.url+'" style="max-width:100%;border-radius:10px;margin-top:6px">') : "";
-      return '<div style="padding:10px 6px;border-bottom:1px solid #222"><b style="color:#8ab4ff">'+String(m.user||"").replace(/</g,"")+'</b>'
-        +(m.text?'<div style="color:#eee">'+String(m.text).replace(/</g,"&lt;")+'</div>':'')+media
-        +'<div style="color:#555;font-size:11px">'+new Date(m.ts||Date.now()).toLocaleString()+'</div></div>';
+      var media = "";
+      if(m.media&&m.media.url){
+        if(m.media.type==="video")
+          media = '<video src="'+m.media.url+'" controls playsinline loop style="width:100%;max-height:55vh;border-radius:12px;background:#000"></video>';
+        else
+          media = '<img src="'+m.media.url+'" alt="" style="width:100%;max-height:55vh;object-fit:contain;border-radius:12px;background:#000">';
+      }
+      return '<div class="onyx-post">'
+        +'<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">'
+        +'<div style="width:40px;height:40px;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff">'+(String(m.user||"?")[0]||"?").toUpperCase()+'</div>'
+        +'<div><b style="color:#fff">'+String(m.user||"").replace(/</g,"")+'</b>'
+        +'<div style="color:#888;font-size:11px">'+new Date(m.ts||Date.now()).toLocaleString()+'</div></div></div>'
+        +(m.text?'<div style="color:#eee;font-size:15px;margin-bottom:6px">'+String(m.text).replace(/</g,"&lt;")+'</div>':'')
+        +media
+        +'</div>';
     }).join("");
-    box.scrollTop = box.scrollHeight;
   }
   function send(){
     var input = document.getElementById("onyxFullInput");
@@ -12531,7 +12570,7 @@ button#navOpenGames, a#navOpenGames,
 })();
 </script>
 
-<script>window.ORBYE_BUILD="1.5.2-nuclear";console.log("[OrbyE]",window.ORBYE_BUILD);</script>
+<script>window.ORBYE_BUILD="1.5.3-onyx-left";console.log("[OrbyE]",window.ORBYE_BUILD);</script>
 
 <script>
 /* SPACES_REDDIT_UI — posts scroll + comentarios derecha */
