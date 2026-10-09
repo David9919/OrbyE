@@ -3834,6 +3834,180 @@ window.__openOryn = window.__openOryn || function(){
 
 <body>
 
+<!-- ORBYE_NUCLEAR_V152 -->
+<div id="orbyeVerBanner" style="position:fixed;top:0;left:0;right:0;z-index:2147483646;background:#0a2;color:#fff;text-align:center;font:700 13px/32px system-ui;letter-spacing:.03em">OrbyE 1.5.2 · si no ves esta barra verde, Vercel no subió este index.html</div>
+<style>
+  body { padding-top: 32px !important; }
+  #loginGate, .login-gate, [data-auth-gate] {
+    display: flex !important;
+    min-height: calc(100vh - 32px) !important;
+    background: #000 !important;
+  }
+  .orbye-login-brand {
+    flex: 1 1 50%;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000 !important;
+    min-height: 40vh;
+  }
+  .orbye-login-brand .orbye-svg-logo { width: 140px; height: 140px; }
+  .orbye-login-brand h1 { color: #fff; font-size: 28px; margin: 16px 0 0; font-weight: 800; }
+  .orbye-login-brand p { color: #666; margin-top: 8px; }
+  @media (max-width: 800px) {
+    #loginGate, .login-gate { flex-direction: column !important; }
+    .orbye-login-brand { min-height: 180px; padding: 24px; }
+  }
+  #view-onyx-full {
+    position: fixed !important;
+    inset: 32px 0 0 0 !important;
+    z-index: 100040 !important;
+    background: #050510 url("chat-bg-orbye.jpg") center/cover no-repeat !important;
+    display: none;
+  }
+  #view-onyx-full.on { display: flex !important; flex-direction: column; }
+  #view-onyx-full .onyx-inner {
+    max-width: 480px; margin: 12px auto; width: 96%;
+    flex: 1; display: flex; flex-direction: column;
+    background: rgba(0,0,0,.72); border: 1px solid #333; border-radius: 16px; overflow: hidden;
+  }
+</style>
+<script>
+(function(){
+  window.ORBYE_BUILD = "1.5.2-nuclear";
+  console.log("%c[OrbyE] 1.5.2-nuclear","background:#0a2;color:#fff;padding:4px 8px");
+
+  var SVG = `<svg class="orbye-svg-logo" viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg" aria-label="OrbyE">
+  <circle cx="60" cy="60" r="28" fill="#000"/>
+  <ellipse cx="60" cy="60" rx="48" ry="14" fill="none" stroke="#fff" stroke-width="4" transform="rotate(-20 60 60)"/>
+  <text x="60" y="105" text-anchor="middle" fill="#fff" font-family="system-ui,sans-serif" font-size="18" font-weight="700">OrbyE</text>
+</svg>`;
+
+  function injectLoginBrand(){
+    var gate = document.getElementById("loginGate");
+    if(!gate){
+      // find "Join today" form parent
+      var h = Array.from(document.querySelectorAll("h1,h2")).find(function(el){ return /Join today/i.test(el.textContent||""); });
+      if(h){
+        var formCol = h.closest("div,section,form") || h.parentElement;
+        var root = formCol && formCol.parentElement;
+        if(root && !root.querySelector(".orbye-login-brand")){
+          root.style.display = "flex";
+          root.style.minHeight = "100vh";
+          root.style.background = "#000";
+          var brand = document.createElement("div");
+          brand.className = "orbye-login-brand";
+          brand.innerHTML = SVG + "<h1>OrbyE</h1><p>Tu red social</p>";
+          root.insertBefore(brand, root.firstChild);
+        }
+      }
+      return;
+    }
+    if(gate.querySelector(".orbye-login-brand")) return;
+    gate.style.display = "flex";
+    var brand = document.createElement("div");
+    brand.className = "orbye-login-brand";
+    brand.innerHTML = SVG + "<h1>OrbyE</h1><p>Tu red social</p>";
+    gate.insertBefore(brand, gate.firstChild);
+  }
+
+  function ensureOnyx(){
+    if(document.getElementById("view-onyx-full")) return;
+    var el = document.createElement("div");
+    el.id = "view-onyx-full";
+    el.innerHTML = '<div class="onyx-inner">'
+      +'<div style="display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid #333">'
+      + SVG.replace('width="120" height="120"','width="36" height="36"')
+      +'<div style="flex:1"><b style="color:#fff">Onyx Feed</b><div style="color:#888;font-size:11px">OrbyE</div></div>'
+      +'<button type="button" id="onyxFullExit" style="background:#222;border:1px solid #555;color:#fff;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer">✕ Salir</button>'
+      +'</div>'
+      +'<div id="onyxFullList" style="flex:1;overflow:auto;padding:12px"></div>'
+      +'<div style="display:flex;gap:8px;padding:10px;border-top:1px solid #333;flex-wrap:wrap">'
+      +'<button type="button" id="onyxFullGif" style="background:#1a1a22;border:1px solid #333;color:#ccc;border-radius:8px;padding:8px 10px;cursor:pointer">GIF</button>'
+      +'<input id="onyxFullInput" placeholder="Escribe..." style="flex:1;min-width:100px;background:#111;border:1px solid #444;color:#fff;border-radius:10px;padding:10px">'
+      +'<button type="button" id="onyxFullSend" style="background:#5865f2;border:0;color:#fff;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer">Enviar</button>'
+      +'</div></div>';
+    document.body.appendChild(el);
+  }
+
+  function openOnyx(e){
+    if(e){ e.preventDefault(); e.stopPropagation(); }
+    ensureOnyx();
+    document.getElementById("view-onyx-full").classList.add("on");
+    var panel = document.getElementById("globalChatPanel");
+    if(panel){ panel.hidden = true; panel.style.display = "none"; }
+    paint();
+    setTimeout(function(){ var i=document.getElementById("onyxFullInput"); if(i) i.focus(); }, 50);
+  }
+  function closeOnyx(){
+    var el = document.getElementById("view-onyx-full");
+    if(el) el.classList.remove("on");
+  }
+
+  var GKEY = "orbye_global_chat_v1";
+  function load(){ try{return JSON.parse(localStorage.getItem(GKEY)||"[]");}catch(e){return[];} }
+  function save(a){ localStorage.setItem(GKEY, JSON.stringify(a.slice(-200))); }
+  function paint(){
+    var box = document.getElementById("onyxFullList");
+    if(!box) return;
+    var list = load().filter(function(m){ return !(m.user==="OrbyE"&&/^PING_/i.test(String(m.text||""))); });
+    if(!list.length){ box.innerHTML='<p style="color:#888;text-align:center;padding:20px">Sin mensajes</p>'; return; }
+    box.innerHTML = list.map(function(m){
+      var media = (m.media&&m.media.url) ? (m.media.type==="video"
+        ? '<video src="'+m.media.url+'" controls style="max-width:100%;border-radius:10px;margin-top:6px"></video>'
+        : '<img src="'+m.media.url+'" style="max-width:100%;border-radius:10px;margin-top:6px">') : "";
+      return '<div style="padding:10px 6px;border-bottom:1px solid #222"><b style="color:#8ab4ff">'+String(m.user||"").replace(/</g,"")+'</b>'
+        +(m.text?'<div style="color:#eee">'+String(m.text).replace(/</g,"&lt;")+'</div>':'')+media
+        +'<div style="color:#555;font-size:11px">'+new Date(m.ts||Date.now()).toLocaleString()+'</div></div>';
+    }).join("");
+    box.scrollTop = box.scrollHeight;
+  }
+  function send(){
+    var input = document.getElementById("onyxFullInput");
+    var text = (input&&input.value||"").trim();
+    var media = window.__onyxMedia||null;
+    if(!text&&!media) return;
+    var u = localStorage.getItem("orbye_demo_user");
+    if(!u){ alert("Inicia sesión"); return; }
+    var list = load();
+    list.push({id:"n"+Date.now(),user:u,text:text,media:media,ts:Date.now()});
+    save(list);
+    if(input) input.value="";
+    window.__onyxMedia=null;
+    paint();
+  }
+
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("#globalChatOpen, [data-open-onyx]");
+    if(t){ openOnyx(e); return; }
+    if(e.target.closest("#onyxFullExit")){ closeOnyx(); return; }
+    if(e.target.closest("#onyxFullSend")){ send(); return; }
+    if(e.target.closest("#onyxFullGif")){
+      if(window.orbyeOpenGiphyDock) window.orbyeOpenGiphyDock("global", e.target);
+      else {
+        var url = null; // no prompt
+        var q = window.prompt; // blocked elsewhere
+        if(window.orbyeOpenGiphyDock) window.orbyeOpenGiphyDock("global");
+      }
+    }
+  }, true);
+  document.addEventListener("keydown", function(e){
+    if(e.key==="Enter" && e.target && e.target.id==="onyxFullInput"){ e.preventDefault(); send(); }
+  });
+
+  function boot(){
+    injectLoginBrand();
+    var b = document.getElementById("globalChatOpen");
+    if(b) b.textContent = "✦ Onyx Feed";
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  setInterval(boot, 2000);
+})();
+</script>
+
+
   
   <div id="orbyeRulesGate" aria-modal="true" role="dialog">
     <div class="rg-wrap">
@@ -12357,7 +12531,7 @@ button#navOpenGames, a#navOpenGames,
 })();
 </script>
 
-<script>window.ORBYE_BUILD="1.5.1-onyx-section";console.log("[OrbyE]",window.ORBYE_BUILD);</script>
+<script>window.ORBYE_BUILD="1.5.2-nuclear";console.log("[OrbyE]",window.ORBYE_BUILD);</script>
 
 <script>
 /* SPACES_REDDIT_UI — posts scroll + comentarios derecha */
