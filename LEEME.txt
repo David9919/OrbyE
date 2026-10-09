@@ -1,7 +1,2 @@
-OrbyE 1.6.0
-- Sin barra rosa
-- Logo OrbyE corregido (anillo blanco)
-- Inicio, Onyx (emoji/GIF/foto), Spaces, Veltx (+Crear), Staff, Perfil, Samuray
-- Verificado azul
-
-GitHub → Upload solo index.html → Commit main → Incógnito
+OrbyE 1.6.1 — logo completo, perfil foto, Veltx editor, Oryn, Wall Pass, Spaces crear, legal login
+Upload solo index.html a GitHub main
