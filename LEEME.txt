@@ -1,7 +1,7 @@
-OrbyE 1.5.9 — 1 archivo (como el TEST 999)
+OrbyE 1.6.0
+- Sin barra rosa
+- Logo OrbyE corregido (anillo blanco)
+- Inicio, Onyx (emoji/GIF/foto), Spaces, Veltx (+Crear), Staff, Perfil, Samuray
+- Verificado azul
 
-GitHub → orbye-app → Upload index.html → Commit main
-Incógnito → https://orbye-app.vercel.app
-
-Barra ROSA = OK
-Incluye: Login+logo, Inicio rico, Onyx (emoji/GIF/foto), Spaces, Veltx, Staff, Samuray, verificado azul
+GitHub → Upload solo index.html → Commit main → Incógnito
