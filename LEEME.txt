@@ -1,9 +1,7 @@
-SOLO 1 ARCHIVO = index.html
+OrbyE 1.5.9 — 1 archivo (como el TEST 999)
 
-Igual que el TEST 999:
-1. GitHub → repo orbye-app
-2. Upload SOLO index.html (reemplaza el anterior)
-3. Commit main
-4. Incógnito → orbye-app.vercel.app
+GitHub → orbye-app → Upload index.html → Commit main
+Incógnito → https://orbye-app.vercel.app
 
-DEBE salir barra ROSA: OrbyE 1.5.8
+Barra ROSA = OK
+Incluye: Login+logo, Inicio rico, Onyx (emoji/GIF/foto), Spaces, Veltx, Staff, Samuray, verificado azul
