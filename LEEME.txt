@@ -1,8 +1,9 @@
-IMPORTANTE 1.5.7
+SOLO 1 ARCHIVO = index.html
 
-La barra debe ser ROSA (no azul ni verde):
-"OrbyE 1.5.7 · si ves esta barra ROSA el archivo nuevo SÍ cargó"
+Igual que el TEST 999:
+1. GitHub → repo orbye-app
+2. Upload SOLO index.html (reemplaza el anterior)
+3. Commit main
+4. Incógnito → orbye-app.vercel.app
 
-Si NO ves la barra ROSA = no subiste este index.html
-
-GitHub → Upload TODO → Commit main → Incógnito
+DEBE salir barra ROSA: OrbyE 1.5.8
