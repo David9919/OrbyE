@@ -1,0 +1,17 @@
+ORBYE SOLO — sin Samuray, sin Vader
+
+COMO SUBIR EN VERCEL:
+1. Vercel.com -> Add New... -> Project
+2. (Si ya tienes otro proyecto seleccionado: clic en "Add New" otra vez)
+3. Arrastra ESTOS archivos (todos juntos, sin abrir otra carpeta):
+   - index.html
+   - todos los .js
+   - style.css
+   - chat-bg-orbye.jpg
+   - vercel.json
+4. Deploy
+
+O: selecciona todos (Ctrl+A) dentro de esta carpeta descomprimida y arrástralos a Vercel.
+
+Version: 1.4.9-plano
+Menu debe decir: Onyx Feed
