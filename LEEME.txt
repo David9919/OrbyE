@@ -1,5 +1,14 @@
-ORBYE 1.5.2
-Si al abrir el sitio NO ves una BARRA VERDE arriba que dice "OrbyE 1.5.2",
-entonces Vercel NO está usando este index.html (proyecto equivocado o caché).
+SOLO HAY 1 ARCHIVO: index.html
 
-Sube TODOS los archivos de este ZIP a la raíz del proyecto Vercel.
+1. En GitHub, en tu repo de orbye-app:
+   - Borra los otros archivos si puedes (o no pasa nada)
+   - Upload: solo index.html
+   - Commit to main
+
+2. Espera Vercel Ready
+
+3. Abre https://orbye-app.vercel.app en INCÓGNITO
+
+4. Debes ver texto VERDE grande: ORBYE TEST 999
+
+Si NO lo ves, el repo de GitHub no es el correcto.
