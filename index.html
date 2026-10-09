@@ -142,6 +142,81 @@ img.brand-logo-circle, .brand img { object-fit:contain!important; background:#00
 
 </style>
 
+<style id="ONYX_SECTION_V154">
+  /* Onyx = apartado normal, no pestaña encima de todo */
+  #view-onyx-full {
+    position: relative !important;
+    inset: auto !important;
+    z-index: 1 !important;
+    display: none !important;
+    min-height: calc(100vh - 60px);
+    width: 100%;
+    background: #050510 url("chat-bg-orbye.jpg") center/cover no-repeat !important;
+    padding: 0 !important;
+  }
+  #view-onyx-full.on {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  #view-onyx-full .onyx-inner {
+    width: min(400px, 100%);
+    max-width: 400px;
+    margin: 0;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,.82);
+    border-right: 1px solid #333;
+  }
+  #onyxFullList {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+    scroll-snap-type: none !important;
+  }
+  #onyxFullList .onyx-post {
+    min-height: 0 !important;
+    padding: 10px 8px !important;
+    border-bottom: 1px solid #222;
+    margin: 0 !important;
+  }
+  #onyxFullList .onyx-post.has-media {
+    min-height: 0;
+  }
+  #onyxFullList .onyx-post img,
+  #onyxFullList .onyx-post video {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #000;
+    margin-top: 6px;
+  }
+  #onyxEmojiBar {
+    display: none;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 6px 10px;
+    background: #111;
+    border-top: 1px solid #333;
+  }
+  #onyxEmojiBar.on { display: flex; }
+  #onyxEmojiBar button {
+    border: 0; background: transparent; font-size: 20px; cursor: pointer; padding: 4px;
+  }
+  /* Login logo left */
+  .orbye-login-brand {
+    flex: 1 1 45% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #000 !important;
+    min-height: 100vh !important;
+  }
+</style>
+
+
 <style id="ONYX_FORCE_V150">
   #globalChatPanel { z-index: 100050 !important; }
   #globalChatPanel .account-box {
@@ -3904,8 +3979,8 @@ window.__openOryn = window.__openOryn || function(){
 </style>
 <script>
 (function(){
-  window.ORBYE_BUILD = "1.5.3-onyx-left";
-  console.log("%c[OrbyE] 1.5.3-onyx-left","background:#0a2;color:#fff;padding:4px 8px");
+  window.ORBYE_BUILD = "1.5.4-apartado";
+  console.log("%c[OrbyE] 1.5.4-apartado","background:#0a2;color:#fff;padding:4px 8px");
 
   var SVG = `<svg class="orbye-svg-logo" viewBox="0 0 120 120" width="120" height="120" xmlns="http://www.w3.org/2000/svg" aria-label="OrbyE">
   <circle cx="60" cy="60" r="28" fill="#000"/>
@@ -3953,7 +4028,7 @@ window.__openOryn = window.__openOryn || function(){
       +'</div>'
       +'<div id="onyxFullList" style="flex:1;overflow:auto;padding:12px"></div>'
       +'<div style="display:flex;gap:8px;padding:10px;border-top:1px solid #333;flex-wrap:wrap">'
-      +'<button type="button" id="onyxFullGif" style="background:#1a1a22;border:1px solid #333;color:#ccc;border-radius:8px;padding:8px 10px;cursor:pointer">GIF</button>'
+      +'<button type="button" id="onyxFullEmoji" style="background:#1a1a22;border:1px solid #333;color:#ccc;border-radius:8px;padding:8px 10px;cursor:pointer">😀</button>'+'<button type="button" id="onyxFullEmoji" style="background:#1a1a22;border:1px solid #333;color:#ccc;border-radius:8px;padding:8px 10px;cursor:pointer">😀</button><button type="button" id="onyxFullGif" style="background:#1a1a22;border:1px solid #333;color:#ccc;border-radius:8px;padding:8px 10px;cursor:pointer">GIF</button>'+'</div><div id="onyxEmojiBar">'
       +'<input id="onyxFullInput" placeholder="Escribe..." style="flex:1;min-width:100px;background:#111;border:1px solid #444;color:#fff;border-radius:10px;padding:10px">'
       +'<button type="button" id="onyxFullSend" style="background:#5865f2;border:0;color:#fff;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer">Enviar</button>'
       +'</div></div>';
@@ -3963,15 +4038,27 @@ window.__openOryn = window.__openOryn || function(){
   function openOnyx(e){
     if(e){ e.preventDefault(); e.stopPropagation(); }
     ensureOnyx();
-    document.getElementById("view-onyx-full").classList.add("on");
+    var ov = document.getElementById("view-onyx-full");
+    ov.classList.add("on");
+    // hide other pages so Onyx is the only apartado
+    document.querySelectorAll("main .view, main > section, #view-home, #view-spaces, #view-veltx, [id^='view-']").forEach(function(v){
+      if(v.id === "view-onyx-full") return;
+      v.hidden = true;
+      if(v.style) v.style.display = "none";
+    });
     var panel = document.getElementById("globalChatPanel");
     if(panel){ panel.hidden = true; panel.style.display = "none"; }
+    // move onyx into main if possible so it is not floating tab
+    var main = document.querySelector("main") || document.getElementById("appMain");
+    if(main && ov.parentElement !== main){ try { main.appendChild(ov); } catch(e){} }
     paint();
     setTimeout(function(){ var i=document.getElementById("onyxFullInput"); if(i) i.focus(); }, 50);
   }
   function closeOnyx(){
     var el = document.getElementById("view-onyx-full");
     if(el) el.classList.remove("on");
+    if(typeof window.showView === "function") try { window.showView("home"); } catch(e){}
+    document.querySelectorAll("#view-home, [data-view='home']").forEach(function(v){ v.hidden=false; v.style.display=""; });
   }
 
   var GKEY = "orbye_global_chat_v1";
@@ -3992,7 +4079,8 @@ window.__openOryn = window.__openOryn || function(){
         else
           media = '<img src="'+m.media.url+'" alt="" style="width:100%;max-height:55vh;object-fit:contain;border-radius:12px;background:#000">';
       }
-      return '<div class="onyx-post">'
+      var cls = media ? "onyx-post has-media" : "onyx-post";
+      return '<div class="'+cls+'">
         +'<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">'
         +'<div style="width:40px;height:40px;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff">'+(String(m.user||"?")[0]||"?").toUpperCase()+'</div>'
         +'<div><b style="color:#fff">'+String(m.user||"").replace(/</g,"")+'</b>'
@@ -12570,7 +12658,7 @@ button#navOpenGames, a#navOpenGames,
 })();
 </script>
 
-<script>window.ORBYE_BUILD="1.5.3-onyx-left";console.log("[OrbyE]",window.ORBYE_BUILD);</script>
+<script>window.ORBYE_BUILD="1.5.4-apartado";console.log("[OrbyE]",window.ORBYE_BUILD);</script>
 
 <script>
 /* SPACES_REDDIT_UI — posts scroll + comentarios derecha */
