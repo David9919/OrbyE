@@ -1,1 +1,1 @@
-1.7.9 likes corazon 1 por usuario, perfil foto, conocidos, veltx autor, float picker z-index
+1.8.0 fix close/create (DOM order), claim anon videos, clock, groq steps

@@ -1,0 +1,14 @@
+ORBYN / GROQ — pasos exactos
+
+1) Entra a https://console.groq.com
+2) Crea cuenta / login
+3) API Keys → Create API Key → copia la key (empieza con gsk_...)
+4) Vercel → tu proyecto orbye-app → Settings → Environment Variables
+5) Name: GROQ_API_KEY
+   Value: pega la key
+   Environment: Production (y Preview si quieres)
+6) Save
+7) Deployments → último deploy → ⋯ → Redeploy
+8) En OrbyE: Ctrl+Shift+R → Oryn → escribe 1+1
+
+Si falla: Settings → Functions → mira logs de /api/oryn
