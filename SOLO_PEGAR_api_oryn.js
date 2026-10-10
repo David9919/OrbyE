@@ -13,7 +13,7 @@ module.exports = async function handler(req, res) {
   if (!key) {
     res.statusCode = 500;
     res.setHeader("Content-Type", "application/json");
-    res.end(JSON.stringify({ reply: "Falta GROQ_API_KEY" }));
+    res.end(JSON.stringify({ reply: "Falta GROQ_API_KEY en Vercel" }));
     return;
   }
   let message = "";
@@ -27,12 +27,12 @@ module.exports = async function handler(req, res) {
     res.end(JSON.stringify({ reply: "Mensaje vacío" }));
     return;
   }
+  // Modelos activos en Groq (2026) — sin mixtral (decommissioned)
   const models = [
+    "openai/gpt-oss-20b",
     "llama-3.1-8b-instant",
     "llama-3.3-70b-versatile",
-    "llama-3.2-3b-preview",
-    "gemma2-9b-it",
-    "mixtral-8x7b-32768"
+    "openai/gpt-oss-120b"
   ];
   let lastErr = "Sin respuesta";
   for (const model of models) {
@@ -54,7 +54,7 @@ module.exports = async function handler(req, res) {
       if (data.choices && data.choices[0] && data.choices[0].message) {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
-        res.end(JSON.stringify({ reply: data.choices[0].message.content }));
+        res.end(JSON.stringify({ reply: data.choices[0].message.content, model: model }));
         return;
       }
       lastErr = (data.error && data.error.message) || lastErr;

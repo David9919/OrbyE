@@ -1,2 +1,7 @@
-1.7.4 - Fix botones (faltaba btnBell), go() completo, inicio ordenado
-Sube index.html
+1.7.5
+- Oryn: modelos 2026 (gpt-oss-20b, llama-3.1-8b, 3.3-70b) SIN mixtral
+- Veltx tipo TikTok+YouTube: click video → pantalla completa + comentarios derecha
+- GIF/Emoji: mini menú flotante arrastrable (Onyx y comentarios Veltx)
+- Campana notificaciones
+
+Sube index.html + api/oryn.js (reemplaza TODO oryn.js)
