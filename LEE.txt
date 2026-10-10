@@ -1,7 +1,2 @@
-1.7.3 FIX LOGIN
-- Bug JS que rompía TODOS los botones (openLegal duplicado)
-- Iniciar sesión: solo usuario + contraseña (sin fecha)
-- Crear cuenta: fecha de nacimiento OBLIGATORIA + aceptar políticas
-- Si ya tienes sesión guardada, entras directo
-
-Sube index.html (el más importante ahora)
+1.7.4 - Fix botones (faltaba btnBell), go() completo, inicio ordenado
+Sube index.html
