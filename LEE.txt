@@ -1,1 +1,1 @@
-1.8.1 CRITICAL: removed crash handlers (profAv etc). Oryn close, GIF float, profile photo/banner.
+1.8.2 home rail Veltx, neon bar, badges, comment edit/del, notif per user, gif+text, staff tools, scroll
