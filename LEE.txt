@@ -1,14 +1,6 @@
-OrbyE 1.6.9
+OrbyE 1.7.0
+- Borrar posts Onyx / mensajes grupos / videos Inicio
+- Inicio tipo Reddit: video grande + título + ▲ 💬 compartir
+- api/oryn.js DEBE ser llama-3.1-8b-instant (si Oryn sigue con error 3.3, el api/oryn.js en GitHub no se actualizó)
 
-1) BORRA oryn.js de la RAÍZ en GitHub si existe
-2) Sube:
-   index.html
-   api/oryn.js   (carpeta api)
-   vercel.json   (vacío {})
-3) Redeploy / espera verde
-4) Oryn debe usar llama-3.1-8b-instant (ya no 3.3)
-
-Onyx → pestaña Grupos (chat + buscar + crear)
-Spaces = comunidades foros (aparte)
-Veltx Studio = texto sobre video + 9:16
-Logo circular en topbar + favicon
+Sube: index.html + api/oryn.js + vercel.json
