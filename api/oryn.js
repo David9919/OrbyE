@@ -32,7 +32,7 @@ module.exports = async function handler(req, res) {
       method: "POST",
       headers: { Authorization: "Bearer " + key, "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
+        model: "llama-3.1-8b-instant",
         messages: [
           { role: "system", content: "Eres Oryn, IA de OrbyE (creador DavidAvila). Responde claro, en el idioma del usuario." },
           { role: "user", content: String(message).slice(0, 4000) }
