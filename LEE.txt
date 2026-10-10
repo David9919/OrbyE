@@ -1,6 +1,11 @@
-1.7.7 — Fondo neón en TODA la página
-Archivos a subir (raíz del repo):
-  index.html
-  bg-frame.jpg   ← OBLIGATORIO (el fondo)
-  api/oryn.js
-  vercel.json
+1.7.8
+Animaciones (campana, likes, páginas)
+Calls + Calendario
+Seguidores / siguiendo en perfil
+Veltx intenta nube Supabase (tabla veltx_videos)
+
+1) Sube index.html + bg-frame.jpg + api/oryn.js
+2) En Supabase SQL Editor: pega SUPABASE_ORBYE.sql → Run
+3) Storage → New bucket "veltx" → Public
+
+Sin el SQL, Calls/Calendario/animaciones igual funcionan; videos cross-device necesitan la tabla.
