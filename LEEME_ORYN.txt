@@ -1,0 +1,21 @@
+ORYN — checklist
+
+1) GitHub debe tener:
+   - index.html
+   - api/oryn.js   ← carpeta api, archivo dentro
+   - vercel.json
+
+2) Vercel → Settings → Environment Variables
+   Name: GROQ_API_KEY
+   Value: gsk_... (tu key)
+   Environments: Production + Preview + Development (marca todas)
+   Save
+
+3) Deployments → ... → Redeploy
+   IMPORTANTE: marca "Use existing Build Cache" en OFF si aparece
+
+4) Prueba en el navegador:
+   https://TU-DOMINIO.vercel.app/api/oryn
+   Debe responder algo (no 404)
+
+5) Si Oryn dice "Error API: ..." copia ese texto y mándamelo

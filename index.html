@@ -347,7 +347,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
 
 <script>
 (function(){
-  console.log("[OrbyE] 1.6.4");
+  console.log("[OrbyE] 1.6.5");
   var SUPA_URL="https://mhexliyacfgsclsnvqsp.supabase.co";
   var SUPA_ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZXhsaXlhY2Znc2Nsc252cXNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NTAyNDMsImV4cCI6MjEwNDMyNjI0M30.2AjwXK7jKarxC8iQHOXaQbmY_yQ5uynhJ0RL5hw32lY";
   var GIPHY_KEY="pFFKfTN75juDqBrmKOgTQa82jHUwClEO";
@@ -676,22 +676,26 @@ h2.pt{margin:0 0 12px;font-size:20px}
     var box=document.getElementById("orynMsgs");
     box.innerHTML+='<div class="b me"><b>Tú</b><div>'+q.replace(/</g,"&lt;")+'</div></div>';
     input.value="";
-    box.innerHTML+='<div class="b" id="ot"><b>Oryn</b><div>…</div></div>';
-    var reply="";
-    try{
-      var r=await fetch("/api/oryn",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q})});
-      if(r.ok){ var j=await r.json(); reply=j.reply||""; }
-      else { var j2=await r.json().catch(function(){return{};}); reply=j2.reply||""; }
-    }catch(e){}
+    box.innerHTML+='<div class="b" id="ot"><b>Oryn</b><div>Pensando…</div></div>';
+    var reply="", errDetail="";
+    var paths=["/api/oryn","/api/oryn.js"];
+    for(var i=0;i<paths.length;i++){
+      try{
+        var r=await fetch(paths[i],{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q})});
+        var text=await r.text();
+        var j={};
+        try{ j=JSON.parse(text); }catch(e){ errDetail="Respuesta no JSON ("+r.status+"): "+text.slice(0,120); continue; }
+        if(r.ok && (j.reply||j.message)){ reply=j.reply||j.message; break; }
+        errDetail=(j.reply||j.error||text||("HTTP "+r.status)).toString().slice(0,200);
+      }catch(e){ errDetail=String(e.message||e); }
+    }
     if(!reply){
-      var ql=q.toLowerCase();
-      if(/hola|hi/.test(ql)) reply="Hola, soy Oryn. Si GROQ_API_KEY y /api/oryn están bien en Vercel, respondo con IA completa.";
-      else if(/mrbeast/.test(ql)) reply="MrBeast es un creador de YouTube conocido por retos y filantropía.";
-      else if(/nube|supabase/.test(ql)) reply="Nube OK = Supabase responde. Los posts aún se guardan sobre todo en tu dispositivo.";
-      else reply="No pude usar la API. Revisa en Vercel: Environment Variable GROQ_API_KEY + archivo api/oryn.js + Redeploy.";
+      reply=errDetail
+        ? ("Error API: "+errDetail)
+        : "No se encontró /api/oryn. Sube la carpeta api/oryn.js a GitHub y haz Redeploy. Revisa GROQ_API_KEY en Vercel.";
     }
     var t=document.getElementById("ot"); if(t) t.remove();
-    box.innerHTML+='<div class="b"><b>Oryn</b><div>'+String(reply).replace(/</g,"&lt;")+'</div></div>';
+    box.innerHTML+='<div class="b"><b>Oryn</b><div>'+String(reply).replace(/</g,"&lt;").replace(/\n/g,"<br>")+'</div></div>';
     box.scrollTop=box.scrollHeight;
   }
   document.getElementById("orynSend").onclick=sendOryn;
