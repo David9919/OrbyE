@@ -1,1 +1,1 @@
-1.8.2 home rail Veltx, neon bar, badges, comment edit/del, notif per user, gif+text, staff tools, scroll
+1.8.3 scroll rail, comments fix, Original Community red, groups logo/banner, search real users, profile videos
