@@ -55,6 +55,7 @@ h2.pt{margin:0 0 14px;font-size:20px}
 .home-empty button{margin-top:10px;background:var(--red);border:0;color:#fff;font-weight:700;border-radius:999px;padding:10px 18px;cursor:pointer}
 /* ONYX */
 #page-onyx{max-width:640px}
+#page-veltx{max-width:1100px}
 .onyx-list{min-height:160px}
 .onyx-post{padding:14px 4px;border-bottom:1px solid #1c1c28}
 .onyx-post .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
@@ -94,11 +95,19 @@ h2.pt{margin:0 0 14px;font-size:20px}
 .veltx-actions button.sec{background:var(--panel2);border:1px solid var(--line)}
 .veltx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
 .veltx-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
-.editor-box{display:none;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.editor-box{display:none;background:linear-gradient(180deg,#14141e,#101018);border:1px solid #2e2e3a;border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 8px 32px rgba(0,0,0,.35)}
 .editor-box.on{display:block}
-.editor-box input,.editor-box textarea{width:100%;background:#111;border:1px solid #333;color:#fff;border-radius:10px;padding:10px;margin:6px 0}
-.editor-box .row{display:flex;gap:8px;flex-wrap:wrap}
-.editor-box .row button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:8px;padding:8px 12px;cursor:pointer}
+.editor-box .ed-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.editor-box .ed-head b{font-size:16px}
+.editor-box .ed-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:16px}
+@media(max-width:800px){.editor-box .ed-grid{grid-template-columns:1fr}}
+.editor-box input,.editor-box textarea{width:100%;background:#0c0c12;border:1px solid #2a2a36;color:#fff;border-radius:12px;padding:11px 12px;margin:6px 0;font-size:13px}
+.editor-box .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.editor-box .row button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:999px;padding:10px 16px;cursor:pointer;font-size:13px}
+.editor-box .preview-box{background:#0a0a10;border:1px dashed #333;border-radius:14px;min-height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#666;font-size:13px}
+.editor-box .preview-box video,.editor-box .preview-box img{max-width:100%;max-height:320px;display:block}
+.veltx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.veltx-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:9/16;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
 .news-item{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
 .news-item h3{margin:0 0 6px;font-size:15px}
 .news-item p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
@@ -150,7 +159,7 @@ h2.pt{margin:0 0 14px;font-size:20px}
 #rulesModal .box{max-width:460px;width:100%;background:#12121a;border:1px solid #333;border-radius:16px;padding:24px;text-align:center}
 #rulesModal ul{text-align:left;color:#bbb;font-size:13px;line-height:1.55;margin:0 0 16px;padding-left:18px}
 #rulesModal button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:999px;padding:11px 24px;cursor:pointer}
-#orynPanel{display:none;position:fixed;bottom:16px;left:210px;z-index:80;width:min(380px,92vw);height:440px;background:#0e0e16;border:1px solid var(--line);border-radius:14px;flex-direction:column;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+#orynPanel{display:none;position:fixed;bottom:16px;right:16px;left:auto;z-index:80;width:min(420px,94vw);height:min(560px,80vh);background:#0c0c12;border:1px solid #2a2a36;border-radius:16px;flex-direction:column;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.55)}
 #orynPanel.on{display:flex}
 #orynPanel .hd{padding:11px;border-bottom:1px solid var(--line);display:flex;align-items:center;font-weight:700}
 #orynPanel .hd button{margin-left:auto;background:transparent;border:0;color:#aaa;cursor:pointer;font-size:16px}
@@ -279,16 +288,27 @@ h2.pt{margin:0 0 14px;font-size:20px}
           <button type="button" class="sec" id="veltxCapcut">CapCut (móvil)</button>
         </div>
         <div class="editor-box" id="veltxEditor">
-          <b>Editor / OrbyPload</b>
-          <p style="color:var(--muted);font-size:12px;margin:6px 0 0">Sube video o imagen. En móvil puedes editar en CapCut y exportar aquí.</p>
-          <input type="text" id="veltxTitle" placeholder="Título">
-          <textarea id="veltxDesc" rows="2" placeholder="Descripción"></textarea>
-          <div class="row">
-            <button type="button" id="veltxPick">Elegir archivo</button>
-            <button type="button" id="veltxPublish" style="background:var(--red)">Publicar</button>
-            <button type="button" id="veltxEditorClose" style="background:#333">Cerrar</button>
+          <div class="ed-head">
+            <b>Veltx Studio</b>
+            <button type="button" id="veltxEditorClose" style="background:#222;border:1px solid #333;color:#ccc;border-radius:999px;padding:6px 12px;cursor:pointer">Cerrar</button>
           </div>
-          <div id="veltxPreview"></div>
+          <div class="ed-grid">
+            <div>
+              <label style="font-size:11px;color:var(--muted)">Título</label>
+              <input type="text" id="veltxTitle" placeholder="Título del clip">
+              <label style="font-size:11px;color:var(--muted)">Descripción</label>
+              <textarea id="veltxDesc" rows="3" placeholder="Descripción, #tags..."></textarea>
+              <p style="color:var(--muted);font-size:12px;margin:8px 0 0">Formato vertical tipo feed (9:16). En móvil: CapCut → exportar MP4 → subir aquí.</p>
+              <div class="row">
+                <button type="button" id="veltxPick">Elegir archivo</button>
+                <button type="button" id="veltxPublish" style="background:var(--red)">Publicar</button>
+              </div>
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--muted)">Vista previa</label>
+              <div class="preview-box" id="veltxPreview">Sin archivo</div>
+            </div>
+          </div>
         </div>
         <div class="veltx-grid" id="veltxGrid"></div>
         <input type="file" id="veltxFile" accept="video/*,image/*" hidden>
@@ -366,7 +386,7 @@ h2.pt{margin:0 0 14px;font-size:20px}
 
 <script>
 (function(){
-  console.log("[OrbyE] 1.6.6");
+  console.log("[OrbyE] 1.6.8");
   var SUPA_URL="https://mhexliyacfgsclsnvqsp.supabase.co";
   var SUPA_ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZXhsaXlhY2Znc2Nsc252cXNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NTAyNDMsImV4cCI6MjEwNDMyNjI0M30.2AjwXK7jKarxC8iQHOXaQbmY_yQ5uynhJ0RL5hw32lY";
   var GIPHY_KEY="pFFKfTN75juDqBrmKOgTQa82jHUwClEO";
@@ -637,7 +657,7 @@ h2.pt{margin:0 0 14px;font-size:20px}
   document.getElementById("veltxFile").onchange=function(){
     var f=this.files&&this.files[0]; if(!f) return; var r=new FileReader();
     r.onload=function(){ veltxPending={type:f.type.startsWith("video/")?"video":"image",url:r.result};
-      document.getElementById("veltxPreview").innerHTML=veltxPending.type==="video"?'<video src="'+veltxPending.url+'" controls style="max-width:100%;max-height:200px"></video>':'<img src="'+veltxPending.url+'" style="max-width:100%;max-height:200px">';
+      document.getElementById("veltxPreview").innerHTML=veltxPending.type==="video"?'<video src="'+veltxPending.url+'" controls playsinline style="width:100%;max-height:320px"></video>':'<img src="'+veltxPending.url+'" style="width:100%;max-height:320px;object-fit:contain">';
       document.getElementById("veltxEditor").classList.add("on");
     }; r.readAsDataURL(f); this.value="";
   };
@@ -646,7 +666,7 @@ h2.pt{margin:0 0 14px;font-size:20px}
     var list=load(VELTX_KEY);
     list.unshift({type:veltxPending.type,url:veltxPending.url,ts:Date.now(),title:(document.getElementById("veltxTitle").value||"").trim()});
     save(VELTX_KEY,list); veltxPending=null;
-    document.getElementById("veltxTitle").value=""; document.getElementById("veltxPreview").innerHTML="";
+    document.getElementById("veltxTitle").value=""; document.getElementById("veltxPreview").innerHTML="Sin archivo";
     document.getElementById("veltxEditor").classList.remove("on"); paintVeltx(); paintHome();
   };
 
