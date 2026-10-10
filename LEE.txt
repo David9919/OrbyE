@@ -1,9 +1,13 @@
-1.7.1
-- Veltx: solo Studio (subes + editas + publicas ahí)
-- Footer ya no te sigue (no sticky)
-- Menos Instagram: posts tipo tarjeta Reddit/X
-- Oryn: SOLO_PEGAR_en_api_oryn.js → copia TODO en GitHub api/oryn.js
+OrbyE Beta 1.7.2 — OrbyE Corporation
+- Legales detallados
+- Amigos + chat privado (DM)
+- Comentarios en videos del Inicio
+- Inicio: reloj (colores), destacados, noticias, videos
+- Campana de notificaciones
+- Sin mencionar Supabase (solo Online/Offline)
+- Vista previa Samuray antes de salir
+- Info / Foros
+- Oryn: prueba varios modelos hasta que uno funcione
 
-Si Oryn sigue con llama-3.3: el archivo en GitHub NO se actualizó.
-Abre https://github.com/David9919/OrbyE/blob/main/api/oryn.js
-Debe decir: model: "llama-3.1-8b-instant"
+Sube index.html + api/oryn.js + vercel.json
+IMPORTANTE: reemplaza TODO api/oryn.js (ahora prueba 5 modelos)

@@ -200,6 +200,52 @@ h2.pt{margin:0 0 12px;font-size:20px}
 #orynIn input{flex:1;background:#111;border:1px solid #333;color:#fff;border-radius:10px;padding:10px}
 #orynIn button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:10px;padding:10px 12px;cursor:pointer}
 @media(max-width:720px){.side{width:52px}.side button span,.side a.nav span{display:none}.login-left{display:none}}
+
+.home-hero{display:grid;grid-template-columns:1fr 200px;gap:14px;margin-bottom:16px}
+@media(max-width:800px){.home-hero{grid-template-columns:1fr}}
+.clock-card{background:linear-gradient(145deg,#12121a,#0a0a10);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.clock-card .time{font-size:28px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:1px;transition:color .4s}
+.clock-card .date{color:var(--muted);font-size:12px;margin-top:4px}
+.clock-card .colors{display:flex;gap:6px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+.clock-card .colors button{width:18px;height:18px;border-radius:50%;border:2px solid #333;cursor:pointer;padding:0}
+.home-section{margin-bottom:18px}
+.home-section h3{font-size:14px;margin:0 0 10px;color:#ccc;display:flex;align-items:center;gap:8px}
+.home-section h3 span{font-size:11px;color:#666;font-weight:500}
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.news-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px;font-size:13px}
+.news-card b{display:block;margin-bottom:4px}
+.news-card .t{color:#666;font-size:11px}
+.feat-row{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px}
+.feat-item{min-width:160px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:12px}
+.topbar .bell{position:relative;background:transparent;border:1px solid var(--line);color:#ccc;border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:16px}
+.topbar .bell .dot{position:absolute;top:4px;right:4px;width:8px;height:8px;background:var(--red);border-radius:50%;display:none}
+.topbar .bell .dot.on{display:block}
+#notifPanel{display:none;position:absolute;right:12px;top:52px;width:min(320px,92vw);max-height:360px;overflow:auto;background:#0e0e14;border:1px solid var(--line);border-radius:12px;z-index:100;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+#notifPanel.on{display:block}
+#notifPanel .n{padding:10px 12px;border-bottom:1px solid #1a1a22;font-size:12px}
+#notifPanel .n b{display:block;margin-bottom:2px}
+.sam-preview{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:12px}
+.sam-preview img{width:88px;height:88px;border-radius:12px;object-fit:cover;background:#111}
+.sam-preview .info{flex:1}
+.sam-preview .info h3{margin:0 0 6px;font-size:16px}
+.sam-preview .info p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}
+.comment-box{margin-top:8px;padding-top:8px;border-top:1px solid #1a1a22}
+.comment-box .clist{font-size:12px;margin-bottom:6px;max-height:120px;overflow:auto}
+.comment-box .c{padding:4px 0;color:#bbb}
+.comment-box .c b{color:#8ab4ff}
+.comment-box .row{display:flex;gap:6px}
+.comment-box input{flex:1;background:#111;border:1px solid #333;color:#fff;border-radius:8px;padding:7px 10px;font-size:12px}
+.comment-box button{background:var(--accent);border:0;color:#fff;border-radius:8px;padding:7px 12px;cursor:pointer;font-size:12px}
+#page-friends .f-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:700px){#page-friends .f-grid{grid-template-columns:1fr}}
+.friend-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
+.dm-box{height:280px;overflow:auto;background:#0a0a10;border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px}
+.dm-box .m{margin-bottom:8px;font-size:13px}
+.dm-box .m.me{text-align:right}
+.dm-box .m span{display:inline-block;background:#1a1a24;padding:6px 10px;border-radius:10px;max-width:80%}
+.dm-box .m.me span{background:#1a2840}
+.ver-badge{font-size:10px;color:#666;margin-left:8px}
+
 </style>
 </head>
 <body>
@@ -272,7 +318,36 @@ h2.pt{margin:0 0 12px;font-size:20px}
       <a class="nav" href="https://samuray-del-norte.vercel.app/#home" target="_blank" rel="noopener">⚔ <span>Samuray</span></a>
     </nav>
     <div class="main">
-      <div id="page-home" class="page wide on"><div class="home-feed" id="homeFeed"></div></div>
+      <div id="page-home" class="page wide on">
+        <div class="home-hero">
+          <div>
+            <div class="home-section">
+              <h3>⭐ Lo más destacado <span>hoy</span></h3>
+              <div class="feat-row" id="featRow"></div>
+            </div>
+            <div class="home-section">
+              <h3>📰 Noticias y updates</h3>
+              <div class="news-grid" id="newsGrid"></div>
+            </div>
+          </div>
+          <div class="clock-card">
+            <div class="time" id="clockTime">--:--</div>
+            <div class="date" id="clockDate">—</div>
+            <div class="colors" id="clockColors">
+              <button type="button" data-cc="#ff8c42" style="background:#ff8c42" title="Naranja"></button>
+              <button type="button" data-cc="#3dd68c" style="background:#3dd68c" title="Verde"></button>
+              <button type="button" data-cc="#5b8cff" style="background:#5b8cff" title="Azul"></button>
+              <button type="button" data-cc="#ff5c7a" style="background:#ff5c7a" title="Rojo"></button>
+              <button type="button" data-cc="#e8e8f0" style="background:#e8e8f0" title="Blanco"></button>
+              <button type="button" data-cc="#c084fc" style="background:#c084fc" title="Violeta"></button>
+            </div>
+          </div>
+        </div>
+        <div class="home-section">
+          <h3>▶ Videos recientes <span>Veltx</span></h3>
+          <div class="home-feed" id="homeFeed"></div>
+        </div>
+      </div>
 
       <div id="page-onyx" class="page wide">
         <h2 class="pt">Onyx</h2>
@@ -415,8 +490,52 @@ h2.pt{margin:0 0 12px;font-size:20px}
         <input type="file" id="profPhoto" accept="image/*" hidden>
         <input type="file" id="profBannerFile" accept="image/*" hidden>
       </div>
+
+      <div id="page-friends" class="page">
+        <h2 style="margin:0 0 12px">Amigos y chat privado</h2>
+        <p style="color:var(--muted);font-size:13px;margin:0 0 12px">Agrega amigos por nombre de usuario. Si ambos se escriben, quedan como amigos.</p>
+        <div class="f-grid">
+          <div>
+            <div style="display:flex;gap:8px;margin-bottom:10px">
+              <input id="friendSearch" placeholder="Usuario a agregar..." style="flex:1;background:#111;border:1px solid #333;color:#fff;border-radius:8px;padding:10px">
+              <button type="button" id="btnAddFriend" style="background:var(--accent);border:0;color:#fff;border-radius:8px;padding:10px 14px;font-weight:700;cursor:pointer">Agregar</button>
+            </div>
+            <div id="friendsList"></div>
+          </div>
+          <div>
+            <div style="margin-bottom:8px;font-size:13px;color:#aaa">Chat con: <b id="dmWith">—</b></div>
+            <div class="dm-box" id="dmBox"></div>
+            <div style="display:flex;gap:6px">
+              <input id="dmInput" placeholder="Mensaje privado..." style="flex:1;background:#111;border:1px solid #333;color:#fff;border-radius:8px;padding:10px">
+              <button type="button" id="dmSend" style="background:var(--accent);border:0;color:#fff;border-radius:8px;padding:10px 14px;cursor:pointer">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="page-info" class="page">
+        <h2 style="margin:0 0 8px">OrbyE Corporation</h2>
+        <p style="color:var(--muted);font-size:13px;margin:0 0 16px">Plataforma social · Veltx · Onyx · Spaces · Oryn IA · Beta 1.7.2</p>
+        <div class="news-grid">
+          <div class="news-card"><b>Foro: Ideas</b><div class="t">Comparte ideas para mejorar OrbyE en Staff o Spaces Orby Help.</div></div>
+          <div class="news-card"><b>Foro: Bugs</b><div class="t">Reporta errores en Staff. Los mods reciben notificación.</div></div>
+          <div class="news-card"><b>Guía nuevos</b><div class="t">Crea cuenta → acepta reglas → sube en Veltx Studio → publica en Onyx.</div></div>
+          <div class="news-card"><b>Legal</b><div class="t">Privacidad, uso y reglas están al pie. Debes aceptar al registrarte.</div></div>
+        </div>
+        <p style="margin-top:20px;color:#666;font-size:12px">© OrbyE Corporation · DavidAvila · Todos los derechos reservados</p>
+      </div>
+      <div id="page-samuray" class="page">
+        <div class="sam-preview">
+          <img src="https://samuray-del-norte.vercel.app/favicon.ico" alt="Samuray" id="samImg" onerror="this.style.background='#222'">
+          <div class="info">
+            <h3>Samuray Del Norte (LNF)</h3>
+            <p>Realm oficial Light No Fire. Misiones, mapa, censo y chat del realm. Enlace directo con OrbyE — misma cuenta si conectas tu perfil.</p>
+            <p style="margin-top:8px;color:#8ab4ff;font-size:12px">Vista previa antes de salir de OrbyE</p>
+          </div>
+        </div>
+        <a href="https://samuray-del-norte.vercel.app/#home" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;border-radius:10px;padding:12px 20px">Abrir Samuray Del Norte →</a>
+      </div>
       <div class="footer">
-        <span>OrbyE · © DavidAvila</span>
+        <span>OrbyE Corporation · © DavidAvila · Beta 1.7.2</span>
         <button type="button" data-open-legal="privacy">Políticas de privacidad</button>
         <button type="button" data-open-legal="terms">Políticas de uso</button>
         <button type="button" data-open-legal="rules">Reglas</button>
@@ -433,7 +552,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
 
 <script>
 (function(){
-  console.log("[OrbyE] 1.7.1");
+  console.log("[OrbyE] Beta 1.7.2");
   var SUPA_URL="https://mhexliyacfgsclsnvqsp.supabase.co";
   var SUPA_ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZXhsaXlhY2Znc2Nsc252cXNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NTAyNDMsImV4cCI6MjEwNDMyNjI0M30.2AjwXK7jKarxC8iQHOXaQbmY_yQ5uynhJ0RL5hw32lY";
   var GIPHY_KEY="pFFKfTN75juDqBrmKOgTQa82jHUwClEO";
@@ -455,17 +574,46 @@ h2.pt{margin:0 0 12px;font-size:20px}
     var el=document.getElementById("cloudStatus");
     try{
       await fetch(SUPA_URL+"/rest/v1/",{headers:{"apikey":SUPA_ANON,"Authorization":"Bearer "+SUPA_ANON}});
-      el.textContent="Nube OK"; el.className="pill ok";
+      el.textContent="Online"; el.className="pill ok";
     }catch(e){ el.textContent="Local"; el.className="pill"; }
   }
   checkCloud();
 
-  var LEGAL={
-    privacy:{title:"Políticas de privacidad",html:"<p>Datos de cuenta para operar OrbyE. Nube OK = Supabase responde.</p>"},
-    terms:{title:"Políticas de uso",html:"<p>No spam, respeto copyright, mods pueden moderar.</p>"},
-    rules:{title:"Reglas",html:"<ul><li>18+ solo mayores</li><li>No spam</li><li>Reporta en Staff</li></ul>"}
+    var LEGAL={
+    privacy:{title:"Políticas de privacidad — OrbyE Corporation",html:
+      "<p><b>OrbyE Corporation</b> (en adelante «OrbyE»), operada por DavidAvila, protege tu información.</p>"
+      +"<ul>"
+      +"<li>Recopilamos nombre de usuario, email, foto de perfil, publicaciones y mensajes necesarios para operar la plataforma.</li>"
+      +"<li>No vendemos datos personales a terceros.</li>"
+      +"<li>Los moderadores no pueden ver contraseñas ni datos de pago.</li>"
+      +"<li>Puedes solicitar eliminación de cuenta escribiendo a Staff.</li>"
+      +"<li>Usamos cifrado en tránsito (HTTPS) y almacenamiento seguro en la nube.</li>"
+      +"<li>Al usar OrbyE aceptas esta política.</li>"
+      +"</ul>"
+      +"<p style='color:#666;font-size:12px;margin-top:12px'>© OrbyE Corporation · DavidAvila</p>"},
+    terms:{title:"Políticas de uso — OrbyE Corporation",html:
+      "<p>Al crear una cuenta en <b>OrbyE</b> aceptas:</p>"
+      +"<ul>"
+      +"<li>No publicar spam, estafas ni contenido ilegal.</li>"
+      +"<li>Respetar derechos de autor (DMCA disponible para titulares).</li>"
+      +"<li>No acosar, amenazar ni suplantar a otras personas.</li>"
+      +"<li>El contenido 18+ solo para usuarios verificados como mayores de edad.</li>"
+      +"<li>OrbyE puede moderar o eliminar contenido que viole estas reglas.</li>"
+      +"<li>OrbyE no se hace responsable del contenido subido por usuarios de terceros.</li>"
+      +"</ul>"
+      +"<p style='color:#666;font-size:12px;margin-top:12px'>© OrbyE Corporation · DavidAvila</p>"},
+    rules:{title:"Reglas de la comunidad — OrbyE",html:
+      "<ul>"
+      +"<li><b>Edad:</b> Debes indicar tu fecha de nacimiento real. Mentir sobre la edad puede resultar en ban.</li>"
+      +"<li><b>Respeto:</b> Trato amable. Cero odio, racismo o acoso.</li>"
+      +"<li><b>No spam:</b> No flood de mensajes, links maliciosos ni bots.</li>"
+      +"<li><b>Copyright:</b> Solo sube material que tengas derecho a publicar.</li>"
+      +"<li><b>Reportes:</b> Usa Staff o el botón Reportar. Los mods revisan casos.</li>"
+      +"<li><b>Cuentas:</b> Una persona, una cuenta principal. Clones pueden ser eliminados.</li>"
+      +"</ul>"
+      +"<p style='color:#666;font-size:12px;margin-top:12px'>OrbyE Corporation · Moderación y Staff</p>"}
   };
-  function openLegal(id){ var L=LEGAL[id]||LEGAL.privacy; document.getElementById("legalTitle").textContent=L.title; document.getElementById("legalBody").innerHTML=L.html; document.getElementById("legalView").classList.add("on"); }
+  function openLegalfunction openLegal(id){ var L=LEGAL[id]||LEGAL.privacy; document.getElementById("legalTitle").textContent=L.title; document.getElementById("legalBody").innerHTML=L.html; document.getElementById("legalView").classList.add("on"); }
   function closeLegal(){ document.getElementById("legalView").classList.remove("on"); }
   document.querySelectorAll("[data-open-legal]").forEach(function(b){ b.onclick=function(){ openLegal(b.getAttribute("data-open-legal")); }; });
   document.getElementById("legalAccept").onclick=function(){ document.getElementById("chkLegal").checked=true; closeLegal(); };
@@ -521,10 +669,29 @@ h2.pt{margin:0 0 12px;font-size:20px}
     var feed=document.getElementById("homeFeed");
     var list=load(VELTX_KEY);
     var u=localStorage.getItem(USER_KEY)||"";
+    // featured
+    var feat=document.getElementById("featRow");
+    if(feat){
+      var items=[];
+      if(list[0]) items.push({t:list[0].title||"Video Veltx",d:"Lo último en Veltx"});
+      items.push({t:"Onyx Feed",d:"Posts de la comunidad"});
+      items.push({t:"OrbyE Beta 1.7.2",d:"Amigos, DM, reloj, comentarios"});
+      feat.innerHTML=items.map(function(x){return '<div class="feat-item"><b>'+x.t+'</b><div style="color:#666;margin-top:4px">'+x.d+'</div></div>';}).join("");
+    }
+    var news=document.getElementById("newsGrid");
+    if(news){
+      news.innerHTML=[
+        {b:"Update Beta 1.7.2",t:"Chat privado, amigos, comentarios en videos, reloj personalizable."},
+        {b:"OrbyE Corporation",t:"Políticas ampliadas. Acepta privacidad y uso al crear cuenta."},
+        {b:"Veltx Studio",t:"Sube, edita texto y publica desde Studio."},
+        {b:"Samuray",t:"Realm LNF enlazado — mira la vista previa antes de entrar."}
+      ].map(function(n){return '<div class="news-card"><b>'+n.b+'</b><div class="t">'+n.t+'</div></div>';}).join("");
+    }
     if(!list.length){
-      feed.innerHTML='<div class="home-empty"><p>Sin videos aún.</p><button type="button" id="hV">Ir a Veltx</button></div>';
+      feed.innerHTML='<div class="home-empty"><p>Sin videos aún.</p><button type="button" id="hV">Ir a Veltx Studio</button></div>';
       var b=document.getElementById("hV"); if(b) b.onclick=function(){go("veltx");}; return;
     }
+    var comments=loadObj("orbye_vcomments_v1");
     feed.innerHTML=list.map(function(v,i){
       var m=v.type==="video"
         ?'<video src="'+v.url+'" controls playsinline preload="metadata"></video>'
@@ -532,14 +699,22 @@ h2.pt{margin:0 0 12px;font-size:20px}
       var title=String(v.title||"Sin título").replace(/</g,"&lt;");
       var canDel = !v.user || v.user===u || isCreator(u);
       var del=canDel?'<button type="button" class="del-btn" data-del-veltx="'+i+'">Borrar</button>':'';
+      var clist=comments[v.id||("v"+i)]||[];
+      var chtml=clist.slice(-8).map(function(c){
+        return '<div class="c"><b>'+String(c.user).replace(/</g,"")+'</b> '+String(c.text).replace(/</g,"&lt;")+'</div>';
+      }).join("");
       return '<div class="home-card">'
         +'<div class="hc-top"><b>Veltx</b><span style="color:#666;font-size:11px">'+new Date(v.ts||Date.now()).toLocaleString()+'</span>'+del+'</div>'
         +'<div class="meta">'+title+'</div>'
         +'<div class="media">'+m+'</div>'
         +'<div class="actions">'
         +'<button type="button" data-like-v="'+i+'">▲ '+(v.likes||0)+'</button>'
-        +'<button type="button">💬</button>'
+        +'<button type="button" data-toggle-c="'+i+'">💬 '+(clist.length||0)+'</button>'
         +'<button type="button">↗ Compartir</button>'
+        +'</div>'
+        +'<div class="comment-box" id="cbox'+i+'" style="display:none">'
+        +'<div class="clist">'+chtml+'</div>'
+        +'<div class="row"><input placeholder="Comentar..." id="cinput'+i+'"><button type="button" data-send-c="'+i+'">Enviar</button></div>'
         +'</div></div>';
     }).join("");
   }
@@ -703,6 +878,138 @@ h2.pt{margin:0 0 12px;font-size:20px}
 
   document.getElementById("btnLogin").onclick=doLogin;
   document.getElementById("btnCreate").onclick=doLogin;
+  
+  /* ——— Friends / DM / Notifs / Clock ——— */
+  var FRIENDS_KEY="orbye_friends_v1";
+  var DM_KEY="orbye_dm_v1";
+  var NOTIF_KEY="orbye_notif_v1";
+  var CLOCK_COLOR_KEY="orbye_clock_color";
+  var dmPeer=null;
+
+  function pushNotif(text){
+    var list=load(NOTIF_KEY); list.unshift({text:text,ts:Date.now(),read:false});
+    if(list.length>40) list=list.slice(0,40);
+    save(NOTIF_KEY,list); paintNotifs();
+  }
+  function paintNotifs(){
+    var list=load(NOTIF_KEY);
+    var panel=document.getElementById("notifPanel");
+    var dot=document.getElementById("bellDot");
+    var unread=list.filter(function(n){return !n.read;}).length;
+    if(dot){ if(unread) dot.classList.add("on"); else dot.classList.remove("on"); }
+    if(!panel) return;
+    if(!list.length){ panel.innerHTML='<div class="n">Sin notificaciones</div>'; return; }
+    panel.innerHTML=list.map(function(n,i){
+      return '<div class="n"><b>'+(n.read?"":"• ")+String(n.text).replace(/</g,"&lt;")+'</b><span style="color:#666">'+new Date(n.ts).toLocaleString()+'</span></div>';
+    }).join("")+'<div class="n"><button type="button" id="notifClear" style="background:#222;border:0;color:#aaa;border-radius:8px;padding:6px 10px;cursor:pointer;width:100%">Marcar leídas</button></div>';
+    var c=document.getElementById("notifClear");
+    if(c) c.onclick=function(){ var L=load(NOTIF_KEY).map(function(n){n.read=true;return n;}); save(NOTIF_KEY,L); paintNotifs(); };
+  }
+  document.getElementById("btnBell").onclick=function(e){
+    e.stopPropagation();
+    document.getElementById("notifPanel").classList.toggle("on");
+    paintNotifs();
+  };
+  document.addEventListener("click",function(){ var p=document.getElementById("notifPanel"); if(p) p.classList.remove("on"); });
+
+  function paintFriends(){
+    var u=localStorage.getItem(USER_KEY)||"";
+    var all=loadObj(FRIENDS_KEY); var mine=all[u]||[];
+    var box=document.getElementById("friendsList");
+    if(!box) return;
+    if(!mine.length){ box.innerHTML='<p style="color:#666;font-size:13px">Aún no tienes amigos. Agrégalos arriba.</p>'; return; }
+    box.innerHTML=mine.map(function(f){
+      return '<div class="friend-card" style="margin-bottom:8px;cursor:pointer" data-dm="'+String(f).replace(/"/g,"")+'"><b>'+String(f).replace(/</g,"")+'</b><div style="color:#666;font-size:11px">Tocar para chat</div></div>';
+    }).join("");
+  }
+  document.getElementById("btnAddFriend").onclick=function(){
+    var u=localStorage.getItem(USER_KEY)||""; if(!u) return;
+    var name=(document.getElementById("friendSearch").value||"").trim();
+    if(!name||name===u){ alert("Escribe un usuario válido"); return; }
+    var all=loadObj(FRIENDS_KEY); all[u]=all[u]||[];
+    if(all[u].indexOf(name)===-1) all[u].push(name);
+    saveObj(FRIENDS_KEY,all);
+    pushNotif("Agregaste a "+name+" como amigo");
+    document.getElementById("friendSearch").value="";
+    paintFriends();
+  };
+  document.getElementById("friendsList").onclick=function(e){
+    var c=e.target.closest("[data-dm]"); if(!c) return;
+    dmPeer=c.getAttribute("data-dm");
+    document.getElementById("dmWith").textContent=dmPeer;
+    paintDM();
+  };
+  function dmKey(a,b){ return [a,b].sort().join("__"); }
+  function paintDM(){
+    var box=document.getElementById("dmBox"); if(!box||!dmPeer) return;
+    var u=localStorage.getItem(USER_KEY)||"";
+    var all=loadObj(DM_KEY); var list=all[dmKey(u,dmPeer)]||[];
+    box.innerHTML=list.map(function(m){
+      var me=m.user===u?" me":"";
+      return '<div class="m'+me+'"><span><b>'+String(m.user).replace(/</g,"")+'</b><br>'+String(m.text).replace(/</g,"&lt;")+'</span></div>';
+    }).join("")||'<div style="color:#555;text-align:center;padding:20px">Sin mensajes aún</div>';
+    box.scrollTop=box.scrollHeight;
+  }
+  function sendDM(){
+    var u=localStorage.getItem(USER_KEY)||""; if(!u||!dmPeer) return;
+    var t=(document.getElementById("dmInput").value||"").trim(); if(!t) return;
+    var all=loadObj(DM_KEY); var k=dmKey(u,dmPeer);
+    all[k]=all[k]||[]; all[k].push({user:u,text:t,ts:Date.now()});
+    saveObj(DM_KEY,all);
+    document.getElementById("dmInput").value="";
+    paintDM();
+    pushNotif("Mensaje enviado a "+dmPeer);
+  }
+  document.getElementById("dmSend").onclick=sendDM;
+  document.getElementById("dmInput").onkeydown=function(e){ if(e.key==="Enter"){ e.preventDefault(); sendDM(); } };
+
+  // clock
+  function tickClock(){
+    var el=document.getElementById("clockTime");
+    var d=document.getElementById("clockDate");
+    if(!el) return;
+    var now=new Date();
+    el.textContent=now.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+    if(d) d.textContent=now.toLocaleDateString([],{weekday:"short",day:"numeric",month:"short"});
+    var col=localStorage.getItem(CLOCK_COLOR_KEY)||"#ff8c42";
+    el.style.color=col;
+  }
+  setInterval(tickClock,1000); tickClock();
+  document.getElementById("clockColors").onclick=function(e){
+    var b=e.target.closest("[data-cc]"); if(!b) return;
+    localStorage.setItem(CLOCK_COLOR_KEY,b.getAttribute("data-cc"));
+    tickClock();
+  };
+
+  // comments on home videos
+  document.getElementById("homeFeed").addEventListener("click",function(e){
+    var t=e.target.closest("[data-toggle-c]");
+    if(t){
+      var i=t.getAttribute("data-toggle-c");
+      var box=document.getElementById("cbox"+i);
+      if(box) box.style.display=box.style.display==="none"?"block":"none";
+      return;
+    }
+    var s=e.target.closest("[data-send-c]");
+    if(s){
+      var i=s.getAttribute("data-send-c");
+      var inp=document.getElementById("cinput"+i);
+      var text=(inp&&inp.value||"").trim(); if(!text) return;
+      var u=localStorage.getItem(USER_KEY)||"anon";
+      var list=load(VELTX_KEY); var v=list[parseInt(i,10)]; if(!v) return;
+      if(!v.id) v.id="v_"+v.ts+"_"+i;
+      var comments=loadObj("orbye_vcomments_v1");
+      comments[v.id]=comments[v.id]||[];
+      comments[v.id].push({user:u,text:text,ts:Date.now()});
+      saveObj("orbye_vcomments_v1",comments);
+      save(VELTX_KEY,list);
+      if(inp) inp.value="";
+      pushNotif("Comentario en: "+(v.title||"video"));
+      paintHome();
+      var box=document.getElementById("cbox"+i); if(box) box.style.display="block";
+    }
+  });
+
   document.getElementById("btnLogout").onclick=function(){ localStorage.removeItem(USER_KEY); showLogin(); };
   document.querySelectorAll(".side button[data-go]").forEach(function(b){ b.onclick=function(){ go(b.getAttribute("data-go")); }; });
   document.getElementById("btnSend").onclick=function(){ sendOnyx(); };
