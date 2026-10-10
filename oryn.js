@@ -1,38 +1,34 @@
-// Vercel Serverless: /api/oryn
-// Env: GROQ_API_KEY=gsk_...
-
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    res.status(405).json({ error: "POST only" });
-    return;
-  }
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") { res.status(200).end(); return; }
+  if (req.method !== "POST") { res.status(405).json({ reply: "POST only" }); return; }
   const key = process.env.GROQ_API_KEY;
   if (!key) {
-    res.status(500).json({ error: "Missing GROQ_API_KEY", reply: "Falta GROQ_API_KEY en Vercel → Settings → Environment Variables." });
+    res.status(500).json({ reply: "Falta GROQ_API_KEY en Vercel → Settings → Environment Variables. Luego Redeploy." });
     return;
   }
-  const message = (req.body && req.body.message) || "";
+  let message = "";
+  try { message = (req.body && req.body.message) || ""; } catch (e) {}
   try {
     const r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
-      headers: {
-        Authorization: "Bearer " + key,
-        "Content-Type": "application/json",
-      },
+      headers: { Authorization: "Bearer " + key, "Content-Type": "application/json" },
       body: JSON.stringify({
         model: "llama-3.3-70b-versatile",
         messages: [
-          { role: "system", content: "Eres Oryn, la IA de OrbyE (red social de DavidAvila). Responde en el idioma del usuario, claro y útil. Puedes hablar de Onyx, Spaces, Veltx, OrbyPload, Wall Pass y Samuray del Norte." },
-          { role: "user", content: String(message).slice(0, 4000) },
+          { role: "system", content: "Eres Oryn, IA de OrbyE creada para DavidAvila. Responde claro, en el idioma del usuario." },
+          { role: "user", content: String(message).slice(0, 4000) }
         ],
         temperature: 0.7,
-        max_tokens: 800,
-      }),
+        max_tokens: 900
+      })
     });
     const data = await r.json();
-    const reply = data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
-    res.status(200).json({ reply: reply || "Sin respuesta" });
+    const reply = data.choices?.[0]?.message?.content || data.error?.message || "Sin respuesta";
+    res.status(200).json({ reply });
   } catch (e) {
-    res.status(500).json({ reply: "Error al contactar la IA." });
+    res.status(500).json({ reply: "Error al llamar a Groq: " + String(e.message || e) });
   }
 }

@@ -1,29 +1,13 @@
-OrbyE 1.6.3
-============
+OrbyE 1.6.4
+- Onyx ancho normal (sin hueco Instagram)
+- Comunidades = Spaces
+- Logo circular arriba
+- Legal pie + login obligatorio
+- Noticias
+- OrbyPload → Veltx + CapCut móvil
+- Nube OK = solo ping Supabase (honesto)
 
-ARCHIVOS:
-- index.html  (sube a la raíz del repo)
-- api/oryn.js (carpeta api para Oryn con Groq)
-
-PASO A PASO — ORYN (IA de verdad)
-1. Vercel → tu proyecto orbye-app → Settings → Environment Variables
-2. Add:
-   Name:  GROQ_API_KEY
-   Value: (tu key de console.groq.com — empieza por gsk_)
-3. Sube index.html y la carpeta api/ (con oryn.js dentro) a GitHub main
-4. Redeploy
-5. Prueba Oryn — si falla, mira Function Logs en Vercel
-
-PASO A PASO — SUPABASE
-1. Ya va el URL del proyecto en el código
-2. Arriba a la derecha debe decir "Nube OK" si responde
-3. Si dice Local: revisa que el proyecto Supabase no esté pausado
-
-REGLAS 18+:
-- Al entrar sale el panel grande de reglas (una vez)
-
-INICIO:
-- Muestra videos de Veltx (no muro de texto)
-
-ALPHA:
-- Solo en el pie: "OrbyE · alpha · © DavidAvila"
+ORYN:
+1. GROQ_API_KEY en Vercel env
+2. api/oryn.js en el repo
+3. Redeploy
