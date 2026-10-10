@@ -1,0 +1,14 @@
+OrbyE 1.6.9
+
+1) BORRA oryn.js de la RAÍZ en GitHub si existe
+2) Sube:
+   index.html
+   api/oryn.js   (carpeta api)
+   vercel.json   (vacío {})
+3) Redeploy / espera verde
+4) Oryn debe usar llama-3.1-8b-instant (ya no 3.3)
+
+Onyx → pestaña Grupos (chat + buscar + crear)
+Spaces = comunidades foros (aparte)
+Veltx Studio = texto sobre video + 9:16
+Logo circular en topbar + favicon

@@ -27,7 +27,10 @@ module.exports = async function handler(req, res) {
     res.end(JSON.stringify({ reply: "Mensaje vacío" }));
     return;
   }
+
+  // MODELO CORRECTO (el 3.3 no existe en tu cuenta)
   const model = "llama-3.1-8b-instant";
+
   try {
     const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
@@ -49,7 +52,7 @@ module.exports = async function handler(req, res) {
       res.end(JSON.stringify({ reply: data.choices[0].message.content }));
       return;
     }
-    const err = (data.error && data.error.message) || "Sin respuesta";
+    const err = (data.error && data.error.message) || JSON.stringify(data).slice(0, 200);
     res.statusCode = 500;
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify({ reply: "Groq: " + err }));
