@@ -36,8 +36,8 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;bac
 .pill{font-size:11px;padding:3px 8px;border-radius:999px;background:#1a1a24;border:1px solid #333;color:#888}
 .pill.ok{color:#6d6;border-color:#363}
 .layout{display:flex;flex:1;min-height:0}
-.side{width:200px;flex-shrink:0;background:#08080c;border-right:1px solid var(--line);padding:10px 8px;overflow-y:auto}
-.side button,.side a.nav{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:transparent;border:0;color:#b8b8c8;padding:10px 11px;border-radius:10px;cursor:pointer;font-size:13px;text-decoration:none;margin-bottom:2px}
+.side{width:220px;flex-shrink:0;background:#0b0b0f;border-right:1px solid #1c1c24;padding:12px 10px;overflow-y:auto}
+.side button,.side a.nav{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:transparent;border:0;color:#b8b8c8;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:13px;text-decoration:none;margin-bottom:1px}
 .side button:hover,.side a.nav:hover,.side button.on{background:var(--panel2);color:#fff}
 .main{flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto}
 .page{display:none;padding:16px;max-width:720px;width:100%;margin:0 auto}
@@ -67,14 +67,14 @@ h2.pt{margin:0 0 12px;font-size:20px}
 /* ONYX feed */
 #page-onyx{max-width:900px}
 .onyx-list{min-height:120px}
-.onyx-post{padding:14px 4px;border-bottom:1px solid #1c1c28}
+.onyx-post{padding:12px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:10px;background:#0e0e14}
 .onyx-post .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .onyx-post .av{width:36px;height:36px;border-radius:50%;background:#252532;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;object-fit:cover}
 .onyx-post b{color:#8ab4ff;font-size:14px}
 .onyx-post .txt{font-size:15px;line-height:1.4}
 .onyx-post .meta{color:#555;font-size:11px;margin-top:6px}
 .onyx-post img.media{max-width:100%;max-height:320px;border-radius:12px;margin-top:8px;display:block}
-.onyx-compose{position:sticky;bottom:0;display:flex;gap:8px;padding:12px 0;border-top:1px solid var(--line);flex-wrap:wrap;align-items:center;background:var(--bg)}
+.onyx-compose{display:flex;gap:8px;padding:12px 0 20px;border-top:1px solid var(--line);flex-wrap:wrap;align-items:center;background:transparent;margin-top:12px}
 .onyx-compose input{flex:1;min-width:120px;background:#111;border:1px solid #333;color:#fff;border-radius:10px;padding:11px;font-size:14px}
 .onyx-compose button{background:#1a1a22;border:1px solid #333;color:#ccc;border-radius:8px;padding:9px 11px;cursor:pointer}
 .onyx-compose .send{background:var(--accent);border:0;color:#fff;font-weight:700;padding:10px 16px}
@@ -122,8 +122,8 @@ h2.pt{margin:0 0 12px;font-size:20px}
 .composer button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:10px;padding:10px 14px;cursor:pointer}
 /* Veltx studio */
 .veltx-actions{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.veltx-actions button{background:var(--red);border:0;color:#fff;font-weight:700;border-radius:999px;padding:9px 16px;cursor:pointer;font-size:13px}
-.veltx-actions button.sec{background:var(--panel2);border:1px solid var(--line)}
+.veltx-actions button{background:var(--red);border:0;color:#fff;font-weight:700;border-radius:8px;padding:10px 18px;cursor:pointer;font-size:13px}
+.veltx-actions button.sec{background:var(--panel2);border:1px solid var(--line);border-radius:8px}
 .veltx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
 .veltx-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:9/16;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px}
 .editor-box{display:none;background:linear-gradient(180deg,#14141e,#101018);border:1px solid #2e2e3a;border-radius:16px;padding:18px;margin-bottom:16px;box-shadow:0 8px 32px rgba(0,0,0,.35)}
@@ -173,7 +173,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
 .chat-in{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
 .chat-in input{flex:1;background:#111;border:1px solid #333;color:#fff;border-radius:10px;padding:10px}
 .chat-in button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:10px;padding:10px 12px;cursor:pointer}
-.footer{padding:12px 16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;font-size:12px;color:#666}
+.footer{padding:16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;font-size:12px;color:#666;margin-top:40px;position:relative}
 .footer button{background:transparent;border:1px solid #333;color:#aaa;border-radius:999px;padding:6px 12px;cursor:pointer;font-size:11px}
 #legalView{display:none;position:fixed;inset:0;z-index:90000;background:#0a0a0e;overflow:auto;padding:24px}
 #legalView.on{display:block}
@@ -284,11 +284,11 @@ h2.pt{margin:0 0 12px;font-size:20px}
           <div class="onyx-list" id="onyxList"></div>
           <div id="emojiBar"></div>
           <div id="giphyDock"><input id="giphyQ" placeholder="Buscar GIF..."><div id="giphyResults"></div></div>
-          <div class="onyx-compose">
+          <div class="onyx-compose" style="border:1px solid var(--line);border-radius:8px;padding:10px;background:#0e0e14">
+            <input id="onyxInput" placeholder="¿Qué está pasando?" maxlength="500" style="border:0;background:transparent;flex:1">
             <button type="button" id="btnEmoji">😀</button>
             <button type="button" id="btnGif">GIF</button>
             <button type="button" id="btnPhoto">📷</button>
-            <input id="onyxInput" placeholder="Crear post..." maxlength="500">
             <button type="button" class="send" id="btnSend">Publicar</button>
             <input type="file" id="onyxFile" accept="image/*,.gif" hidden>
           </div>
@@ -336,10 +336,10 @@ h2.pt{margin:0 0 12px;font-size:20px}
       <div id="page-veltx" class="page wide">
         <h2 class="pt">Veltx</h2>
         <div class="veltx-actions">
-          <button type="button" id="veltxCreate">+ Crear</button>
-          <button type="button" class="sec" id="veltxEditorBtn">Studio</button>
+          <button type="button" id="veltxEditorBtn">Studio</button>
           <button type="button" class="sec" id="veltxCapcut">CapCut (móvil)</button>
         </div>
+        <p style="color:var(--muted);font-size:13px;margin:-4px 0 12px">En <b>Studio</b> subes el video, lo editas (texto) y publicas. No hace falta otro botón Crear.</p>
         <div class="editor-box" id="veltxEditor">
           <div class="ed-head">
             <b>Veltx Studio</b>
@@ -433,7 +433,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
 
 <script>
 (function(){
-  console.log("[OrbyE] 1.7.0");
+  console.log("[OrbyE] 1.7.1");
   var SUPA_URL="https://mhexliyacfgsclsnvqsp.supabase.co";
   var SUPA_ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZXhsaXlhY2Znc2Nsc252cXNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NTAyNDMsImV4cCI6MjEwNDMyNjI0M30.2AjwXK7jKarxC8iQHOXaQbmY_yQ5uynhJ0RL5hw32lY";
   var GIPHY_KEY="pFFKfTN75juDqBrmKOgTQa82jHUwClEO";
@@ -799,7 +799,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
     box.innerHTML=media+(ov?'<div class="overlay-text">'+ov.replace(/</g,"&lt;")+'</div>':'');
   }
   document.getElementById("veltxOverlay").oninput=updatePreview;
-  document.getElementById("veltxCreate").onclick=function(){ document.getElementById("veltxFile").click(); };
+  /* Crear eliminado: todo en Studio */
   document.getElementById("veltxEditorBtn").onclick=function(){ document.getElementById("veltxEditor").classList.add("on"); };
   document.getElementById("veltxEditorClose").onclick=function(){ document.getElementById("veltxEditor").classList.remove("on"); };
   document.getElementById("veltxCapcut").onclick=function(){ alert("CapCut:\n1) Edita en CapCut\n2) Exporta MP4\n3) Veltx → Crear"); };

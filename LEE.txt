@@ -1,6 +1,9 @@
-OrbyE 1.7.0
-- Borrar posts Onyx / mensajes grupos / videos Inicio
-- Inicio tipo Reddit: video grande + título + ▲ 💬 compartir
-- api/oryn.js DEBE ser llama-3.1-8b-instant (si Oryn sigue con error 3.3, el api/oryn.js en GitHub no se actualizó)
+1.7.1
+- Veltx: solo Studio (subes + editas + publicas ahí)
+- Footer ya no te sigue (no sticky)
+- Menos Instagram: posts tipo tarjeta Reddit/X
+- Oryn: SOLO_PEGAR_en_api_oryn.js → copia TODO en GitHub api/oryn.js
 
-Sube: index.html + api/oryn.js + vercel.json
+Si Oryn sigue con llama-3.3: el archivo en GitHub NO se actualizó.
+Abre https://github.com/David9919/OrbyE/blob/main/api/oryn.js
+Debe decir: model: "llama-3.1-8b-instant"
