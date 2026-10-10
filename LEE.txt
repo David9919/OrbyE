@@ -1,7 +1,8 @@
-1.7.5
-- Oryn: modelos 2026 (gpt-oss-20b, llama-3.1-8b, 3.3-70b) SIN mixtral
-- Veltx tipo TikTok+YouTube: click video → pantalla completa + comentarios derecha
-- GIF/Emoji: mini menú flotante arrastrable (Onyx y comentarios Veltx)
-- Campana notificaciones
+1.7.6
+- Spaces: solo Orby Help + Orby Question (oficiales). Sin bots/duplicados
+- Samuray → Links (comunidad fan no oficial) con hero visual
+- Inicio más 2026: tipografía, cards, secciones claras
+- Veltx: aviso de modo watch (tocar clip)
 
-Sube index.html + api/oryn.js (reemplaza TODO oryn.js)
+Sube index.html
+Si Spaces siguen viejos: localStorage quitar orbye_spaces_clean_176 o borrar spaces key
