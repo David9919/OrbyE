@@ -6,13 +6,13 @@
 <title>OrbyE</title>
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMzIiIGZpbGw9IiMwYTBhMGEiLz48Y2lyY2xlIGN4PSIzMiIgY3k9IjI2IiByPSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuNSIvPjxlbGxpcHNlIGN4PSIzMiIgY3k9IjI2IiByeD0iMjAiIHJ5PSI2LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiIHRyYW5zZm9ybT0icm90YXRlKC0yMiAzMiAyNikiLz48Y2lyY2xlIGN4PSI0OCIgY3k9IjE4IiByPSIyIiBmaWxsPSIjZmZmIi8+PC9zdmc+">
 <style>
-:root{--bg:#06060a;--panel:#101018;--panel2:#181822;--line:#2a2a36;--text:#f0f0f5;--muted:#8b8b9a;--accent:#5865f2;--blue:#1d9bf0;--red:#e11d48}
+:root{--bg:#06060a;--panel:#12121a;--panel2:#1a1a24;--line:#2a2a36;--text:#f0f0f5;--muted:#8b8b9a;--accent:#5865f2;--blue:#1d9bf0;--red:#e11d48}
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 #view-login{display:none;min-height:100vh;background:#000}
 #view-login.on{display:flex}
 .login-left{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 40% 40%,#14101c,#000 70%);padding:24px}
-.login-left img.big{width:min(160px,45vw);height:min(160px,45vw);border-radius:50%;object-fit:cover;border:1px solid #333;box-shadow:0 0 40px rgba(88,101,242,.25)}
+.login-left img.big{width:min(150px,42vw);height:min(150px,42vw);border-radius:50%;object-fit:cover;border:1px solid #333;box-shadow:0 0 40px rgba(88,101,242,.25)}
 .login-left h1{margin:14px 0 4px;font-size:28px}
 .login-left p{color:var(--muted);margin:0;font-size:13px}
 .login-right{width:min(400px,100%);padding:28px 22px;background:#0a0a0e;border-left:1px solid var(--line);overflow-y:auto;max-height:100vh}
@@ -36,16 +36,16 @@ body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;bac
 .pill{font-size:11px;padding:3px 8px;border-radius:999px;background:#1a1a24;border:1px solid #333;color:#888}
 .pill.ok{color:#6d6;border-color:#363}
 .layout{display:flex;flex:1;min-height:0}
-.side{width:210px;flex-shrink:0;background:#08080c;border-right:1px solid var(--line);padding:10px 8px;overflow-y:auto}
+.side{width:200px;flex-shrink:0;background:#08080c;border-right:1px solid var(--line);padding:10px 8px;overflow-y:auto}
 .side button,.side a.nav{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:transparent;border:0;color:#b8b8c8;padding:10px 11px;border-radius:10px;cursor:pointer;font-size:13px;text-decoration:none;margin-bottom:2px}
 .side button:hover,.side a.nav:hover,.side button.on{background:var(--panel2);color:#fff}
 .main{flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto}
 .page{display:none;padding:16px;max-width:720px;width:100%;margin:0 auto}
 .page.on{display:block}
 .page.wide{max-width:960px}
-h2.pt{margin:0 0 12px;font-size:20px}
+h2.pt{margin:0 0 14px;font-size:20px}
 .verified{display:inline-flex;width:14px;height:14px;background:var(--blue);border-radius:50%;color:#fff;font-size:9px;align-items:center;justify-content:center;font-weight:900;margin-left:3px}
-/* HOME videos */
+/* HOME */
 .home-feed{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
 .home-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
 .home-card .media{aspect-ratio:16/10;background:#0a0a10}
@@ -53,9 +53,9 @@ h2.pt{margin:0 0 12px;font-size:20px}
 .home-card .meta{padding:10px;font-size:13px}
 .home-empty{text-align:center;padding:40px 16px;color:var(--muted)}
 .home-empty button{margin-top:10px;background:var(--red);border:0;color:#fff;font-weight:700;border-radius:999px;padding:10px 18px;cursor:pointer}
-/* ONYX full width feed */
+/* ONYX */
 #page-onyx{max-width:640px}
-.onyx-list{min-height:200px}
+.onyx-list{min-height:160px}
 .onyx-post{padding:14px 4px;border-bottom:1px solid #1c1c28}
 .onyx-post .row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .onyx-post .av{width:36px;height:36px;border-radius:50%;background:#252532;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;object-fit:cover}
@@ -88,7 +88,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
 .composer{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
 .composer input{flex:1;background:#111;border:1px solid #333;color:#fff;border-radius:10px;padding:10px}
 .composer button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:10px;padding:10px 14px;cursor:pointer}
-/* Veltx / news / etc */
+/* Veltx */
 .veltx-actions{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
 .veltx-actions button{background:var(--red);border:0;color:#fff;font-weight:700;border-radius:999px;padding:9px 16px;cursor:pointer;font-size:13px}
 .veltx-actions button.sec{background:var(--panel2);border:1px solid var(--line)}
@@ -106,22 +106,36 @@ h2.pt{margin:0 0 12px;font-size:20px}
 .wp-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
 .wp-card button{margin-top:10px;width:100%;background:var(--panel2);border:1px solid var(--line);color:#fff;border-radius:999px;padding:9px;font-weight:700}
 .wp-card button:disabled{opacity:.5}
-.prof-banner{height:110px;background:linear-gradient(90deg,#1a1040,#0c1220);border-radius:12px 12px 0 0;border:1px solid var(--line);border-bottom:0;background-size:cover}
-.prof-body{background:var(--panel);border:1px solid var(--line);border-radius:0 0 12px 12px;padding:14px;max-width:460px;margin-top:-26px}
-.prof-body .av-big{width:64px;height:64px;border-radius:50%;background:#252532;border:3px solid var(--panel);display:flex;align-items:center;justify-content:center;font-weight:800;overflow:hidden}
-.prof-body input,.prof-body textarea{width:100%;background:#111;border:1px solid #333;color:#fff;border-radius:10px;padding:9px;margin-top:6px;font-size:13px}
-.prof-body button{margin-top:8px;background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:10px;padding:9px 14px;cursor:pointer}
+/* PROFILE modern */
+.prof-wrap{max-width:480px}
+.prof-banner{height:140px;background:linear-gradient(135deg,#1a1040,#0c1220 60%,#12101a);border-radius:16px 16px 0 0;border:1px solid var(--line);border-bottom:0;background-size:cover;background-position:center;position:relative}
+.prof-banner .edit-ban{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.55);border:1px solid #444;color:#fff;border-radius:999px;padding:6px 12px;font-size:12px;cursor:pointer;backdrop-filter:blur(6px)}
+.prof-body{background:var(--panel);border:1px solid var(--line);border-radius:0 0 16px 16px;padding:0 16px 18px}
+.prof-av-row{display:flex;align-items:flex-end;gap:12px;margin-top:-36px}
+.prof-av{width:80px;height:80px;border-radius:50%;background:#1e1e2a;border:3px solid var(--panel);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;overflow:hidden;position:relative;cursor:pointer;flex-shrink:0}
+.prof-av img{width:100%;height:100%;object-fit:cover}
+.prof-av .cam{position:absolute;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;font-size:20px}
+.prof-av:hover .cam{display:flex}
+.prof-names{padding-bottom:6px}
+.prof-names .n{font-weight:800;font-size:18px}
+.prof-names .m{color:var(--muted);font-size:12px;margin-top:2px}
+.prof-field{margin-top:12px}
+.prof-field label{display:block;font-size:11px;color:var(--muted);margin-bottom:4px}
+.prof-field textarea,.prof-field input{width:100%;background:#0e0e14;border:1px solid #2a2a36;color:#fff;border-radius:12px;padding:11px 12px;font-size:13px;font-family:inherit}
+.prof-field textarea{resize:vertical;min-height:64px}
+.prof-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.prof-actions button{border:0;border-radius:999px;padding:10px 16px;font-weight:700;cursor:pointer;font-size:13px}
+.prof-actions .save{background:var(--accent);color:#fff}
+.prof-actions .ghost{background:transparent;border:1px solid #333;color:#ccc}
+.prof-pass{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.prof-pass h3{margin:0 0 8px;font-size:14px}
 .chat-box{background:var(--panel);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;min-height:320px}
 .chat-msgs{flex:1;overflow:auto;padding:12px}
 .chat-in{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line)}
 .chat-in input{flex:1;background:#111;border:1px solid #333;color:#fff;border-radius:10px;padding:10px}
 .chat-in button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:10px;padding:10px 12px;cursor:pointer}
-.pload-box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
-.pload-box .hint{color:var(--muted);font-size:13px;line-height:1.45;margin:0 0 10px}
 .footer{padding:12px 16px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;font-size:12px;color:#666}
 .footer button{background:transparent;border:1px solid #333;color:#aaa;border-radius:999px;padding:6px 12px;cursor:pointer;font-size:11px}
-.footer button:hover{color:#fff;border-color:#555}
-/* Legal page overlay */
 #legalView{display:none;position:fixed;inset:0;z-index:90000;background:#0a0a0e;overflow:auto;padding:24px}
 #legalView.on{display:block}
 #legalView .inner{max-width:560px;margin:0 auto}
@@ -131,14 +145,12 @@ h2.pt{margin:0 0 12px;font-size:20px}
 #legalView .actions button{border:0;border-radius:999px;padding:11px 20px;font-weight:700;cursor:pointer}
 #legalView .ok{background:var(--accent);color:#fff}
 #legalView .back{background:#222;color:#fff}
-/* Rules modal */
 #rulesModal{display:none;position:fixed;inset:0;z-index:100000;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px}
 #rulesModal.on{display:flex}
 #rulesModal .box{max-width:460px;width:100%;background:#12121a;border:1px solid #333;border-radius:16px;padding:24px;text-align:center}
 #rulesModal ul{text-align:left;color:#bbb;font-size:13px;line-height:1.55;margin:0 0 16px;padding-left:18px}
 #rulesModal button{background:var(--accent);border:0;color:#fff;font-weight:700;border-radius:999px;padding:11px 24px;cursor:pointer}
-/* Oryn */
-#orynPanel{display:none;position:fixed;bottom:16px;left:220px;z-index:80;width:min(380px,92vw);height:440px;background:#0e0e16;border:1px solid var(--line);border-radius:14px;flex-direction:column;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+#orynPanel{display:none;position:fixed;bottom:16px;left:210px;z-index:80;width:min(380px,92vw);height:440px;background:#0e0e16;border:1px solid var(--line);border-radius:14px;flex-direction:column;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.5)}
 #orynPanel.on{display:flex}
 #orynPanel .hd{padding:11px;border-bottom:1px solid var(--line);display:flex;align-items:center;font-weight:700}
 #orynPanel .hd button{margin-left:auto;background:transparent;border:0;color:#aaa;cursor:pointer;font-size:16px}
@@ -217,7 +229,6 @@ h2.pt{margin:0 0 12px;font-size:20px}
       <button type="button" data-go="onyx">✦ <span>Onyx Feed</span></button>
       <button type="button" data-go="spaces">○ <span>Comunidades</span></button>
       <button type="button" data-go="veltx">▶ <span>Veltx</span></button>
-      <button type="button" data-go="pload">⬆ <span>OrbyPload</span></button>
       <button type="button" data-go="news">📰 <span>Noticias</span></button>
       <button type="button" data-go="wallpass">🎫 <span>Wall Pass</span></button>
       <button type="button" data-go="oryn">◈ <span>Oryn IA</span></button>
@@ -245,7 +256,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
       </div>
       <div id="page-spaces" class="page">
         <div id="spaceListWrap">
-          <h2 class="pt">Comunidades (Spaces)</h2>
+          <h2 class="pt">Comunidades</h2>
           <div class="space-create">
             <input id="spaceName" placeholder="Nombre"><input id="spaceDesc" placeholder="Descripción">
             <button type="button" id="spaceCreateBtn">+ Crear</button>
@@ -268,7 +279,8 @@ h2.pt{margin:0 0 12px;font-size:20px}
           <button type="button" class="sec" id="veltxCapcut">CapCut (móvil)</button>
         </div>
         <div class="editor-box" id="veltxEditor">
-          <b>Editor Veltx</b>
+          <b>Editor / OrbyPload</b>
+          <p style="color:var(--muted);font-size:12px;margin:6px 0 0">Sube video o imagen. En móvil puedes editar en CapCut y exportar aquí.</p>
           <input type="text" id="veltxTitle" placeholder="Título">
           <textarea id="veltxDesc" rows="2" placeholder="Descripción"></textarea>
           <div class="row">
@@ -280,17 +292,6 @@ h2.pt{margin:0 0 12px;font-size:20px}
         </div>
         <div class="veltx-grid" id="veltxGrid"></div>
         <input type="file" id="veltxFile" accept="video/*,image/*" hidden>
-      </div>
-      <div id="page-pload" class="page">
-        <h2 class="pt">OrbyPload → Veltx</h2>
-        <div class="pload-box">
-          <p class="hint">OrbyPload prepara archivos para <b>Veltx</b>. En el móvil puedes editar en CapCut y luego subir el export aquí o en Veltx → Crear.</p>
-          <input type="file" id="ploadFile" accept="video/*,image/*,.gif">
-          <div id="ploadPreview" style="margin-top:8px"></div>
-          <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-            <button type="button" id="ploadToVeltx" style="background:var(--red);border:0;color:#fff;font-weight:700;border-radius:10px;padding:10px 16px;cursor:pointer">Enviar a Veltx</button>
-          </div>
-        </div>
       </div>
       <div id="page-news" class="page">
         <h2 class="pt">Noticias OrbyE</h2>
@@ -312,22 +313,40 @@ h2.pt{margin:0 0 12px;font-size:20px}
       </div>
       <div id="page-profile" class="page">
         <h2 class="pt">Perfil</h2>
-        <div class="prof-banner" id="profBanner"></div>
-        <div class="prof-body">
-          <div style="display:flex;gap:10px;align-items:flex-end">
-            <div class="av-big" id="profAv"></div>
-            <div><div id="profName" style="font-weight:800"></div><div id="profMeta" style="color:var(--muted);font-size:12px"></div></div>
+        <div class="prof-wrap">
+          <div class="prof-banner" id="profBanner">
+            <button type="button" class="edit-ban" id="btnBanner">Cambiar banner</button>
           </div>
-          <input type="file" id="profPhoto" accept="image/*">
-          <input type="file" id="profBannerFile" accept="image/*">
-          <textarea id="profBio" rows="2" placeholder="Bio"></textarea>
-          <button type="button" id="profSave">Guardar</button>
-          <hr style="border:none;border-top:1px solid var(--line);margin:14px 0">
-          <b style="font-size:13px">Contraseña</b>
-          <input type="password" id="passOld" placeholder="Actual">
-          <input type="password" id="passNew" placeholder="Nueva">
-          <button type="button" id="passSave">Actualizar</button>
+          <div class="prof-body">
+            <div class="prof-av-row">
+              <div class="prof-av" id="profAv" title="Cambiar foto">
+                <span id="profAvLetter">?</span>
+                <div class="cam">📷</div>
+              </div>
+              <div class="prof-names">
+                <div class="n" id="profName">—</div>
+                <div class="m" id="profMeta">Miembro</div>
+              </div>
+            </div>
+            <div class="prof-field">
+              <label>Bio</label>
+              <textarea id="profBio" placeholder="Cuéntanos algo..."></textarea>
+            </div>
+            <div class="prof-actions">
+              <button type="button" class="save" id="profSave">Guardar perfil</button>
+            </div>
+            <div class="prof-pass">
+              <h3>Contraseña</h3>
+              <div class="prof-field"><label>Actual</label><input type="password" id="passOld"></div>
+              <div class="prof-field"><label>Nueva</label><input type="password" id="passNew"></div>
+              <div class="prof-actions">
+                <button type="button" class="save" id="passSave">Actualizar contraseña</button>
+              </div>
+            </div>
+          </div>
         </div>
+        <input type="file" id="profPhoto" accept="image/*" hidden>
+        <input type="file" id="profBannerFile" accept="image/*" hidden>
       </div>
       <div class="footer">
         <span>OrbyE · © DavidAvila</span>
@@ -347,14 +366,14 @@ h2.pt{margin:0 0 12px;font-size:20px}
 
 <script>
 (function(){
-  console.log("[OrbyE] 1.6.5");
+  console.log("[OrbyE] 1.6.6");
   var SUPA_URL="https://mhexliyacfgsclsnvqsp.supabase.co";
   var SUPA_ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZXhsaXlhY2Znc2Nsc252cXNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NTAyNDMsImV4cCI6MjEwNDMyNjI0M30.2AjwXK7jKarxC8iQHOXaQbmY_yQ5uynhJ0RL5hw32lY";
   var GIPHY_KEY="pFFKfTN75juDqBrmKOgTQa82jHUwClEO";
   var KEY="orbye_global_chat_v1", USER_KEY="orbye_demo_user", STAFF_KEY="orbye_staff_chat_v1";
   var VELTX_KEY="orbye_veltx_local_v1", SPACE_KEY="orbye_spaces_v1", SPACE_POSTS="orbye_space_posts_v1";
   var PROF_KEY="orbye_profiles_v1", PASS_KEY="orbye_passes_v1", RULES_KEY="orbye_rules_ok_v1";
-  var veltxPending=null, ploadPending=null, currentSpace=null;
+  var veltxPending=null, currentSpace=null;
 
   function isCreator(n){ n=String(n||"").toLowerCase(); return /davidavila|avilarodriguez|david9919|avilarodriguezdavid13/.test(n); }
   function load(k){ try{return JSON.parse(localStorage.getItem(k)||"[]");}catch(e){return[];} }
@@ -364,26 +383,20 @@ h2.pt{margin:0 0 12px;font-size:20px}
   function profileOf(u){ return loadObj(PROF_KEY)[u]||{}; }
   function setProfile(u,p){ var a=loadObj(PROF_KEY); a[u]=Object.assign(a[u]||{},p); saveObj(PROF_KEY,a); }
 
-  /* Honest cloud: ping only — posts still local until full tables */
   async function checkCloud(){
     var el=document.getElementById("cloudStatus");
     try{
       await fetch(SUPA_URL+"/rest/v1/",{headers:{"apikey":SUPA_ANON,"Authorization":"Bearer "+SUPA_ANON}});
-      el.textContent="Nube OK";
-      el.className="pill ok";
-      el.title="Supabase responde. Posts/perfiles aún se guardan en este dispositivo hasta migrar tablas completas.";
-    }catch(e){
-      el.textContent="Local";
-      el.className="pill";
-      el.title="No se pudo contactar Supabase. Todo en este dispositivo.";
-    }
+      el.textContent="Nube OK"; el.className="pill ok";
+      el.title="Supabase responde. Posts aún locales hasta migrar tablas.";
+    }catch(e){ el.textContent="Local"; el.className="pill"; }
   }
   checkCloud();
 
   var LEGAL={
-    privacy:{title:"Políticas de privacidad",html:"<p>OrbyE recoge datos de cuenta (usuario, preferencias) para operar la red social.</p><ul><li>En esta fase muchos datos se guardan en tu navegador (localStorage).</li><li><b>Nube OK</b> significa que el servidor Supabase responde; no implica que cada post ya esté en la nube.</li><li>No vendemos datos personales.</li><li>Puedes borrar datos del sitio en el navegador.</li><li>Contacto del creador: cuenta verificada DavidAvila.</li></ul>"},
-    terms:{title:"Políticas de uso",html:"<p>Al usar OrbyE aceptas:</p><ul><li>No publicar contenido ilegal ni spam.</li><li>Respetar copyright y a otros usuarios.</li><li>Los moderadores pueden eliminar contenido o restringir cuentas.</li><li>Wall Pass/pagos aún en producción.</li><li>El servicio puede cambiar en fase de desarrollo.</li></ul>"},
-    rules:{title:"Reglas",html:"<ul><li>Edad: 18+ solo para mayores.</li><li>No spam ni acoso.</li><li>Mods: advertencia / ban.</li><li>Reporta en Staff.</li></ul>"}
+    privacy:{title:"Políticas de privacidad",html:"<p>OrbyE recoge datos de cuenta para operar la red.</p><ul><li>En esta fase muchos datos están en tu navegador.</li><li><b>Nube OK</b> = Supabase responde; no implica que cada post ya esté en la nube.</li><li>No vendemos datos.</li><li>Creador: DavidAvila (verificado).</li></ul>"},
+    terms:{title:"Políticas de uso",html:"<p>Al usar OrbyE aceptas:</p><ul><li>No publicar contenido ilegal ni spam.</li><li>Respetar copyright.</li><li>Mods pueden eliminar contenido.</li><li>Wall Pass en producción.</li></ul>"},
+    rules:{title:"Reglas",html:"<ul><li>18+ solo mayores.</li><li>No spam ni acoso.</li><li>Reporta en Staff.</li></ul>"}
   };
   function openLegal(id){
     var L=LEGAL[id]||LEGAL.privacy;
@@ -392,13 +405,8 @@ h2.pt{margin:0 0 12px;font-size:20px}
     document.getElementById("legalView").classList.add("on");
   }
   function closeLegal(){ document.getElementById("legalView").classList.remove("on"); }
-  document.querySelectorAll("[data-open-legal]").forEach(function(b){
-    b.onclick=function(){ openLegal(b.getAttribute("data-open-legal")); };
-  });
-  document.getElementById("legalAccept").onclick=function(){
-    document.getElementById("chkLegal").checked=true;
-    closeLegal();
-  };
+  document.querySelectorAll("[data-open-legal]").forEach(function(b){ b.onclick=function(){ openLegal(b.getAttribute("data-open-legal")); }; });
+  document.getElementById("legalAccept").onclick=function(){ document.getElementById("chkLegal").checked=true; closeLegal(); };
   document.getElementById("legalBack").onclick=closeLegal;
 
   function whoHTML(){
@@ -421,14 +429,11 @@ h2.pt{margin:0 0 12px;font-size:20px}
     document.getElementById("who").innerHTML=whoHTML();
     if(!localStorage.getItem(RULES_KEY)) document.getElementById("rulesModal").classList.add("on");
   }
-  document.getElementById("rulesOk").onclick=function(){
-    localStorage.setItem(RULES_KEY,"1");
-    document.getElementById("rulesModal").classList.remove("on");
-  };
+  document.getElementById("rulesOk").onclick=function(){ localStorage.setItem(RULES_KEY,"1"); document.getElementById("rulesModal").classList.remove("on"); };
 
   function go(page){
     if(page==="oryn"){ document.getElementById("orynPanel").classList.add("on"); return; }
-    ["home","onyx","spaces","veltx","pload","news","wallpass","staff","profile"].forEach(function(p){
+    ["home","onyx","spaces","veltx","news","wallpass","staff","profile"].forEach(function(p){
       var el=document.getElementById("page-"+p); if(!el) return;
       var on=p===page; el.classList.toggle("on",on); el.style.display=on?"block":"none";
     });
@@ -530,29 +535,31 @@ h2.pt{margin:0 0 12px;font-size:20px}
   function paintProfile(){
     var u=localStorage.getItem(USER_KEY)||""; var p=profileOf(u);
     var av=document.getElementById("profAv");
-    if(p.photo) av.innerHTML='<img src="'+p.photo+'" style="width:100%;height:100%;object-fit:cover">';
-    else av.textContent=(u[0]||"?").toUpperCase();
+    var letter=document.getElementById("profAvLetter");
+    if(p.photo){
+      av.innerHTML='<img src="'+p.photo+'" alt=""><div class="cam">📷</div>';
+    } else {
+      av.innerHTML='<span id="profAvLetter">'+(u[0]||"?").toUpperCase()+'</span><div class="cam">📷</div>';
+    }
     document.getElementById("profName").innerHTML=u+(isCreator(u)?' <span class="verified">✓</span>':'');
     document.getElementById("profMeta").textContent=isCreator(u)?"Creador · Verificado":"Miembro";
     document.getElementById("profBio").value=p.bio||"";
-    if(p.banner){ var b=document.getElementById("profBanner"); b.style.backgroundImage="url("+p.banner+")"; b.style.backgroundSize="cover"; }
+    var b=document.getElementById("profBanner");
+    if(p.banner){ b.style.backgroundImage="url("+p.banner+")"; b.style.backgroundSize="cover"; }
+    else { b.style.backgroundImage=""; }
   }
   function paintNews(){
     document.getElementById("newsList").innerHTML=[
-      {t:"OrbyE en desarrollo",d:"Nube OK indica que Supabase responde. Los posts de Onyx/Veltx siguen en tu dispositivo hasta la migración completa."},
-      {t:"Oryn IA",d:"Si configuraste GROQ_API_KEY y api/oryn.js, Oryn usa Groq. Si no, responde en modo básico."},
-      {t:"Veltx + CapCut",d:"Edita en CapCut en el móvil, exporta el video y súbelo con OrbyPload o Veltx → Crear."}
+      {t:"OrbyE en desarrollo",d:"Nube OK indica que Supabase responde. Posts de Onyx/Veltx aún en este dispositivo."},
+      {t:"Oryn IA",d:"Necesita api/oryn.js + GROQ_API_KEY en Vercel y Redeploy."},
+      {t:"Veltx + CapCut",d:"Edita en CapCut, exporta MP4 y súbelo en Veltx → Crear."}
     ].map(function(n){return '<div class="news-item"><h3>'+n.t+'</h3><p>'+n.d+'</p></div>';}).join("");
   }
 
   function doLogin(){
     var u=(document.getElementById("inUser").value||"").trim();
     if(!u){ alert("Escribe usuario"); return; }
-    if(!document.getElementById("chkLegal").checked){
-      alert("Debes aceptar Políticas de privacidad y uso");
-      openLegal("privacy");
-      return;
-    }
+    if(!document.getElementById("chkLegal").checked){ alert("Debes aceptar Políticas"); openLegal("privacy"); return; }
     var pass=document.getElementById("inPass").value||"";
     var passes=loadObj(PASS_KEY);
     if(passes[u]&&passes[u]!==pass&&pass){ alert("Contraseña incorrecta"); return; }
@@ -624,7 +631,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
   document.getElementById("veltxEditorBtn").onclick=function(){ document.getElementById("veltxEditor").classList.add("on"); };
   document.getElementById("veltxEditorClose").onclick=function(){ document.getElementById("veltxEditor").classList.remove("on"); };
   document.getElementById("veltxCapcut").onclick=function(){
-    alert("CapCut (móvil):\n1) Edita tu video en CapCut\n2) Exporta (MP4)\n3) Vuelve a OrbyE → OrbyPload o Veltx → Crear y elige el archivo\n\nOrbyE no abre CapCut dentro de la web; usas el export.");
+    alert("CapCut (móvil):\n1) Edita en CapCut\n2) Exporta MP4\n3) Veltx → Crear y elige el archivo");
   };
   document.getElementById("veltxPick").onclick=function(){ document.getElementById("veltxFile").click(); };
   document.getElementById("veltxFile").onchange=function(){
@@ -643,31 +650,31 @@ h2.pt{margin:0 0 12px;font-size:20px}
     document.getElementById("veltxEditor").classList.remove("on"); paintVeltx(); paintHome();
   };
 
-  document.getElementById("ploadFile").onchange=function(){
-    var f=this.files&&this.files[0]; if(!f) return; var r=new FileReader();
-    r.onload=function(){ ploadPending={type:f.type.startsWith("video/")?"video":"image",url:r.result};
-      document.getElementById("ploadPreview").innerHTML=ploadPending.type==="video"?'<video src="'+ploadPending.url+'" controls style="max-width:100%;max-height:200px"></video>':'<img src="'+ploadPending.url+'" style="max-width:100%;max-height:200px">';
-    }; r.readAsDataURL(f);
-  };
-  document.getElementById("ploadToVeltx").onclick=function(){
-    if(!ploadPending){ alert("Sube un archivo"); return; }
-    veltxPending=ploadPending; go("veltx"); document.getElementById("veltxEditor").classList.add("on");
-  };
-
   document.getElementById("staffSend").onclick=function(){
     var t=(document.getElementById("staffInput").value||"").trim(); if(!t) return;
     var list=load(STAFF_KEY); list.push({user:localStorage.getItem(USER_KEY)||"anon",text:t,ts:Date.now()}); save(STAFF_KEY,list);
     document.getElementById("staffInput").value=""; paintStaff();
   };
-  document.getElementById("profPhoto").onchange=function(){ var f=this.files&&this.files[0]; if(!f) return; var u=localStorage.getItem(USER_KEY); var r=new FileReader(); r.onload=function(){ setProfile(u,{photo:r.result}); paintProfile(); document.getElementById("who").innerHTML=whoHTML(); }; r.readAsDataURL(f); };
-  document.getElementById("profBannerFile").onchange=function(){ var f=this.files&&this.files[0]; if(!f) return; var u=localStorage.getItem(USER_KEY); var r=new FileReader(); r.onload=function(){ setProfile(u,{banner:r.result}); paintProfile(); }; r.readAsDataURL(f); };
-  document.getElementById("profSave").onclick=function(){ setProfile(localStorage.getItem(USER_KEY),{bio:document.getElementById("profBio").value||""}); alert("OK"); };
+
+  document.getElementById("profAv").onclick=function(){ document.getElementById("profPhoto").click(); };
+  document.getElementById("btnBanner").onclick=function(){ document.getElementById("profBannerFile").click(); };
+  document.getElementById("profPhoto").onchange=function(){
+    var f=this.files&&this.files[0]; if(!f) return; var u=localStorage.getItem(USER_KEY);
+    var r=new FileReader(); r.onload=function(){ setProfile(u,{photo:r.result}); paintProfile(); document.getElementById("who").innerHTML=whoHTML(); };
+    r.readAsDataURL(f); this.value="";
+  };
+  document.getElementById("profBannerFile").onchange=function(){
+    var f=this.files&&this.files[0]; if(!f) return; var u=localStorage.getItem(USER_KEY);
+    var r=new FileReader(); r.onload=function(){ setProfile(u,{banner:r.result}); paintProfile(); };
+    r.readAsDataURL(f); this.value="";
+  };
+  document.getElementById("profSave").onclick=function(){ setProfile(localStorage.getItem(USER_KEY),{bio:document.getElementById("profBio").value||""}); alert("Perfil guardado"); };
   document.getElementById("passSave").onclick=function(){
     var u=localStorage.getItem(USER_KEY); var passes=loadObj(PASS_KEY);
     var old=document.getElementById("passOld").value||""; var neu=document.getElementById("passNew").value||"";
-    if(!neu||neu.length<4){ alert("Mínimo 4"); return; }
-    if(passes[u]&&passes[u]!==old){ alert("Incorrecta"); return; }
-    passes[u]=neu; saveObj(PASS_KEY,passes); alert("OK");
+    if(!neu||neu.length<4){ alert("Mínimo 4 caracteres"); return; }
+    if(passes[u]&&passes[u]!==old){ alert("Contraseña actual incorrecta"); return; }
+    passes[u]=neu; saveObj(PASS_KEY,passes); alert("Contraseña actualizada");
   };
 
   document.getElementById("orynClose").onclick=function(){ document.getElementById("orynPanel").classList.remove("on"); };
@@ -678,24 +685,16 @@ h2.pt{margin:0 0 12px;font-size:20px}
     input.value="";
     box.innerHTML+='<div class="b" id="ot"><b>Oryn</b><div>Pensando…</div></div>';
     var reply="", errDetail="";
-    var paths=["/api/oryn","/api/oryn.js"];
-    for(var i=0;i<paths.length;i++){
-      try{
-        var r=await fetch(paths[i],{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q})});
-        var text=await r.text();
-        var j={};
-        try{ j=JSON.parse(text); }catch(e){ errDetail="Respuesta no JSON ("+r.status+"): "+text.slice(0,120); continue; }
-        if(r.ok && (j.reply||j.message)){ reply=j.reply||j.message; break; }
-        errDetail=(j.reply||j.error||text||("HTTP "+r.status)).toString().slice(0,200);
-      }catch(e){ errDetail=String(e.message||e); }
-    }
-    if(!reply){
-      reply=errDetail
-        ? ("Error API: "+errDetail)
-        : "No se encontró /api/oryn. Sube la carpeta api/oryn.js a GitHub y haz Redeploy. Revisa GROQ_API_KEY en Vercel.";
-    }
+    try{
+      var r=await fetch("/api/oryn",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:q})});
+      var text=await r.text();
+      var j={}; try{ j=JSON.parse(text); }catch(e){ errDetail="HTTP "+r.status+" "+text.slice(0,100); }
+      if(r.ok && j.reply) reply=j.reply;
+      else errDetail=j.reply||j.error||errDetail||("HTTP "+r.status);
+    }catch(e){ errDetail=String(e.message||e); }
+    if(!reply) reply=errDetail?("Error: "+errDetail):"No hay /api/oryn. Sube api/oryn.js + GROQ_API_KEY y Redeploy.";
     var t=document.getElementById("ot"); if(t) t.remove();
-    box.innerHTML+='<div class="b"><b>Oryn</b><div>'+String(reply).replace(/</g,"&lt;").replace(/\n/g,"<br>")+'</div></div>';
+    box.innerHTML+='<div class="b"><b>Oryn</b><div>'+String(reply).replace(/</g,"&lt;").replace(/\\n/g,"<br>")+'</div></div>';
     box.scrollTop=box.scrollHeight;
   }
   document.getElementById("orynSend").onclick=sendOryn;

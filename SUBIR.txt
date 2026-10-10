@@ -1,0 +1,18 @@
+OrbyE 1.6.6
+
+BUILD FALLÓ porque vercel.json decía api/oryn.js pero el archivo no estaba en el commit.
+
+CÓMO SUBIR (importante):
+1. En GitHub David9919/OrbyE → sube ESTOS 2:
+   - index.html  (raíz del repo)
+   - carpeta api/ con oryn.js dentro
+
+2. NO subas un vercel.json con "functions" (ese error).
+   Este ZIP no trae vercel.json problemático.
+
+3. GROQ_API_KEY en Vercel Environment Variables (Production)
+
+4. Redeploy
+
+Perfil: foto y banner modernos (toca el avatar / botón banner).
+OrbyPload quitado de la barra (está dentro de Veltx → Editor).
