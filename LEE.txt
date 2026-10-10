@@ -1,8 +1,6 @@
-1.7.6
-- Spaces: solo Orby Help + Orby Question (oficiales). Sin bots/duplicados
-- Samuray → Links (comunidad fan no oficial) con hero visual
-- Inicio más 2026: tipografía, cards, secciones claras
-- Veltx: aviso de modo watch (tocar clip)
-
-Sube index.html
-Si Spaces siguen viejos: localStorage quitar orbye_spaces_clean_176 o borrar spaces key
+1.7.7 — Fondo neón en TODA la página
+Archivos a subir (raíz del repo):
+  index.html
+  bg-frame.jpg   ← OBLIGATORIO (el fondo)
+  api/oryn.js
+  vercel.json
