@@ -29,9 +29,9 @@ module.exports = async function handler(req, res) {
   }
   // Modelos activos en Groq (2026) — sin mixtral (decommissioned)
   const models = [
-    "openai/gpt-oss-20b",
     "llama-3.1-8b-instant",
     "llama-3.3-70b-versatile",
+    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b"
   ];
   let lastErr = "Sin respuesta";

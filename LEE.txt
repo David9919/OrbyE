@@ -1,1 +1,1 @@
-1.8.0 fix close/create (DOM order), claim anon videos, clock, groq steps
+1.8.1 CRITICAL: removed crash handlers (profAv etc). Oryn close, GIF float, profile photo/banner.
