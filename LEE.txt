@@ -1,13 +1,7 @@
-OrbyE Beta 1.7.2 — OrbyE Corporation
-- Legales detallados
-- Amigos + chat privado (DM)
-- Comentarios en videos del Inicio
-- Inicio: reloj (colores), destacados, noticias, videos
-- Campana de notificaciones
-- Sin mencionar Supabase (solo Online/Offline)
-- Vista previa Samuray antes de salir
-- Info / Foros
-- Oryn: prueba varios modelos hasta que uno funcione
+1.7.3 FIX LOGIN
+- Bug JS que rompía TODOS los botones (openLegal duplicado)
+- Iniciar sesión: solo usuario + contraseña (sin fecha)
+- Crear cuenta: fecha de nacimiento OBLIGATORIA + aceptar políticas
+- Si ya tienes sesión guardada, entras directo
 
-Sube index.html + api/oryn.js + vercel.json
-IMPORTANTE: reemplaza TODO api/oryn.js (ahora prueba 5 modelos)
+Sube index.html (el más importante ahora)

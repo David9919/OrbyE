@@ -286,8 +286,8 @@ h2.pt{margin:0 0 12px;font-size:20px}
     <label style="display:flex;gap:8px;align-items:flex-start;margin-top:12px;font-size:11px;color:#aaa;cursor:pointer">
       <input type="checkbox" id="chkLegal" style="width:auto;margin-top:2px"> Acepto Políticas de privacidad y uso.
     </label>
-    <button type="button" class="btn btn-white" id="btnCreate">Create account / Sign in</button>
-    <button type="button" class="btn btn-blue" id="btnLogin">Sign in</button>
+    <button type="button" class="btn btn-white" id="btnCreate">Crear cuenta</button>
+    <button type="button" class="btn btn-blue" id="btnLogin">Iniciar sesión</button>
     <div class="legal-links">
       <button type="button" data-open-legal="privacy">Privacidad</button>
       <button type="button" data-open-legal="terms">Uso / Términos</button>
@@ -514,7 +514,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
       </div>
       <div id="page-info" class="page">
         <h2 style="margin:0 0 8px">OrbyE Corporation</h2>
-        <p style="color:var(--muted);font-size:13px;margin:0 0 16px">Plataforma social · Veltx · Onyx · Spaces · Oryn IA · Beta 1.7.2</p>
+        <p style="color:var(--muted);font-size:13px;margin:0 0 16px">Plataforma social · Veltx · Onyx · Spaces · Oryn IA · Beta 1.7.3</p>
         <div class="news-grid">
           <div class="news-card"><b>Foro: Ideas</b><div class="t">Comparte ideas para mejorar OrbyE en Staff o Spaces Orby Help.</div></div>
           <div class="news-card"><b>Foro: Bugs</b><div class="t">Reporta errores en Staff. Los mods reciben notificación.</div></div>
@@ -535,7 +535,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
         <a href="https://samuray-del-norte.vercel.app/#home" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;border-radius:10px;padding:12px 20px">Abrir Samuray Del Norte →</a>
       </div>
       <div class="footer">
-        <span>OrbyE Corporation · © DavidAvila · Beta 1.7.2</span>
+        <span>OrbyE Corporation · © DavidAvila · Beta 1.7.3</span>
         <button type="button" data-open-legal="privacy">Políticas de privacidad</button>
         <button type="button" data-open-legal="terms">Políticas de uso</button>
         <button type="button" data-open-legal="rules">Reglas</button>
@@ -552,7 +552,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
 
 <script>
 (function(){
-  console.log("[OrbyE] Beta 1.7.2");
+  console.log("[OrbyE] Beta 1.7.3");
   var SUPA_URL="https://mhexliyacfgsclsnvqsp.supabase.co";
   var SUPA_ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1oZXhsaXlhY2Znc2Nsc252cXNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg3NTAyNDMsImV4cCI6MjEwNDMyNjI0M30.2AjwXK7jKarxC8iQHOXaQbmY_yQ5uynhJ0RL5hw32lY";
   var GIPHY_KEY="pFFKfTN75juDqBrmKOgTQa82jHUwClEO";
@@ -604,16 +604,21 @@ h2.pt{margin:0 0 12px;font-size:20px}
       +"<p style='color:#666;font-size:12px;margin-top:12px'>© OrbyE Corporation · DavidAvila</p>"},
     rules:{title:"Reglas de la comunidad — OrbyE",html:
       "<ul>"
-      +"<li><b>Edad:</b> Debes indicar tu fecha de nacimiento real. Mentir sobre la edad puede resultar en ban.</li>"
+      +"<li><b>Edad:</b> Debes indicar tu fecha de nacimiento real al crear cuenta.</li>"
       +"<li><b>Respeto:</b> Trato amable. Cero odio, racismo o acoso.</li>"
       +"<li><b>No spam:</b> No flood de mensajes, links maliciosos ni bots.</li>"
       +"<li><b>Copyright:</b> Solo sube material que tengas derecho a publicar.</li>"
       +"<li><b>Reportes:</b> Usa Staff o el botón Reportar. Los mods revisan casos.</li>"
-      +"<li><b>Cuentas:</b> Una persona, una cuenta principal. Clones pueden ser eliminados.</li>"
+      +"<li><b>Cuentas:</b> Una persona, una cuenta principal.</li>"
       +"</ul>"
       +"<p style='color:#666;font-size:12px;margin-top:12px'>OrbyE Corporation · Moderación y Staff</p>"}
   };
-  function openLegalfunction openLegal(id){ var L=LEGAL[id]||LEGAL.privacy; document.getElementById("legalTitle").textContent=L.title; document.getElementById("legalBody").innerHTML=L.html; document.getElementById("legalView").classList.add("on"); }
+  function openLegal(id){
+    var L=LEGAL[id]||LEGAL.privacy;
+    document.getElementById("legalTitle").textContent=L.title;
+    document.getElementById("legalBody").innerHTML=L.html;
+    document.getElementById("legalView").classList.add("on");
+  }
   function closeLegal(){ document.getElementById("legalView").classList.remove("on"); }
   document.querySelectorAll("[data-open-legal]").forEach(function(b){ b.onclick=function(){ openLegal(b.getAttribute("data-open-legal")); }; });
   document.getElementById("legalAccept").onclick=function(){ document.getElementById("chkLegal").checked=true; closeLegal(); };
@@ -675,13 +680,13 @@ h2.pt{margin:0 0 12px;font-size:20px}
       var items=[];
       if(list[0]) items.push({t:list[0].title||"Video Veltx",d:"Lo último en Veltx"});
       items.push({t:"Onyx Feed",d:"Posts de la comunidad"});
-      items.push({t:"OrbyE Beta 1.7.2",d:"Amigos, DM, reloj, comentarios"});
+      items.push({t:"OrbyE Beta 1.7.3",d:"Amigos, DM, reloj, comentarios"});
       feat.innerHTML=items.map(function(x){return '<div class="feat-item"><b>'+x.t+'</b><div style="color:#666;margin-top:4px">'+x.d+'</div></div>';}).join("");
     }
     var news=document.getElementById("newsGrid");
     if(news){
       news.innerHTML=[
-        {b:"Update Beta 1.7.2",t:"Chat privado, amigos, comentarios en videos, reloj personalizable."},
+        {b:"Update Beta 1.7.3",t:"Chat privado, amigos, comentarios en videos, reloj personalizable."},
         {b:"OrbyE Corporation",t:"Políticas ampliadas. Acepta privacidad y uso al crear cuenta."},
         {b:"Veltx Studio",t:"Sube, edita texto y publica desde Studio."},
         {b:"Samuray",t:"Realm LNF enlazado — mira la vista previa antes de entrar."}
@@ -865,19 +870,55 @@ h2.pt{margin:0 0 12px;font-size:20px}
     ].map(function(n){return '<div class="news-item"><h3>'+n.t+'</h3><p>'+n.d+'</p></div>';}).join("");
   }
 
-  function doLogin(){
+  function calcAge(iso){
+    if(!iso) return 0;
+    var d=new Date(iso); if(isNaN(d.getTime())) return 0;
+    var now=new Date();
+    var age=now.getFullYear()-d.getFullYear();
+    var m=now.getMonth()-d.getMonth();
+    if(m<0||(m===0&&now.getDate()<d.getDate())) age--;
+    return age;
+  }
+  function doSignIn(){
     var u=(document.getElementById("inUser").value||"").trim();
-    if(!u){ alert("Escribe usuario"); return; }
-    if(!document.getElementById("chkLegal").checked){ alert("Acepta las políticas"); openLegal("privacy"); return; }
+    if(!u){ alert("Escribe usuario o correo"); return; }
     var pass=document.getElementById("inPass").value||"";
     var passes=loadObj(PASS_KEY);
-    if(passes[u]&&passes[u]!==pass&&pass){ alert("Contraseña incorrecta"); return; }
-    if(pass&&!passes[u]){ passes[u]=pass; saveObj(PASS_KEY,passes); }
-    localStorage.setItem(USER_KEY,u); showApp(); go("home");
+    // Si ya existe cuenta, validar pass; si no hay pass guardada, dejar pasar (cuenta demo)
+    if(passes[u]){
+      if(!pass){ alert("Escribe tu contraseña"); return; }
+      if(passes[u]!==pass){ alert("Contraseña incorrecta"); return; }
+    } else if(pass){
+      // primera vez con ese usuario vía Sign in: guardar pass
+      passes[u]=pass; saveObj(PASS_KEY,passes);
+    }
+    localStorage.setItem(USER_KEY,u);
+    localStorage.setItem("orbye_session_ok","1");
+    showApp(); go("home");
   }
-
-  document.getElementById("btnLogin").onclick=doLogin;
-  document.getElementById("btnCreate").onclick=doLogin;
+  function doCreate(){
+    var u=(document.getElementById("inUser").value||"").trim();
+    if(!u){ alert("Escribe usuario o correo"); return; }
+    var pass=document.getElementById("inPass").value||"";
+    if(!pass||pass.length<4){ alert("Contraseña mínimo 4 caracteres"); return; }
+    var birth=(document.getElementById("inBirth").value||"").trim();
+    if(!birth){ alert("La fecha de nacimiento es obligatoria al crear cuenta"); return; }
+    var age=calcAge(birth);
+    if(age<1||age>120){ alert("Fecha de nacimiento no válida"); return; }
+    if(!document.getElementById("chkLegal").checked){ alert("Debes aceptar Políticas de privacidad y uso"); openLegal("privacy"); return; }
+    var passes=loadObj(PASS_KEY);
+    if(passes[u]){ alert("Esa cuenta ya existe. Usa Sign in"); return; }
+    passes[u]=pass; saveObj(PASS_KEY,passes);
+    var accounts=loadObj("orbye_accounts_meta_v1");
+    accounts[u]={birth:birth,age:age,adult:age>=18,created:Date.now()};
+    saveObj("orbye_accounts_meta_v1",accounts);
+    localStorage.setItem(USER_KEY,u);
+    localStorage.setItem("orbye_session_ok","1");
+    localStorage.setItem(RULES_KEY,"1");
+    showApp(); go("home");
+  }
+  document.getElementById("btnLogin").onclick=doSignIn;
+  document.getElementById("btnCreate").onclick=doCreate;
   
   /* ——— Friends / DM / Notifs / Clock ——— */
   var FRIENDS_KEY="orbye_friends_v1";
@@ -1165,7 +1206,7 @@ h2.pt{margin:0 0 12px;font-size:20px}
   document.getElementById("orynSend").onclick=sendOryn;
   document.getElementById("orynInput").onkeydown=function(e){ if(e.key==="Enter"){ e.preventDefault(); sendOryn(); } };
 
-  if(localStorage.getItem(USER_KEY)){ showApp(); go("home"); } else showLogin();
+  if(localStorage.getItem(USER_KEY)){ showApp(); go("home"); } else { showLogin(); }
 })();
 </script>
 </body>
