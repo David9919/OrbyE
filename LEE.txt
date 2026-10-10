@@ -1,11 +1,1 @@
-1.7.8
-Animaciones (campana, likes, páginas)
-Calls + Calendario
-Seguidores / siguiendo en perfil
-Veltx intenta nube Supabase (tabla veltx_videos)
-
-1) Sube index.html + bg-frame.jpg + api/oryn.js
-2) En Supabase SQL Editor: pega SUPABASE_ORBYE.sql → Run
-3) Storage → New bucket "veltx" → Public
-
-Sin el SQL, Calls/Calendario/animaciones igual funcionan; videos cross-device necesitan la tabla.
+1.7.9 likes corazon 1 por usuario, perfil foto, conocidos, veltx autor, float picker z-index
