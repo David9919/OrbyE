@@ -1,2 +1,2 @@
-1.10.0 sidebar labels, profile who, nav clicks, paint home
-?v=1100
+1.10.1 capture-phase nav, clear blockers, profile who, no rules trap
+?v=1101
