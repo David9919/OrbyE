@@ -1,2 +1,2 @@
-1.9.8 login buttons hard-bound + try/catch
-?v=198
+1.9.9 emergency login + session restore
+?v=199
