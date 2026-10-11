@@ -1,9 +1,7 @@
-Beta 1.10.4
-- Onyx Grupos tab works
-- GIF button opens giphy dock
-- Emoji bar works  
-- Profile seeds username from email / creator badge
-- Session keys forced on login
+Beta 1.10.5 — CRÍTICO logout
+1. Log out YA NO te vuelve a meter solo
+2. Reloj se actualiza cada segundo
+3. GIF dock visible
+4. Para entrar de nuevo: Iniciar sesión con tu correo (borra orbye_logged_out)
 
-Deploy: replace index.html, open ?v=1104, Ctrl+Shift+R
-If profile still empty: Log out → Iniciar sesión de nuevo with full email
+?v=1105  Ctrl+Shift+R
