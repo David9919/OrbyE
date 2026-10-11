@@ -1,2 +1,10 @@
-1.9.5 real creator stats, space delete posts, modal cancel fix, view tracking
-?v=195
+Beta 1.9.6
+- Perfil: TODO dentro del engranaje (foto, banner, @, bio, password)
+- Spaces: ✓ al lado del nombre; tuerca para logo/banner/reglas/mods
+- Calendario: eliminar eventos
+- Móvil responsive
+- Studio Veltx scroll
+- Links con marca seguro
+- Info OrbyE Corporation + Supabase
+- Noticias: solo verificados publican
+?v=196
