@@ -1,2 +1,9 @@
-1.10.3 profile recovery currentUser multi-key
-?v=1103
+Beta 1.10.4
+- Onyx Grupos tab works
+- GIF button opens giphy dock
+- Emoji bar works  
+- Profile seeds username from email / creator badge
+- Session keys forced on login
+
+Deploy: replace index.html, open ?v=1104, Ctrl+Shift+R
+If profile still empty: Log out → Iniciar sesión de nuevo with full email
