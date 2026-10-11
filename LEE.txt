@@ -1,3 +1,2 @@
-1.8.6 Inicio sin player/rail. Veltx = Para ti TikTok por defecto.
-Sube index.html
-Abre ?v=186 + Ctrl+Shift+R
+1.8.7 Home SVG icon, WallPass descriptions, Veltx scroll fix
+?v=187 Ctrl+Shift+R
