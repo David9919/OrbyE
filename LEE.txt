@@ -1,2 +1,2 @@
-1.9.1 close works, play button hidden when playing, calendar day click events
-?v=191
+1.9.2 badge red check only, calendar modal no past, real friends only, news, search photo
+?v=192
