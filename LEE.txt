@@ -1,2 +1,2 @@
-1.9.0 username, pause fix, modern like icons, search displayName
-?v=190
+1.9.1 close works, play button hidden when playing, calendar day click events
+?v=191
