@@ -1,2 +1,2 @@
-1.10.2 compact nav, logout to login, home videos
-?v=1102
+1.10.3 profile recovery currentUser multi-key
+?v=1103
