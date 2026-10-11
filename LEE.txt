@@ -1,2 +1,2 @@
-1.9.7 gif groups, links cards, svg nav, drag-drop, stats tech, avatar adjust
-?v=197
+1.9.8 login buttons hard-bound + try/catch
+?v=198
