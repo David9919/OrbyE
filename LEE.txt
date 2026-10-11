@@ -1,1 +1,8 @@
-1.8.3 scroll rail, comments fix, Original Community red, groups logo/banner, search real users, profile videos
+1.8.4
+CRITICO: Ctrl+Shift+R o abre orbye-app.vercel.app/?v=184
+Si sigue viejo: Vercel Deployments → Redeploy (clear cache)
+
+- Scroll rail Veltx forzado
+- Borrar/Editar comentarios con handlers directos en cada boton
+- Original Community: pastilla ROJA + check blanco en circulo
+- Buscador: mejor foto de perfil
