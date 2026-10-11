@@ -1,2 +1,2 @@
-1.10.8 profile name fix, calendar grid force, veltx empty help
-?v=1108
+1.10.9 photo lookup, gif fallback, stats, compact info, onyx fluid bg
+?v=1109
