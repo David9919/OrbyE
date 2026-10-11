@@ -1,2 +1,2 @@
-1.10.7 STABLE BOOT last-wins: login profile clock calendar gif nav
-?v=1107
+1.10.8 profile name fix, calendar grid force, veltx empty help
+?v=1108
