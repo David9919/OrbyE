@@ -1,2 +1,2 @@
-1.9.3 calendar modal, day click fix, delete friends, short vs normal
-?v=193
+1.9.4 cancel modal, group gif display, gear profile, edit/delete group, space media
+?v=194
