@@ -1,7 +1,9 @@
-Beta 1.10.5 — CRÍTICO logout
-1. Log out YA NO te vuelve a meter solo
-2. Reloj se actualiza cada segundo
-3. GIF dock visible
-4. Para entrar de nuevo: Iniciar sesión con tu correo (borra orbye_logged_out)
+Beta 1.10.6 — bugs reales encontrados:
+1. Calendario llamaba paintCal() que NO EXISTE → ahora paintCalendar()
+2. Login no borraba orbye_logged_out → perfil vacío
+3. Login ahora guarda sesión completa + nombre DavidAvila para tu correo
+4. Reloj también en la barra superior
+5. Días del calendario con CSS visible
 
-?v=1105  Ctrl+Shift+R
+Sube index.html → ?v=1106 → Ctrl+Shift+R
+Luego: Log out → Iniciar sesión otra vez con avilarodriguezdavid13@gmail.com
