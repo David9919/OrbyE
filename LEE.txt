@@ -1,2 +1,9 @@
-1.8.7 Home SVG icon, WallPass descriptions, Veltx scroll fix
-?v=187 Ctrl+Shift+R
+1.8.8
+- Home icon se rellena blanco al estar activo
+- FIX: Veltx ya no aparece en Inicio (CSS !important)
+- Scroll TikTok en modo watch (rueda / swipe)
+- Crear grupo: modal moderno + subir logo/banner (archivo, no URL)
+- Grupos privados con código único opcional
+- Staff: ban / unban / reportes
+- Perfil: bio visible
+?v=188 Ctrl+Shift+R
