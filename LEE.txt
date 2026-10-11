@@ -1,2 +1,2 @@
-1.9.2 badge red check only, calendar modal no past, real friends only, news, search photo
-?v=192
+1.9.3 calendar modal, day click fix, delete friends, short vs normal
+?v=193
