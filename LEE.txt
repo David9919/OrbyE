@@ -1,2 +1,2 @@
-1.9.9 emergency login + session restore
-?v=199
+1.10.0 sidebar labels, profile who, nav clicks, paint home
+?v=1100
