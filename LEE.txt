@@ -1,2 +1,2 @@
-1.10.21 ONE clock only — no stacking clones
-?v=1121
+1.10.22 profile photo banner verified fix
+?v=1122
