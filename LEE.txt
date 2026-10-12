@@ -1,2 +1,2 @@
-1.10.22 profile photo banner verified fix
-?v=1122
+1.10.23 mobile Galaxy A13 + clock no blink
+?v=1123
