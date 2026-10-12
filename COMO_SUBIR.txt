@@ -1,0 +1,27 @@
+CÓMO SUBIR OrbyE PARA OTROS USUARIOS (Vercel + Supabase)
+
+1) SUPABASE (una sola vez)
+   - Entra a https://supabase.com → tu proyecto
+   - SQL Editor → New query
+   - Pega TODO el archivo SUPABASE.sql → Run
+   - Si usas videos grandes: Storage → New bucket → "veltx" → Public
+
+2) VERCEL
+   - Sube esta carpeta (o el ZIP descomprimido) a tu repo GitHub
+   - O en Vercel: Deploy → Upload
+   - Root = carpeta con index.html
+   - Deploy
+
+3) ABRIR
+   - https://TU-DOMINIO.vercel.app/?v=1112
+   - Ctrl+Shift+R
+
+4) PROBAR SINCRONIZACIÓN
+   - Laptop A: inicia sesión → Perfil → engranaje → foto → Guardar
+   - Laptop B: misma cuenta → refresca → debe bajar la foto si Supabase está OK
+   - Botón Online verde = navegador en línea (nube lista si SQL ya corrió)
+
+IMPORTANTE
+- localStorage solo es de UN dispositivo
+- La nube (Supabase tablas profiles / veltx_videos / onyx_posts) es lo que une dispositivos
+- Si no corriste SUPABASE.sql, solo guarda en este Chromebook

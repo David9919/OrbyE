@@ -1,7 +1,2 @@
-OrbyE Beta 1.10.11
-- Verificado azul (badge) sin fondo blanco/negro para el creador
-- Editor de perfil (engranaje): foto, banner, nombre
-- Foto se guarda en localStorage de este dispositivo
-- Online badge, Onyx restaurado, Oryn oculto
-
-Despliegue: sube este ZIP a Vercel/GitHub y abre ?v=1111
+1.10.12 un solo verificado + sync perfiles nube
+?v=1112
