@@ -1,2 +1,7 @@
-1.10.10 Onyx UI restored, Más icons, Online badge, Oryn removed, stats force
-?v=1110
+OrbyE Beta 1.10.11
+- Verificado azul (badge) sin fondo blanco/negro para el creador
+- Editor de perfil (engranaje): foto, banner, nombre
+- Foto se guarda en localStorage de este dispositivo
+- Online badge, Onyx restaurado, Oryn oculto
+
+Despliegue: sube este ZIP a Vercel/GitHub y abre ?v=1111
