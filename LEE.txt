@@ -1,2 +1,2 @@
-1.10.15 clock, gif menu, compact X verified, hide white bar
-?v=1115
+1.10.16 no flicker clock/badge, onyx photo+delete
+?v=1116
