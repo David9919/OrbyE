@@ -1,2 +1,2 @@
-1.10.12 un solo verificado + sync perfiles nube
-?v=1112
+1.10.13 FINAL por ahora: foto igual arriba y perfil, 1 verificado azul, engranaje abre editor
+?v=1113
