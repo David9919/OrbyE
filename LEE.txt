@@ -1,2 +1,2 @@
-1.10.14 Onyx floating GIF+emoji mini menu
-?v=1114
+1.10.15 clock, gif menu, compact X verified, hide white bar
+?v=1115
