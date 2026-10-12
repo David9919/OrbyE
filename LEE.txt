@@ -1,2 +1,2 @@
-1.10.13 FINAL por ahora: foto igual arriba y perfil, 1 verificado azul, engranaje abre editor
-?v=1113
+1.10.14 Onyx floating GIF+emoji mini menu
+?v=1114
