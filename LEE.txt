@@ -1,2 +1,2 @@
-1.10.19 clock gear timezone, staff UI, OrbyPload studio drag-drop
-?v=1119
+1.10.20 footer only Info, force clock gear+timezone
+?v=1120
