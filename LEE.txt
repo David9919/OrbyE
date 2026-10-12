@@ -1,2 +1,2 @@
-1.10.20 footer only Info, force clock gear+timezone
-?v=1120
+1.10.21 ONE clock only — no stacking clones
+?v=1121
