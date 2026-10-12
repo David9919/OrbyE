@@ -1,2 +1,2 @@
-1.10.16 no flicker clock/badge, onyx photo+delete
-?v=1116
+1.10.17 Onyx delete, big clock, Veltx Studio
+?v=1117
