@@ -1,2 +1,2 @@
-1.10.24 phone Más sheet + GIF mobile
-?v=1124
+OrbyE 1.10.25 — sin reloj, Valt en Links automático
+Valt URL por defecto: https://valt-app.vercel.app (cámbiala si usas otra)
