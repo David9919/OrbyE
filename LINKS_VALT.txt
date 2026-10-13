@@ -1,0 +1,12 @@
+ORBYE ↔ VALT
+=============
+En OrbyE, apartado Links (o el menú de enlaces), agrega:
+
+Nombre: Valt
+URL: https://valt-vercel.vercel.app
+Descripción: Chat, llamadas y grupos · OrbyE Corporation
+
+Los usuarios que abran Valt se registran en valt_users y se pueden buscar como amigos.
+Misma cuenta (nombre/email) facilita reconocerlos.
+
+Créditos: OrbyE Corporation — David Avila
