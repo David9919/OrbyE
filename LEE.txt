@@ -1,5 +1,2 @@
-OrbyE 1.10.26 → https://orbye-app.vercel.app
-- Links: Valt oficial https://valt-hq.vercel.app (automático)
-- Sin reloj
-- Password creador: 16092013 (en login password)
-Sube TODO el contenido del ZIP al proyecto orbye-app en Vercel.
+OrbyE 1.10.27 — tarjeta VALT oficial visible en Links → https://valt-hq.vercel.app
+Sube a orbye-app.vercel.app
