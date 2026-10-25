@@ -1,0 +1,10 @@
+OrbyE v201
+- Botón XeiE en barra + botón flotante azul
+- api/xeie.js (misma GROQ_API_KEY que Velpx)
+- Reloj sigue oculto
+- Helper de foto de perfil en localStorage
+
+GROQ: En Vercel del proyecto OrbyE pon la MISMA variable:
+  GROQ_API_KEY = tu key de Groq (igual que Velpx)
+No copies la URL de Velpx; cada proyecto Vercel tiene su deploy.
+La API de Groq es siempre: https://api.groq.com (la usa api/xeie.js).
