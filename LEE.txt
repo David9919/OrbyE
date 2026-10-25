@@ -1,2 +1,2 @@
-OrbyE 1.10.27 — tarjeta VALT oficial visible en Links → https://valt-hq.vercel.app
-Sube a orbye-app.vercel.app
+1.10.24 phone Más sheet + GIF mobile
+?v=1124
