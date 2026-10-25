@@ -1,0 +1,6 @@
+OrbyE v200
+- Reloj del inicio oculto
+- Oryn renombrado a XeiE en UI
+- Límite gratis XeiE: 40 mensajes/hora
+- WallPass: referencias a XeiE
+Sube TODA la carpeta a Vercel (index.html + api + assets).
