@@ -1,0 +1,4 @@
+OrbyE v202
+- Botón XeiE abre Velpx: https://velpx.vercel.app
+- Si tu URL de Velpx es otra, edita en index.html la variable VELPX
+- GROQ sigue en Velpx (proyecto Velpx en Vercel)
