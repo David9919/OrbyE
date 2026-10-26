@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 ══════════════════════════════════════════════════════════════
-  OrbyE Corp v2 — PROPIEDAD DE DavidAvila (OrbyE Corporation) · Pure black · X home · microtx visual only · Valt linked
+  OrbyE Corp v3 — PROPIEDAD DE DavidAvila (OrbyE Corporation) · Professional X layout · pure black · WallPass visual · Valt
   Cuenta creador: avilarodriguezdavid13@gmail.com
   Versión: Beta 1.10.27 · XeiE→Velpx
   Fecha copia: 2026-10-12
@@ -1369,6 +1369,77 @@ body::before,body::after,.bg-glow,.glow,.fx-bg,.hero-bg,.circuit,.bg-red,.bg-blu
   margin-bottom:12px;
   background:#000;
 }
+
+
+/* === Corp v3 Professional X layout === */
+html,body{background:#000!important;color:#e7e9ea!important}
+#orbyeProShell{display:none}
+body.pro-home #orbyeProShell{display:grid!important}
+body.pro-home .side, body.pro-home .sidebar, body.pro-home nav.left,
+body.pro-home .main > .content > *:not(#orbyeProShell),
+body.pro-home #homeView > *:not(#orbyeProShell){ }
+/* center column feed */
+.pro-center{
+  max-width:600px;width:100%;margin:0 auto;
+  border-left:1px solid #2f3336;border-right:1px solid #2f3336;
+  min-height:100vh;background:#000;
+}
+.pro-right{
+  width:350px;padding:12px 16px;position:sticky;top:0;align-self:start;
+}
+.pro-composer{
+  padding:12px 16px;border-bottom:1px solid #2f3336;
+}
+.pro-composer textarea{
+  width:100%;min-height:56px;background:transparent;border:0;outline:0;
+  color:#e7e9ea;font-size:20px;resize:none;font-family:inherit;line-height:1.3;
+}
+.pro-composer-actions{
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid #2f3336;margin-top:8px;padding-top:10px;
+}
+.pro-btn-post{
+  background:#1d9bf0;color:#fff;border:0;border-radius:999px;
+  padding:8px 18px;font-weight:700;font-size:15px;cursor:pointer;
+}
+.pro-btn-post:hover{background:#1a8cd8}
+.pro-post{
+  padding:12px 16px;border-bottom:1px solid #2f3336;
+  display:flex;gap:12px;
+}
+.pro-post:hover{background:rgba(255,255,255,0.03)}
+.pro-av{
+  width:40px;height:40px;border-radius:50%;background:#1d9bf0;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;color:#fff;flex-shrink:0;font-size:15px;
+  overflow:hidden;
+}
+.pro-av img{width:100%;height:100%;object-fit:cover}
+.pro-name{font-weight:700;font-size:15px}
+.pro-handle{color:#71767b;font-weight:400;font-size:15px;margin-left:4px}
+.pro-text{font-size:15px;line-height:1.45;margin-top:4px;white-space:pre-wrap;word-break:break-word}
+.pro-card{
+  background:#16181c;border-radius:16px;padding:12px 16px;margin-bottom:16px;
+  border:1px solid #2f3336;
+}
+.pro-card h3{margin:0 0 8px;font-size:20px;font-weight:800}
+.pro-tier{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px solid #2f3336;font-size:14px;
+}
+.pro-tier:last-child{border-bottom:0}
+.pro-price{font-weight:800}
+.pro-price.gold{color:#ffd700}
+.pro-price.red{color:#f4212e}
+.pro-muted{color:#71767b;font-size:13px;line-height:1.4}
+.pro-tabs{display:flex;border-bottom:1px solid #2f3336}
+.pro-tab{
+  flex:1;text-align:center;padding:14px 8px;font-weight:700;font-size:15px;
+  color:#71767b;cursor:pointer;border-bottom:4px solid transparent;
+}
+.pro-tab.on{color:#e7e9ea;border-bottom-color:#1d9bf0}
+.pro-link{color:#1d9bf0;text-decoration:none;font-size:14px;font-weight:600}
+.pro-link:hover{text-decoration:underline}
 
 </style>
 
@@ -8786,83 +8857,196 @@ body::before,body::after,.bg-glow,.glow,.fx-bg,.hero-bg,.circuit,.bg-red,.bg-blu
 </script>
 
 
+
+
+
 <script>
 (function(){
-  function paintHomeX(){
-    var root = document.querySelector('#homeView, #view-home, [data-panel="home"], .home-panel, #inicio, main .content, .page-home');
-    // try find "Inicio" heading parent
-    var h = Array.from(document.querySelectorAll('h1,h2,.page-title')).find(function(el){
-      return /inicio/i.test(el.textContent||'');
-    });
-    if(h) root = h.parentElement || root;
-    if(!root) return;
-    if(root.querySelector('#xComposer')) return;
-    var box = document.createElement('div');
-    box.id = 'xComposer';
-    box.innerHTML = ''
-      +'<div style="display:flex;gap:12px;align-items:flex-start">'
-      +'  <div id="xCompAvatar" style="width:40px;height:40px;border-radius:50%;background:#1d9bf0;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;flex-shrink:0">D</div>'
-      +'  <div style="flex:1">'
-      +'    <textarea id="xCompText" placeholder="¿Qué está pasando?" style="width:100%;min-height:64px;background:transparent;border:none;color:#e7e9ea;font-size:18px;resize:none;outline:none;font-family:inherit"></textarea>'
-      +'    <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2f3336;padding-top:10px;margin-top:8px">'
-      +'      <div style="display:flex;gap:8px;color:#1d9bf0;font-size:13px">'
-      +'        <button type="button" id="xCompGif" style="background:none;border:none;color:#1d9bf0;cursor:pointer;font-weight:700">GIF</button>'
-      +'        <button type="button" id="xCompImg" style="background:none;border:none;color:#1d9bf0;cursor:pointer;font-weight:700">Foto</button>'
-      +'      </div>'
-      +'      <button type="button" id="xCompPost" style="background:#1d9bf0;color:#fff;border:none;border-radius:999px;padding:8px 18px;font-weight:800;cursor:pointer">Post</button>'
-      +'    </div>'
-      +'  </div>'
-      +'</div>'
-      +'<div id="xHomeFeed" style="margin-top:16px"></div>'
-      +'<div style="margin-top:20px;padding:16px;border:1px solid #2f3336;border-radius:16px">'
-      +'  <div style="font-weight:800;margin-bottom:8px">WallPass</div>'
-      +'  <div style="color:#71767b;font-size:13px;margin-bottom:10px">Microtransacciones internas · sin Stripe/PayPal por ahora</div>'
-      +'  <div style="display:flex;flex-wrap:wrap;gap:8px">'
-      +'    <span style="border:1px solid #2f3336;border-radius:999px;padding:6px 12px;font-size:12px">WallPass $8</span>'
-      +'    <span style="border:1px solid #2f3336;border-radius:999px;padding:6px 12px;font-size:12px;color:#ffd700">Ultimate $20</span>'
-      +'    <span style="border:1px solid #2f3336;border-radius:999px;padding:6px 12px;font-size:12px;color:#f4212e">Verify $14</span>'
-      +'  </div>'
-      +'  <p style="color:#71767b;font-size:11px;margin:10px 0 0">Solo visualización de beneficios. Pagos reales cuando actives pasarela.</p>'
-      +'</div>';
-    // insert after title or at top of root
-    if(h && h.nextSibling) h.parentNode.insertBefore(box, h.nextSibling);
-    else root.insertBefore(box, root.firstChild);
+  var VALT = "https://valt-chat.vercel.app/";
 
-    // wire post to local feed + optional existing post APIs
-    var btn = document.getElementById('xCompPost');
-    var ta = document.getElementById('xCompText');
-    var feed = document.getElementById('xHomeFeed');
-    function renderLocal(){
-      var posts=[];
-      try{ posts=JSON.parse(localStorage.getItem('orbye_home_posts')||'[]'); }catch(e){}
-      feed.innerHTML = posts.map(function(p){
-        return '<div style="border-bottom:1px solid #2f3336;padding:14px 0">'
-          +'<div style="font-weight:800">@'+(p.user||'user')+' <span style="color:#71767b;font-weight:500;font-size:12px">'+new Date(p.t).toLocaleString()+'</span></div>'
-          +'<div style="margin-top:6px;white-space:pre-wrap">'+String(p.text||'').replace(/</g,'&lt;')+'</div>'
-          +'</div>';
-      }).join('') || '<div style="color:#71767b;padding:20px 0">Aún no hay posts. Escribe algo arriba.</div>';
-    }
-    renderLocal();
-    if(btn) btn.onclick=function(){
-      var text=(ta&&ta.value||'').trim(); if(!text) return;
-      var user='user';
-      try{
-        var s=JSON.parse(localStorage.getItem('orbye_sess')||localStorage.getItem('valt_sess_v1')||'null');
-        if(s) user=s.username||s.name||s.email||user;
-      }catch(e){}
-      var posts=[];
-      try{ posts=JSON.parse(localStorage.getItem('orbye_home_posts')||'[]'); }catch(e){}
-      posts.unshift({text:text,user:user,t:Date.now()});
-      localStorage.setItem('orbye_home_posts', JSON.stringify(posts.slice(0,50)));
-      if(ta) ta.value='';
-      renderLocal();
-    };
+  function sessUser(){
+    try{
+      var keys=["orbye_sess","orbye_session","valt_sess_v1","sess"];
+      for(var i=0;i<keys.length;i++){
+        var s=JSON.parse(localStorage.getItem(keys[i])||"null");
+        if(s && (s.username||s.name||s.email)){
+          return {
+            name: s.username||s.name||String(s.email).split("@")[0],
+            photo: s.photo||s.avatar||s.avatar_url||"",
+            verified: !!(s.verified||s.is_creator||/david/i.test(s.username||s.email||""))
+          };
+        }
+      }
+    }catch(e){}
+    return {name:"Usuario",photo:"",verified:false};
   }
-  document.addEventListener('DOMContentLoaded', function(){ setTimeout(paintHomeX, 200); });
-  document.addEventListener('click', function(e){
-    if(e.target.closest('[data-go="home"],#navHome,.nav-home')) setTimeout(paintHomeX, 100);
+
+  function loadPosts(){
+    try{ return JSON.parse(localStorage.getItem("orbye_home_posts_v3")||"[]"); }catch(e){ return []; }
+  }
+  function savePosts(p){ localStorage.setItem("orbye_home_posts_v3", JSON.stringify(p.slice(0,80))); }
+
+  function el(html){
+    var d=document.createElement("div");
+    d.innerHTML=html.trim();
+    return d.firstChild;
+  }
+
+  function renderFeed(box){
+    var posts=loadPosts();
+    box.innerHTML="";
+    if(!posts.length){
+      box.appendChild(el('<div class="pro-muted" style="padding:28px 16px;text-align:center">Tu feed está vacío. Publica lo primero.</div>'));
+      return;
+    }
+    posts.forEach(function(p){
+      var letter=(p.user||"U").charAt(0).toUpperCase();
+      var av = p.photo
+        ? '<div class="pro-av"><img src="'+String(p.photo).replace(/"/g,"")+'" alt=""></div>'
+        : '<div class="pro-av">'+letter+'</div>';
+      var ver = p.verified ? ' <span class="user-verified" title="Verificado"></span>' : '';
+      var node = el(
+        '<article class="pro-post">'+av+
+        '<div style="flex:1;min-width:0">'+
+        '<div><span class="pro-name">'+String(p.user||"user").replace(/</g,"&lt;")+'</span>'+ver+
+        '<span class="pro-handle">@'+String(p.user||"user").replace(/</g,"&lt;")+' · '+new Date(p.t).toLocaleString()+'</span></div>'+
+        '<div class="pro-text">'+String(p.text||"").replace(/</g,"&lt;")+'</div>'+
+        '</div></article>'
+      );
+      box.appendChild(node);
+    });
+  }
+
+  function buildShell(){
+    if(document.getElementById("orbyeProShell")) return document.getElementById("orbyeProShell");
+    var u=sessUser();
+    var letter=(u.name||"U").charAt(0).toUpperCase();
+    var avHtml = u.photo
+      ? '<div class="pro-av"><img src="'+String(u.photo).replace(/"/g,"")+'" alt=""></div>'
+      : '<div class="pro-av">'+letter+'</div>';
+
+    var shell = el(
+      '<div id="orbyeProShell" style="display:grid;grid-template-columns:1fr 350px;gap:0;max-width:980px;margin:0 auto;width:100%">'+
+      '  <div class="pro-center">'+
+      '    <div class="pro-tabs">'+
+      '      <div class="pro-tab on" data-tab="foryou">Para ti</div>'+
+      '      <div class="pro-tab" data-tab="siguiendo">Siguiendo</div>'+
+      '    </div>'+
+      '    <div class="pro-composer">'+
+      '      <div style="display:flex;gap:12px">'+avHtml+
+      '        <div style="flex:1">'+
+      '          <textarea id="proTa" placeholder="¿Qué está pasando?"></textarea>'+
+      '          <div class="pro-composer-actions">'+
+      '            <div style="display:flex;gap:14px;color:#1d9bf0;font-size:13px;font-weight:700">'+
+      '              <span style="cursor:pointer" id="proGif">GIF</span>'+
+      '              <span style="cursor:pointer" id="proImg">Foto</span>'+
+      '            </div>'+
+      '            <button type="button" class="pro-btn-post" id="proPost">Post</button>'+
+      '          </div>'+
+      '        </div>'+
+      '      </div>'+
+      '    </div>'+
+      '    <div id="proFeed"></div>'+
+      '  </div>'+
+      '  <aside class="pro-right">'+
+      '    <div class="pro-card">'+
+      '      <h3>WallPass</h3>'+
+      '      <p class="pro-muted">Beneficios premium dentro de OrbyE. Sin pasarela externa todavía.</p>'+
+      '      <div class="pro-tier"><span>WallPass</span><span class="pro-price">$8/mes</span></div>'+
+      '      <div class="pro-tier"><span>Ultimate</span><span class="pro-price gold">$20/mes</span></div>'+
+      '      <div class="pro-tier"><span>Verify Space</span><span class="pro-price red">$14</span></div>'+
+      '      <p class="pro-muted" style="margin-top:10px">Más vistas, insignia y prioridad en el feed cuando actives pagos.</p>'+
+      '    </div>'+
+      '    <div class="pro-card">'+
+      '      <h3>Ecosistema</h3>'+
+      '      <p class="pro-muted" style="margin-bottom:8px">Productos OrbyE Corporation</p>'+
+      '      <div style="display:flex;flex-direction:column;gap:8px">'+
+      '        <a class="pro-link" href="'+VALT+'" target="_blank" rel="noopener">Valt — chat y llamadas</a>'+
+      '        <a class="pro-link" href="https://samuray-del-norte.vercel.app/" target="_blank" rel="noopener">Samuray del Norte</a>'+
+      '        <a class="pro-link" href="https://velpx.vercel.app/" target="_blank" rel="noopener">Velpx / XeiE</a>'+
+      '      </div>'+
+      '    </div>'+
+      '    <div class="pro-muted" style="padding:0 8px">© OrbyE Corporation · David Avila</div>'+
+      '  </aside>'+
+      '</div>'
+    );
+    return shell;
+  }
+
+  function mount(){
+    // Prefer mounting inside home content area
+    var anchors = [
+      document.querySelector('#homeView'),
+      document.querySelector('[data-panel="home"]'),
+      document.querySelector('.home-panel'),
+      Array.from(document.querySelectorAll('h1,h2')).find(function(h){return /inicio/i.test(h.textContent||"");})
+    ].filter(Boolean);
+
+    var host = null;
+    if(anchors[0] && anchors[0].tagName && anchors[0].tagName[0]==='H'){
+      host = anchors[0].parentElement;
+    } else {
+      host = anchors[0];
+    }
+    // fallback: main content next to sidebar
+    if(!host){
+      host = document.querySelector('.main .content, main, .content, #app');
+    }
+    if(!host) return;
+
+    // Hide old sparse home blocks (keep nav)
+    Array.from(host.children).forEach(function(ch){
+      if(ch.id==="orbyeProShell") return;
+      if(/inicio|destacado|noticia|veltx|wallpass|qué está/i.test(ch.textContent||"") || ch.id==="xComposer"){
+        ch.style.display="none";
+      }
+    });
+    // also hide xComposer if present
+    var old=document.getElementById("xComposer"); if(old) old.style.display="none";
+
+    var shell=document.getElementById("orbyeProShell")||buildShell();
+    if(!shell.parentNode) host.insertBefore(shell, host.firstChild);
+    shell.style.display="grid";
+
+    var feed=document.getElementById("proFeed");
+    if(feed) renderFeed(feed);
+
+    var btn=document.getElementById("proPost");
+    var ta=document.getElementById("proTa");
+    if(btn && !btn._bound){
+      btn._bound=true;
+      btn.onclick=function(){
+        var text=(ta&&ta.value||"").trim();
+        if(!text) return;
+        var u=sessUser();
+        var posts=loadPosts();
+        posts.unshift({text:text,user:u.name,photo:u.photo,verified:u.verified,t:Date.now()});
+        savePosts(posts);
+        if(ta) ta.value="";
+        renderFeed(feed);
+      };
+    }
+
+    // tabs visual only
+    Array.from(document.querySelectorAll(".pro-tab")).forEach(function(tab){
+      tab.onclick=function(){
+        document.querySelectorAll(".pro-tab").forEach(function(t){t.classList.remove("on");});
+        tab.classList.add("on");
+      };
+    });
+  }
+
+  function onHome(){
+    setTimeout(mount, 50);
+    setTimeout(mount, 250);
+  }
+
+  document.addEventListener("DOMContentLoaded", onHome);
+  document.addEventListener("click", function(e){
+    if(e.target.closest('[data-go="home"],#navHome,.nav-home,a[href="#home"]')) onHome();
   });
-  setTimeout(paintHomeX, 600);
+  setTimeout(onHome, 400);
+  setTimeout(onHome, 1200);
 })();
 </script>
 

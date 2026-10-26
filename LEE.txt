@@ -1,8 +1,8 @@
-OrbyE Corp v2
-- Fondo negro PURO (sin rojo/azul/glow/circuit)
-- Inicio tipo X: composer "¿Qué está pasando?" + feed
-- WallPass solo visual ($8 / $20 / $14) — SIN Stripe ni PayPal
-- Verificado azul usuario / rojo comunidad
-- Link Valt
+OrbyE Corp v3 — aspecto profesional
+- Layout tipo X: columna central (feed) + derecha (WallPass + ecosistema)
+- Composer limpio, posts con avatar/nombre/hora
+- Fondo negro, sin brillos
+- WallPass solo informativo (sin Stripe/PayPal)
+- Links a Valt, Samuray, Velpx
 
-Sube ZIP → Redeploy → Ctrl+Shift+R
+Redeploy + Ctrl+Shift+R
