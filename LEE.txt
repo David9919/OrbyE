@@ -1,8 +1,16 @@
-OrbyE Corp v3 — aspecto profesional
-- Layout tipo X: columna central (feed) + derecha (WallPass + ecosistema)
-- Composer limpio, posts con avatar/nombre/hora
-- Fondo negro, sin brillos
-- WallPass solo informativo (sin Stripe/PayPal)
-- Links a Valt, Samuray, Velpx
+OrbyE Corp v4
+=============
+- Solo 2 columnas (sin barra derecha tipo X)
+- Verificado = círculo azul PERFECTO + check blanco (no dentado)
+- Botón flotante XeiE eliminado
+- Foto de perfil y banner → local + Supabase (profiles / valt_users)
+- WallPass solo visual
 
-Redeploy + Ctrl+Shift+R
+1) Supabase → SQL Editor → pega SUPABASE_PROFILES.sql → Run
+2) Sube ZIP a Vercel → Redeploy → Ctrl+Shift+R
+
+Monetización (cuentas, sin código en la app todavía):
+- Lemon Squeezy (digital, impuestos) https://lemonsqueezy.com
+- Gumroad https://gumroad.com
+- Mercado Pago ( LatAm ) https://www.mercadopago.com
+Casi todos piden 18+ para cuenta de vendedor.

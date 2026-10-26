@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 ══════════════════════════════════════════════════════════════
-  OrbyE Corp v3 — PROPIEDAD DE DavidAvila (OrbyE Corporation) · Professional X layout · pure black · WallPass visual · Valt
+  OrbyE Corp v4 — PROPIEDAD DE DavidAvila (OrbyE Corporation) · Professional X layout · pure black · WallPass visual · Valt
   Cuenta creador: avilarodriguezdavid13@gmail.com
   Versión: Beta 1.10.27 · XeiE→Velpx
   Fecha copia: 2026-10-12
@@ -1440,6 +1440,78 @@ body.pro-home #homeView > *:not(#orbyeProShell){ }
 .pro-tab.on{color:#e7e9ea;border-bottom-color:#1d9bf0}
 .pro-link{color:#1d9bf0;text-decoration:none;font-size:14px;font-weight:600}
 .pro-link:hover{text-decoration:underline}
+
+
+/* Corp v4 — verified = círculo perfecto azul (imagen 1) */
+.user-verified,
+.verified,
+span.user-verified,
+[class*="user-verified"]{
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:18px !important;
+  height:18px !important;
+  min-width:18px !important;
+  max-width:18px !important;
+  min-height:18px !important;
+  max-height:18px !important;
+  border-radius:50% !important;
+  background:#1D9BF0 !important;
+  color:#fff !important;
+  font-size:0 !important;
+  line-height:0 !important;
+  padding:0 !important;
+  margin-left:4px !important;
+  border:none !important;
+  box-shadow:none !important;
+  overflow:hidden !important;
+  vertical-align:middle !important;
+  flex-shrink:0 !important;
+  position:relative !important;
+  clip-path:none !important;
+  -webkit-clip-path:none !important;
+}
+.user-verified::before,
+.verified::before{
+  display:none !important;
+  content:none !important;
+}
+.user-verified::after,
+.verified::after{
+  content:"" !important;
+  display:block !important;
+  width:10px !important;
+  height:6px !important;
+  border-left:2px solid #fff !important;
+  border-bottom:2px solid #fff !important;
+  transform:rotate(-45deg) translate(0px,-1px) !important;
+  background:transparent !important;
+  font-size:0 !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+}
+/* community red circle */
+.badge-oc,.space-verify{
+  display:inline-flex !important;
+  width:18px !important;height:18px !important;
+  border-radius:50% !important;
+  background:#f4212e !important;
+  padding:0 !important;gap:0 !important;
+  box-shadow:none !important;clip-path:none !important;
+  align-items:center !important;justify-content:center !important;
+}
+.badge-oc::after,.space-verify::after{
+  content:"" !important;
+  width:10px !important;height:6px !important;
+  border-left:2px solid #fff !important;
+  border-bottom:2px solid #fff !important;
+  transform:rotate(-45deg) !important;
+  background:none !important;
+}
+.badge-oc i,.badge-oc span,.badge-oc .oc-check{display:none!important}
+/* hide floating AI */
+#xeieFab,#xeieFabRemoved,.xeie-fab,[data-fab="xeie"]{display:none!important}
 
 </style>
 
@@ -8751,7 +8823,7 @@ body.pro-home #homeView > *:not(#orbyeProShell){ }
 })();
 </script>
 
-<button type="button" id="xeieFab" title="XeiE en Velpx" style="position:fixed;right:18px;bottom:18px;z-index:140000;width:56px;height:56px;border-radius:50%;border:0;background:#000;color:#fff;font-weight:800;font-size:12px;cursor:pointer;box-shadow:0 8px 24px rgba(29,155,240,.4)">XeiE</button>
+
 <script>
 (function(){
   function openXeie(){
@@ -8926,7 +8998,7 @@ body.pro-home #homeView > *:not(#orbyeProShell){ }
       : '<div class="pro-av">'+letter+'</div>';
 
     var shell = el(
-      '<div id="orbyeProShell" style="display:grid;grid-template-columns:1fr 350px;gap:0;max-width:980px;margin:0 auto;width:100%">'+
+      '<div id="orbyeProShell" style="display:grid;grid-template-columns:1fr;gap:0;max-width:600px;margin:0 auto;width:100%">'+
       '  <div class="pro-center">'+
       '    <div class="pro-tabs">'+
       '      <div class="pro-tab on" data-tab="foryou">Para ti</div>'+
@@ -8948,26 +9020,7 @@ body.pro-home #homeView > *:not(#orbyeProShell){ }
       '    </div>'+
       '    <div id="proFeed"></div>'+
       '  </div>'+
-      '  <aside class="pro-right">'+
-      '    <div class="pro-card">'+
-      '      <h3>WallPass</h3>'+
-      '      <p class="pro-muted">Beneficios premium dentro de OrbyE. Sin pasarela externa todavía.</p>'+
-      '      <div class="pro-tier"><span>WallPass</span><span class="pro-price">$8/mes</span></div>'+
-      '      <div class="pro-tier"><span>Ultimate</span><span class="pro-price gold">$20/mes</span></div>'+
-      '      <div class="pro-tier"><span>Verify Space</span><span class="pro-price red">$14</span></div>'+
-      '      <p class="pro-muted" style="margin-top:10px">Más vistas, insignia y prioridad en el feed cuando actives pagos.</p>'+
-      '    </div>'+
-      '    <div class="pro-card">'+
-      '      <h3>Ecosistema</h3>'+
-      '      <p class="pro-muted" style="margin-bottom:8px">Productos OrbyE Corporation</p>'+
-      '      <div style="display:flex;flex-direction:column;gap:8px">'+
-      '        <a class="pro-link" href="'+VALT+'" target="_blank" rel="noopener">Valt — chat y llamadas</a>'+
-      '        <a class="pro-link" href="https://samuray-del-norte.vercel.app/" target="_blank" rel="noopener">Samuray del Norte</a>'+
-      '        <a class="pro-link" href="https://velpx.vercel.app/" target="_blank" rel="noopener">Velpx / XeiE</a>'+
-      '      </div>'+
-      '    </div>'+
-      '    <div class="pro-muted" style="padding:0 8px">© OrbyE Corporation · David Avila</div>'+
-      '  </aside>'+
+      
       '</div>'
     );
     return shell;
@@ -9047,6 +9100,176 @@ body.pro-home #homeView > *:not(#orbyeProShell){ }
   });
   setTimeout(onHome, 400);
   setTimeout(onHome, 1200);
+})();
+</script>
+
+
+<script>
+(function(){
+  var SB_URL = "https://mhexliyacfgsclsnvqsp.supabase.co";
+  var SB_KEY = (function(){
+    try{
+      var m = document.documentElement.innerHTML.match(/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+/);
+      return m ? m[0] : "";
+    }catch(e){ return ""; }
+  })();
+
+  function hdr(){
+    return {
+      "apikey": SB_KEY,
+      "Authorization": "Bearer " + SB_KEY,
+      "Content-Type": "application/json",
+      "Prefer": "return=representation"
+    };
+  }
+
+  function getSess(){
+    var keys=["orbye_sess","orbye_session","valt_sess_v1","sess"];
+    for(var i=0;i<keys.length;i++){
+      try{
+        var s=JSON.parse(localStorage.getItem(keys[i])||"null");
+        if(s) return s;
+      }catch(e){}
+    }
+    return null;
+  }
+
+  function uidOf(s){
+    if(!s) return "";
+    return String(s.id||s.user_id||s.username||s.email||"").trim();
+  }
+
+  async function fileToDataUrl(file, maxW, quality){
+    maxW = maxW || 512; quality = quality || 0.85;
+    return new Promise(function(resolve, reject){
+      var fr = new FileReader();
+      fr.onload = function(){
+        var img = new Image();
+        img.onload = function(){
+          var w = img.width, h = img.height;
+          if(w > maxW){ h = Math.round(h * maxW / w); w = maxW; }
+          var c = document.createElement("canvas");
+          c.width = w; c.height = h;
+          c.getContext("2d").drawImage(img, 0, 0, w, h);
+          resolve(c.toDataURL("image/jpeg", quality));
+        };
+        img.onerror = reject;
+        img.src = fr.result;
+      };
+      fr.onerror = reject;
+      fr.readAsDataURL(file);
+    });
+  }
+
+  async function cloudUpsertProfile(patch){
+    var s = getSess();
+    if(!s || !SB_KEY) return {ok:false, err:"no session"};
+    var id = uidOf(s);
+    if(!id) return {ok:false, err:"no id"};
+    var body = Object.assign({
+      id: id,
+      username: s.username || s.name || id,
+      email: s.email || null,
+      updated_at: new Date().toISOString()
+    }, patch);
+    // try patch then insert
+    try{
+      var r = await fetch(SB_URL+"/rest/v1/profiles?id=eq."+encodeURIComponent(id), {
+        method:"PATCH", headers:hdr(), body:JSON.stringify(body)
+      });
+      if(r.ok) return {ok:true};
+      // fallback table name
+      r = await fetch(SB_URL+"/rest/v1/valt_users?id=eq."+encodeURIComponent(id), {
+        method:"PATCH", headers:hdr(), body:JSON.stringify(body)
+      });
+      if(r.ok) return {ok:true};
+      r = await fetch(SB_URL+"/rest/v1/profiles", {
+        method:"POST", headers:hdr(), body:JSON.stringify(body)
+      });
+      if(r.ok) return {ok:true};
+      r = await fetch(SB_URL+"/rest/v1/valt_users", {
+        method:"POST", headers:hdr(), body:JSON.stringify(body)
+      });
+      if(r.ok) return {ok:true};
+      return {ok:false, err: await r.text()};
+    }catch(e){
+      return {ok:false, err: String(e.message||e)};
+    }
+  }
+
+  function mergeLocal(patch){
+    var keys=["orbye_sess","orbye_session","valt_sess_v1"];
+    keys.forEach(function(k){
+      try{
+        var s=JSON.parse(localStorage.getItem(k)||"null");
+        if(!s) return;
+        Object.assign(s, patch);
+        localStorage.setItem(k, JSON.stringify(s));
+      }catch(e){}
+    });
+    try{
+      var all=JSON.parse(localStorage.getItem("orbye_profiles")||"{}");
+      var s=getSess(); var id=uidOf(s);
+      if(id){ all[id]=Object.assign(all[id]||{}, patch); localStorage.setItem("orbye_profiles", JSON.stringify(all)); }
+    }catch(e){}
+  }
+
+  async function onProfileFile(kind, file){
+    if(!file) return;
+    try{
+      var max = kind==="banner" ? 1200 : 512;
+      var dataUrl = await fileToDataUrl(file, max, 0.85);
+      var patch = kind==="banner" ? {banner: dataUrl} : {photo: dataUrl, avatar: dataUrl};
+      mergeLocal(patch);
+      // paint immediate
+      document.querySelectorAll(kind==="banner" ? ".profile-banner, #profileBanner, [data-banner]" : ".profile-photo, #profilePhoto, .avatar img, [data-avatar]").forEach(function(el){
+        if(el.tagName==="IMG") el.src=dataUrl;
+        else el.style.backgroundImage="url("+dataUrl+")";
+      });
+      var res = await cloudUpsertProfile(patch);
+      if(!res.ok) console.warn("profile cloud", res.err);
+      alert(res.ok ? "Perfil guardado en la nube" : "Guardado aquí. Nube: "+(res.err||"revisar Supabase profiles"));
+    }catch(e){
+      alert("Error imagen: "+(e.message||e));
+    }
+  }
+
+  document.addEventListener("change", function(e){
+    var t=e.target;
+    if(!t || t.tagName!=="INPUT" || t.type!=="file") return;
+    var f=t.files && t.files[0]; if(!f) return;
+    var id=(t.id||"")+(t.name||"")+(t.className||"");
+    var kind = /banner/i.test(id) ? "banner" : (/photo|avatar|perfil|profile|pfp/i.test(id) ? "photo" : "");
+    if(!kind && f.type.indexOf("image/")===0){
+      // modal context
+      if(t.closest("#profileModal, #editProfile, .profile-edit, [data-profile-edit]")){
+        kind = /banner/i.test(String(t.previousSibling&&t.previousSibling.textContent||"")) ? "banner" : "photo";
+      }
+    }
+    if(kind) onProfileFile(kind, f);
+  });
+
+  // Load cloud profile on start
+  async function pullProfile(){
+    var s=getSess(); if(!s||!SB_KEY) return;
+    var id=uidOf(s); if(!id) return;
+    try{
+      var r=await fetch(SB_URL+"/rest/v1/profiles?id=eq."+encodeURIComponent(id)+"&select=*", {headers:hdr()});
+      if(!r.ok) r=await fetch(SB_URL+"/rest/v1/valt_users?id=eq."+encodeURIComponent(id)+"&select=*", {headers:hdr()});
+      if(!r.ok) return;
+      var rows=await r.json();
+      if(rows && rows[0]){
+        var p=rows[0];
+        var patch={};
+        if(p.photo||p.avatar) patch.photo=p.photo||p.avatar;
+        if(p.banner) patch.banner=p.banner;
+        if(p.bio) patch.bio=p.bio;
+        if(p.username) patch.username=p.username;
+        mergeLocal(patch);
+      }
+    }catch(e){}
+  }
+  setTimeout(pullProfile, 800);
 })();
 </script>
 
