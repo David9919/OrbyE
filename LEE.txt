@@ -1,2 +1,11 @@
-1.10.24 phone Más sheet + GIF mobile
-?v=1124
+OrbyE Corp v1
+==============
+- Fondo negro puro (sin azul/rojo de fondo)
+- Estilo corporación tipo X.com
+- Verificado usuario: círculo azul + ✓ (como X)
+- Verificado comunidad: círculo rojo + ✓
+- Link a Valt: https://valt-chat.vercel.app/
+- WallPass tiers $8 / Ultimate $20 / Verify Space $14
+- Footer OrbyE Corporation · David Avila
+
+Sube a Vercel (orbye-app) → Redeploy → Ctrl+Shift+R

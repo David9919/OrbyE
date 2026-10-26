@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 ══════════════════════════════════════════════════════════════
-  OrbyE — PROPIEDAD DE DavidAvila (OrbyE Corporation)
+  OrbyE Corp v1 — PROPIEDAD DE DavidAvila (OrbyE Corporation) · Black X-style · Valt linked
   Cuenta creador: avilarodriguezdavid13@gmail.com
   Versión: Beta 1.10.27 · XeiE→Velpx
   Fecha copia: 2026-10-12
@@ -17,9 +17,9 @@
 <title>OrbyE</title>
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMzIiIGZpbGw9IiMwMDAiLz48Y2lyY2xlIGN4PSIzMiIgY3k9IjI0IiByPSIxMSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjMuMiIvPjxlbGxpcHNlIGN4PSIzMiIgY3k9IjI0IiByeD0iMTgiIHJ5PSI1LjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjIiIHRyYW5zZm9ybT0icm90YXRlKC0yMCAzMiAyNCkiLz48Y2lyY2xlIGN4PSI0NiIgY3k9IjE3IiByPSIxLjgiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIzMiIgeT0iNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIj5PcmJ5RTwvdGV4dD48L3N2Zz4=">
 <style>
-:root{--bg:#06060a;--panel:#12121a;--panel2:#1a1a24;--line:#2a2a36;--text:#f0f0f5;--muted:#8b8b9a;--accent:#5865f2;--blue:#1d9bf0;--red:#e11d48}
+:root{--bg:#000000;--panel:#0a0a0a;--panel2:#111111;--line:#2f3336;--text:#e7e9ea;--muted:#71767b;--accent:#1d9bf0;--blue:#1d9bf0;--red:#f4212e;--gold:#ffd700}
 *{box-sizing:border-box}
-body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#000;color:var(--text);min-height:100vh}
 #view-login{display:none;min-height:100vh;background:#000}
 #view-login.on{display:flex}
 .login-left{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 40% 40%,#14101c,#000 70%);padding:24px}
@@ -380,7 +380,7 @@ button:active{transform:scale(.96)}
 .badge-oc{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#e11d48;color:#fff;font-size:10px;font-weight:900;margin-left:4px;vertical-align:middle;box-shadow:0 0 0 2px rgba(225,29,72,.25)}
 .badge-oc .oc-check,.badge-oc span{display:none}
 .badge-oc::after{content:"✓";font-size:10px;line-height:1}
-.user-verified{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border-radius:50%;background:#3b82f6;color:#fff;font-size:10px;font-weight:900;margin-left:4px}
+.user-verified{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#1d9bf0;color:#fff;font-size:11px;font-weight:900;margin-left:4px;flex-shrink:0;line-height:1}
 .user-verified::after{content:"✓"}
 /* Home 2026 layout */
 .home-layout{display:grid;grid-template-columns:1fr 340px;gap:18px;align-items:start}
@@ -402,7 +402,7 @@ button:active{transform:scale(.96)}
 .yt-player{background:rgba(8,8,14,.9);border-radius:16px;overflow:hidden;border:1px solid #1a2a3a;box-shadow:0 0 0 1px rgba(0,180,255,.2),inset 0 0 40px rgba(0,40,80,.25);margin-bottom:14px}
 .yt-player .stage{position:relative;background:#000;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
 .yt-player .stage video{width:100%;height:100%;object-fit:contain;background:#000}
-.yt-player .neon-bar{height:4px;background:linear-gradient(90deg,#00e5ff,#3b82f6,#7c3aed);box-shadow:0 0 12px rgba(0,200,255,.7);width:100%}
+.yt-player .neon-bar{height:4px;background:#000;box-shadow:0 0 12px rgba(0,200,255,.7);width:100%}
 .yt-player .meta{padding:12px 14px;display:flex;gap:12px;align-items:center}
 .yt-player .meta img{width:40px;height:40px;border-radius:50%;object-fit:cover;background:#222}
 .yt-player .meta .av{width:40px;height:40px;border-radius:50%;background:#2a2a35;display:flex;align-items:center;justify-content:center;font-weight:800;color:#888}
@@ -487,7 +487,7 @@ html,body{height:100%;overflow:hidden}
 .space-hero .ban{height:140px;background:linear-gradient(135deg,#0a1628,#1a0a20 50%,#0a0a12);background-size:cover;background-position:center}
 .space-hero .row{display:flex;gap:14px;align-items:flex-end;padding:0 16px 14px;margin-top:-36px;position:relative}
 .space-hero .logo{width:72px;height:72px;border-radius:50%;border:3px solid #0e0e14;background:#1a1a28;object-fit:cover;flex-shrink:0}
-.space-hero .logo-ph{width:72px;height:72px;border-radius:50%;border:3px solid #0e0e14;background:linear-gradient(135deg,#1d9bf0,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;color:#fff;flex-shrink:0}
+.space-hero .logo-ph{width:72px;height:72px;border-radius:50%;border:3px solid #0e0e14;background:#000;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;color:#fff;flex-shrink:0}
 .space-hero .info{flex:1;min-width:0;padding-bottom:4px}
 .space-hero .info h2{margin:0;font-size:22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .space-layout{display:grid;grid-template-columns:1fr 280px;gap:16px;align-items:start}
@@ -623,7 +623,7 @@ nav.side button:not(.on) .home-ico .home-path{fill:none !important;stroke:curren
 }
 .vw-progress .fill{
   height:100%;width:0%;border-radius:999px;
-  background:linear-gradient(90deg,#1e1b4b 0%,#4c1d95 35%,#7c3aed 70%,#3b82f6 100%);
+  background:#000;
   box-shadow:0 0 12px rgba(124,58,237,.7);transition:width .1s linear
 }
 .vw-next-mobile{
@@ -732,7 +732,7 @@ nav.side button:not(.on) .home-ico .home-path{fill:none !important;stroke:curren
 .bar-row{display:flex;align-items:center;gap:8px;margin:6px 0;font-size:12px}
 .bar-row .lab{width:90px;color:#aaa;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .bar-row .track{flex:1;height:10px;background:#1a1a28;border-radius:99px;overflow:hidden}
-.bar-row .fill{height:100%;background:linear-gradient(90deg,#3b82f6,#8b5cf6);border-radius:99px}
+.bar-row .fill{height:100%;background:#000;border-radius:99px}
 .bar-row .val{width:40px;text-align:right;color:#8ab4ff;font-weight:700}
 .credits-box{background:linear-gradient(135deg,#1a1030,#0f172a);border:1px solid #4c1d95;border-radius:14px;padding:16px;margin-top:16px}
 
@@ -864,7 +864,7 @@ h2#spaceRoomTitle { display:flex;align-items:center;flex-wrap:wrap;gap:4px }
 #cloudBadge.online { color:#6f6 !important; border-color:#2a4 !important; background:#122 !important; }
 
 .orbye-verified{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;vertical-align:middle}
-.who-verified,.verified-badge,.user-verified{background:transparent!important;border:none!important}
+.who-verified,.verified-badge,/* user-verified: X blue check */
 #who .orbye-verified, #topUser .orbye-verified, .prof-meta .orbye-verified{margin-left:5px}
 
 #giphyDock{display:none!important;flex-direction:column;gap:8px;padding:10px;background:rgba(12,12,18,.96);border:1px solid #333;border-radius:14px;margin:8px 0;position:relative;z-index:20}
@@ -1306,6 +1306,35 @@ html, body {
 
 /* v200: reloj eliminado del inicio */
 .clock-card, #clockBox, .clock-box, #clockPanel, #clockTime, #clockDate, #clockGear, #clockFmt { display:none!important; height:0!important; overflow:hidden!important; margin:0!important; padding:0!important; border:0!important; }
+
+/* === OrbyE Corp verified badges (X-style) === */
+.user-verified,.verified{
+  display:inline-flex!important;align-items:center;justify-content:center!important;
+  width:18px!important;height:18px!important;min-width:18px!important;
+  border-radius:50%!important;background:#1d9bf0!important;color:#fff!important;
+  font-size:11px!important;font-weight:900!important;margin-left:4px!important;
+  padding:0!important;border:none!important;box-shadow:none!important;
+  vertical-align:middle!important;flex-shrink:0!important;line-height:1!important;
+}
+.user-verified::after,.verified::after{content:"✓";font-size:11px;line-height:1}
+.user-verified i,.verified i,.user-verified span:not(:empty){display:none!important}
+.badge-oc,.space-verify{
+  display:inline-flex!important;align-items:center;justify-content:center!important;
+  width:18px!important;height:18px!important;min-width:18px!important;
+  border-radius:50%!important;background:#f4212e!important;color:#fff!important;
+  font-size:11px!important;font-weight:900!important;margin-left:4px!important;
+  padding:0!important;border:none!important;box-shadow:none!important;
+  vertical-align:middle!important;flex-shrink:0!important;gap:0!important;
+}
+.badge-oc::after,.space-verify::after{content:"✓";font-size:11px;line-height:1;color:#fff}
+.badge-oc i,.badge-oc .oc-check,.badge-oc span{display:none!important}
+/* corp chrome */
+.side,.sidebar,aside.nav,.left-nav{background:#000!important;border-right:1px solid #2f3336}
+.panel,.card,.modal-card{background:#0a0a0a!important;border-color:#2f3336!important}
+a{color:#1d9bf0}
+.btn-primary,.btn-blue{background:#1d9bf0!important;color:#fff!important;border:none!important;border-radius:999px!important}
+.btn-primary:hover,.btn-blue:hover{background:#1a8cd8!important}
+
 </style>
 
 
@@ -1395,7 +1424,9 @@ html, body {
           <button type="button" data-go="news"><svg class="nav-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h5"/></svg> <span>Noticias</span></button>
           <button type="button" data-go="calls"><svg class="nav-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 5l2 2-1 3 4 4 3-1 2 2-2 3c-3 1-8-2-11-5S4 5 5 2l3 3z"/></svg> <span>Calls</span></button>
           <button type="button" data-go="calendar"><svg class="nav-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> <span>Calendario</span></button>
-          <button type="button" data-go="wallpass"><svg class="nav-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg> <span>Wall Pass</span></button>
+          <a href="https://valt-chat.vercel.app/" target="_blank" rel="noopener" class="nav-item" style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;color:#e7e9ea;text-decoration:none;font-weight:700;margin:4px 0">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4z"/></svg>
+  <span>Valt</span></a><button type="button" data-go="wallpass"><svg class="nav-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg> <span>Wall Pass</span></button>
           <button type="button" data-go="staff"><svg class="nav-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6h6l-5 4 2 7-6-4-6 4 2-7-5-4h6z"/></svg> <span>Staff</span></button>
           <button type="button" data-go="stats"><svg class="nav-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V9M12 19V5M20 19v-7"/></svg> <span>Stats</span></button>
           <button type="button" data-go="info"><svg class="nav-ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 10v6M12 7h.01"/></svg> <span>Info</span></button>
@@ -1757,7 +1788,13 @@ html, body {
             <button type="button" class="pri" id="linkAddBtn">Publicar tarjeta</button>
           </div>
         </div>
-        <div id="linksList"></div>
+        <div id="linksList">
+<div class="link-card" style="margin:12px 0;padding:16px;border:1px solid #2f3336;border-radius:16px;background:#0a0a0a">
+  <div style="font-weight:800;font-size:16px;margin-bottom:4px">Valt</div>
+  <div style="color:#71767b;font-size:13px;margin-bottom:10px">Chat · llamadas · grupos · OrbyE Corporation</div>
+  <a href="https://valt-chat.vercel.app/" target="_blank" rel="noopener" style="display:inline-block;padding:8px 16px;border-radius:999px;background:#1d9bf0;color:#fff;font-weight:700;text-decoration:none">Abrir Valt</a>
+</div>
+</div>
 
         <h2>Links</h2>
         <p class="lead">Sitios y comunidades externas · no oficiales de OrbyE Corporation</p>
@@ -8608,7 +8645,7 @@ html, body {
 })();
 </script>
 
-<button type="button" id="xeieFab" title="XeiE en Velpx" style="position:fixed;right:18px;bottom:18px;z-index:140000;width:56px;height:56px;border-radius:50%;border:0;background:linear-gradient(135deg,#1d9bf0,#6366f1);color:#fff;font-weight:800;font-size:12px;cursor:pointer;box-shadow:0 8px 24px rgba(29,155,240,.4)">XeiE</button>
+<button type="button" id="xeieFab" title="XeiE en Velpx" style="position:fixed;right:18px;bottom:18px;z-index:140000;width:56px;height:56px;border-radius:50%;border:0;background:#000;color:#fff;font-weight:800;font-size:12px;cursor:pointer;box-shadow:0 8px 24px rgba(29,155,240,.4)">XeiE</button>
 <script>
 (function(){
   function openXeie(){
@@ -8675,5 +8712,43 @@ html, body {
   setTimeout(bind, 1500);
 })();
 </script>
+<div style="display:none" id="wpTiersStore">
+<div id="wallpassTiers" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0">
+  <div style="border:1px solid #2f3336;border-radius:16px;padding:16px;background:#0a0a0a">
+    <div style="font-weight:800;font-size:15px">WallPass</div>
+    <div style="color:#1d9bf0;font-size:22px;font-weight:900;margin:8px 0">$8<span style="font-size:13px;color:#71767b">/mes</span></div>
+    <div style="color:#71767b;font-size:13px">Más vistas · insignia · prioridad en feed</div>
+  </div>
+  <div style="border:1px solid #2f3336;border-radius:16px;padding:16px;background:#0a0a0a">
+    <div style="font-weight:800;font-size:15px">Ultimate</div>
+    <div style="color:#ffd700;font-size:22px;font-weight:900;margin:8px 0">$20<span style="font-size:13px;color:#71767b">/mes</span></div>
+    <div style="color:#71767b;font-size:13px">Todo WallPass · más accesorios · XeiE boost</div>
+  </div>
+  <div style="border:1px solid #2f3336;border-radius:16px;padding:16px;background:#0a0a0a">
+    <div style="font-weight:800;font-size:15px">Verify Space</div>
+    <div style="color:#f4212e;font-size:22px;font-weight:900;margin:8px 0">$14<span style="font-size:13px;color:#71767b"> único</span></div>
+    <div style="color:#71767b;font-size:13px">Verificar comunidad · check rojo oficial</div>
+  </div>
+</div>
+<p style="color:#71767b;font-size:12px">Pagos en producción · OrbyE Corporation · David Avila. Por ahora el pase muestra beneficios; la pasarela se activa cuando esté lista.</p>
+</div>
+<script>
+(function(){
+  function showWpTiers(){
+    var store=document.getElementById("wpTiersStore");
+    if(!store) return;
+    var host=document.querySelector("[data-panel=wallpass],#wallpass,#view-wallpass,.wallpass-panel");
+    if(host && !host.querySelector("#wallpassTiers")){
+      host.insertAdjacentHTML("afterbegin", store.innerHTML);
+    }
+  }
+  document.addEventListener("click", function(e){
+    var t=e.target.closest("[data-go=wallpass],#navWallpass,.nav-wallpass");
+    if(t) setTimeout(showWpTiers, 80);
+  });
+  setTimeout(showWpTiers, 500);
+})();
+</script>
+
 </body>
 </html>
