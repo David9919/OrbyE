@@ -1,11 +1,8 @@
-OrbyE Corp v1
-==============
-- Fondo negro puro (sin azul/rojo de fondo)
-- Estilo corporación tipo X.com
-- Verificado usuario: círculo azul + ✓ (como X)
-- Verificado comunidad: círculo rojo + ✓
-- Link a Valt: https://valt-chat.vercel.app/
-- WallPass tiers $8 / Ultimate $20 / Verify Space $14
-- Footer OrbyE Corporation · David Avila
+OrbyE Corp v2
+- Fondo negro PURO (sin rojo/azul/glow/circuit)
+- Inicio tipo X: composer "¿Qué está pasando?" + feed
+- WallPass solo visual ($8 / $20 / $14) — SIN Stripe ni PayPal
+- Verificado azul usuario / rojo comunidad
+- Link Valt
 
-Sube a Vercel (orbye-app) → Redeploy → Ctrl+Shift+R
+Sube ZIP → Redeploy → Ctrl+Shift+R
