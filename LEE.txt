@@ -1,12 +1,9 @@
-OrbyE Corp v7
-- Menú izquierdo compacto (iconos mismo tamaño, pegado a la izquierda)
-- Sin hueco negro enorme a la izquierda
-- Textos propios OrbyE (no "Para ti/Siguiendo/Qué está pasando" de X)
-- Feed ocupa el resto del ancho
-- WallPass tarjeta limpia
+OrbyE Corp v8 — Stripe WallPass conectado
+WallPass $8 → https://buy.stripe.com/test_dRmcN4apNgli2fff3ugrS00
 
-Stripe producto:
-1. Nombre arriba si falta: WallPass
-2. Puntual + US$ 8,00 (como tienes)
-3. Cantidad por unidad en vista previa: pon 1 (no 0)
-4. Añadir producto → Crear enlace → copia buy.stripe.com/...
+Faltan (cuando los tengas):
+- Ultimate $20
+- Verify Space $14
+
+Redeploy + Ctrl+Shift+R
+Prueba: 4242 4242 4242 4242

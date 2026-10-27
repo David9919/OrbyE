@@ -2249,7 +2249,7 @@ body > .app, #app, .app-root, .shell {
             <div class="sn-wp-title">WallPass</div>
             <p class="sn-wp-sub">Microtransacciones · Stripe modo prueba</p>
             <div class="sn-wp-tiers">
-              <button type="button" class="sn-tier" data-tier="wallpass" data-price="8">WallPass · $8</button>
+              <button type="button" class="sn-tier" data-tier="wallpass" data-price="8" data-stripe="https://buy.stripe.com/test_dRmcN4apNgli2fff3ugrS00">WallPass · $8</button>
               <button type="button" class="sn-tier gold" data-tier="ultimate" data-price="20">Ultimate · $20</button>
               <button type="button" class="sn-tier red" data-tier="verify" data-price="14">Verify Space · $14</button>
             </div>
@@ -9894,7 +9894,7 @@ body > .app, #app, .app-root, .shell {
 (function(){
   // Stripe Payment Links — pega aquí cuando los tengas:
   var STRIPE_LINKS = {
-    wallpass: "",   // https://buy.stripe.com/xxx
+    wallpass: "https://buy.stripe.com/test_dRmcN4apNgli2fff3ugrS00",
     ultimate: "",
     verify: ""
   };
@@ -9984,7 +9984,7 @@ body > .app, #app, .app-root, .shell {
     document.querySelectorAll(".sn-tier").forEach(function(b){
       b.onclick=function(){
         var tier=b.getAttribute("data-tier");
-        var link=STRIPE_LINKS[tier];
+        var link=STRIPE_LINKS[tier]||b.getAttribute("data-stripe")||"";
         if(link){ window.open(link,"_blank"); return; }
         alert("Stripe (prueba): crea un Payment Link para \""+tier+"\" en dashboard.stripe.com y pégalo en la app.\n\nTarjeta test: 4242 4242 4242 4242");
       };
