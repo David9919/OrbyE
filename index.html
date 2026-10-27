@@ -2668,6 +2668,140 @@ html,body,#app,.app-root{
 /* hide stray bottom mini dock if any */
 .side-bottom,.dock-bottom,.float-calls{display:none!important}
 
+
+/* === v12 OrbyPload + espacio + verificado === */
+/* feed más ancho — aprovecha espacio */
+.sn-home{
+  max-width:min(920px,96vw)!important;
+  width:100%!important;
+  margin:0 auto!important;
+}
+.main,.content,#main,main,.pages{
+  margin-left:80px!important;
+  width:calc(100% - 80px)!important;
+  max-width:none!important;
+  padding:16px 28px 48px!important;
+}
+#page-home,#page-home.page{
+  max-width:none!important;
+  width:100%!important;
+}
+
+/* OrbyPload — inputs file modernos */
+input[type="file"]{
+  width:.1px!important;
+  height:.1px!important;
+  opacity:0!important;
+  overflow:hidden!important;
+  position:absolute!important;
+  z-index:-1!important;
+}
+/* label asociado o wrapper */
+.orbypload,
+label.orbypload,
+.file-upload-label,
+.pload-btn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  min-height:42px!important;
+  padding:10px 16px!important;
+  background:#111!important;
+  border:1px dashed #3a3a3a!important;
+  border-radius:12px!important;
+  color:#c8cdd4!important;
+  font-size:13px!important;
+  font-weight:600!important;
+  cursor:pointer!important;
+  transition:border-color .15s, background .15s!important;
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+.orbypload:hover,
+label.orbypload:hover,
+.pload-btn:hover{
+  border-color:#5b8def!important;
+  background:#0d1520!important;
+  color:#fff!important;
+}
+/* modal profile polish */
+.modal-card,.panel[style*="max-width"],#profileEditModal .modal-card,
+div[role="dialog"],.modal .card{
+  background:#0a0a0a!important;
+  border:1px solid #2a2a2a!important;
+  border-radius:18px!important;
+}
+/* native file button restyle via parent */
+.modal-card input[type="file"] + span,
+.modal-card .file-name{color:#8b93a1!important;font-size:12px!important}
+
+/* VERIFICADO — forzar cuadrado redondeado azul limpio en TODO el sitio */
+.topbar .user-verified,
+header .user-verified,
+#who .user-verified,
+.who .user-verified,
+.user-chip .user-verified,
+span.user-verified,
+.user-verified,
+.verified,
+svg.orbye-verified,
+.orbye-verified,
+.topbar svg[class*="verif"],
+header svg[class*="verif"]{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:16px!important;
+  height:16px!important;
+  min-width:16px!important;
+  min-height:16px!important;
+  max-width:16px!important;
+  max-height:16px!important;
+  border-radius:4px!important;
+  background:#5b8def!important;
+  border:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  margin-left:5px!important;
+  vertical-align:middle!important;
+  position:relative!important;
+  overflow:hidden!important;
+  clip-path:none!important;
+  -webkit-clip-path:none!important;
+  font-size:0!important;
+  color:transparent!important;
+  line-height:0!important;
+}
+svg.orbye-verified *,
+.orbye-verified *,
+.topbar svg[class*="verif"] *{
+  display:none!important;
+  fill:transparent!important;
+  stroke:transparent!important;
+}
+span.user-verified::before,
+.user-verified::before,
+.verified::before,
+svg.orbye-verified::before{display:none!important;content:none!important}
+span.user-verified::after,
+.user-verified::after,
+.verified::after,
+svg.orbye-verified::after,
+.orbye-verified::after{
+  content:""!important;
+  display:block!important;
+  width:7px!important;
+  height:4px!important;
+  border-left:2px solid #fff!important;
+  border-bottom:2px solid #fff!important;
+  transform:rotate(-45deg) translateY(-1px)!important;
+  background:none!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  position:relative!important;
+}
+
 </style>
 
 
@@ -10627,6 +10761,62 @@ html,body,#app,.app-root{
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", ensureMore);
   else ensureMore();
   setTimeout(ensureMore, 500);
+})();
+</script>
+
+
+<script>
+(function(){
+  function wrapFiles(root){
+    root = root || document;
+    root.querySelectorAll('input[type="file"]').forEach(function(inp){
+      if(inp.dataset.oePload) return;
+      inp.dataset.oePload = "1";
+      var lab = document.createElement("label");
+      lab.className = "orbypload";
+      lab.textContent = "OrbyPload · elegir archivo";
+      lab.style.cursor = "pointer";
+      var id = inp.id || ("oeFile_"+Math.random().toString(36).slice(2,8));
+      inp.id = id;
+      lab.setAttribute("for", id);
+      inp.parentNode.insertBefore(lab, inp);
+      var name = document.createElement("div");
+      name.className = "file-name";
+      name.style.cssText = "font-size:12px;color:#8b93a1;margin-top:6px";
+      name.textContent = "Ningún archivo seleccionado";
+      lab.parentNode.insertBefore(name, lab.nextSibling);
+      inp.addEventListener("change", function(){
+        name.textContent = (inp.files && inp.files[0]) ? inp.files[0].name : "Ningún archivo seleccionado";
+      });
+    });
+  }
+  function fixVer(){
+    document.querySelectorAll("svg.orbye-verified, svg[class*='verif']").forEach(function(svg){
+      var s = document.createElement("span");
+      s.className = "user-verified";
+      s.setAttribute("title","Verificado");
+      if(svg.parentNode) svg.parentNode.replaceChild(s, svg);
+    });
+    // also any emoji/check weird nodes near @DavidAvila
+    document.querySelectorAll("#who, .who, .user-chip, .topbar").forEach(function(box){
+      box.querySelectorAll("svg").forEach(function(svg){
+        var c = (svg.getAttribute("class")||"")+(svg.innerHTML||"");
+        if(/verif|badge|check/i.test(c) || svg.closest(".user-verified")){
+          var s = document.createElement("span");
+          s.className = "user-verified";
+          if(svg.parentNode) svg.parentNode.replaceChild(s, svg);
+        }
+      });
+    });
+  }
+  function run(){ wrapFiles(); fixVer(); }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", run);
+  else run();
+  setInterval(function(){ wrapFiles(); fixVer(); }, 2000);
+  // observe modals
+  try{
+    new MutationObserver(function(){ wrapFiles(); fixVer(); }).observe(document.body,{childList:true,subtree:true});
+  }catch(e){}
 })();
 </script>
 

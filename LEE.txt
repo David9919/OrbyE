@@ -1,8 +1,7 @@
-OrbyE Corp v11
-- Fondo #000 negro puro
-- Tarjetas #0a0a0a con borde #222
-- Menú Más (•••): panel con Noticias, Calendario, Staff, Links, Stats, Info, Ajustes — scrolleable
-- Dock lateral sin cortar botones
+OrbyE Corp v12
+- OrbyPload: botones de archivo modernos (no el blanco del navegador)
+- Feed más ancho (hasta ~920px) — menos hueco negro
+- Verificado: cuadrado redondeado #5b8def en header y todo el sitio
 
 Redeploy + Ctrl+Shift+R
-Clic en ••• o Más → debe abrir panel a la derecha del menú
+Abre Editar perfil → debe decir OrbyPload · elegir archivo
