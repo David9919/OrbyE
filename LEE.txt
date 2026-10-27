@@ -1,9 +1,13 @@
-OrbyE Corp v8 — Stripe WallPass conectado
-WallPass $8 → https://buy.stripe.com/test_dRmcN4apNgli2fff3ugrS00
+OrbyE Corp v9
+- Botones del menú abajo a la izquierda (rail fijo)
+- Feed más ancho (hasta ~820px), aprovecha el espacio
+- Verificado del header: círculo azul liso
 
-Faltan (cuando los tengas):
-- Ultimate $20
-- Verify Space $14
+STRIPE — ¿me dan dinero de verdad?
+NO en "Entorno de prueba".
+- test_ links = dinero falso
+- Para cobrar de verdad: Verificar empresa en Stripe → modo Live → links buy.stripe.com sin "test_"
+- El dinero llega a la cuenta bancaria que configures en Stripe → Pagos / Cuentas bancarias
+- Stripe puede tardar días en el primer payout tras verificar identidad
 
-Redeploy + Ctrl+Shift+R
-Prueba: 4242 4242 4242 4242
+Prueba actual: 4242 4242 4242 4242 (no cobra)
