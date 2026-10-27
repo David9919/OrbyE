@@ -1,16 +1,15 @@
-OrbyE Corp v5 — red social profesional
-=====================================
-- Home real: tabs Para ti / Siguiendo, composer, feed
-- Solo 2 columnas (feed centrado)
-- Verificado = círculo azul perfecto (SVG dentado reemplazado)
-- WallPass botones listos para Stripe Payment Links
-- Versión visible: Beta 1.11.0 · Corp · Stripe-ready
+OrbyE Corp v6 — UI Premium estilo X.com
+======================================
+Archivos:
+- index.html (CSS inyectado al final de <style>)
+- orbye-x-premium.css (mismas reglas sueltas por si las pegas aparte)
 
-Stripe:
-1. dashboard.stripe.com → Payment Links
-2. Crea 3 productos ($8, $20, $14)
-3. Copia los links buy.stripe.com/...
-4. Dímelos y los dejo fijos en el código
+Incluye:
+1. Paleta X (#000, #2f3336, #eff3f4, #71767b, #1d9bf0)
+2. Header compacto + buscador píldora
+3. Sidebar sin bloque azul; hover gris sutil
+4. Feed: tabs 50/50, underline azul bajo texto, composer sin caja
+5. WallPass tipo tarjeta Discover, botones píldora neutros
+6. Verificado círculo azul perfecto
 
-Redeploy + Ctrl+Shift+R
-Si NO ves Beta 1.11.0 arriba, el deploy no aplicó el ZIP nuevo.
+Sube ZIP completo → Redeploy → Ctrl+Shift+R
