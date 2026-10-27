@@ -2011,6 +2011,118 @@ svg.orbye-verified::after{
   box-shadow:none!important;
 }
 
+
+/* === OrbyE Corp v7 — identidad propia (no clon X) === */
+html,body{background:#000!important;margin:0!important}
+/* App row: sidebar fixed left + main fills rest */
+.side,.sidebar,nav.left,aside.nav,.left-nav{
+  position:sticky!important;
+  top:0!important;
+  left:0!important;
+  width:88px!important;
+  min-width:88px!important;
+  max-width:88px!important;
+  padding:12px 8px!important;
+  border-right:1px solid #2f3336!important;
+  background:#000!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  gap:4px!important;
+  z-index:20!important;
+  height:100vh!important;
+  overflow-y:auto!important;
+}
+/* icon-only rail: equal size buttons */
+.side button[data-go],
+.sidebar button[data-go],
+.side a.nav-item,
+.side .nav-btn{
+  width:52px!important;
+  height:52px!important;
+  min-width:52px!important;
+  min-height:52px!important;
+  padding:0!important;
+  margin:2px 0!important;
+  border-radius:14px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:0!important;
+  background:transparent!important;
+  border:0!important;
+  color:#eff3f4!important;
+  font-size:0!important; /* hide text labels in compact rail */
+  box-shadow:none!important;
+}
+.side button[data-go] span,
+.side button[data-go] .nav-label,
+.sidebar button[data-go] span:not(.nav-ico){
+  display:none!important;
+}
+.side button[data-go] svg,
+.sidebar button[data-go] svg{
+  width:24px!important;
+  height:24px!important;
+  display:block!important;
+}
+.side button[data-go]:hover,
+.sidebar button[data-go]:hover{
+  background:rgba(255,255,255,.08)!important;
+}
+.side button[data-go].on,
+.side button[data-go].active{
+  background:rgba(29,155,240,.15)!important;
+  color:#1d9bf0!important;
+  font-weight:700!important;
+}
+/* main content area next to rail */
+.main,.content,#main,main,.pages,.page-wrap{
+  margin-left:0!important;
+  flex:1!important;
+  min-width:0!important;
+}
+/* feed takes remaining width, not tiny centered island with huge left void */
+#page-home.page,
+#page-home,
+.sn-home{
+  max-width:none!important;
+  width:100%!important;
+  margin:0!important;
+  border-left:none!important;
+  border-right:1px solid #2f3336!important;
+  background:#000!important;
+}
+/* when body uses flex row for shell */
+body > .app, #app, .app-root, .shell {
+  display:flex!important;
+  align-items:stretch!important;
+  min-height:100vh!important;
+  background:#000!important;
+}
+/* composer OrbyE branded */
+.sn-composer{border-bottom:1px solid #2f3336!important}
+.sn-tabs{background:rgba(0,0,0,.8)!important}
+.sn-tab.on::after{width:64px!important;background:#1d9bf0!important}
+/* wallpass softer inside feed */
+.sn-wallpass{
+  max-width:480px!important;
+  margin:20px auto!important;
+  background:#0a0a0a!important;
+  border:1px solid #2f3336!important;
+  border-radius:16px!important;
+}
+/* header full width */
+.topbar,header.top,.app-header{width:100%!important}
+/* kill X-layout 3-col forced center gap */
+.x-layout{
+  display:flex!important;
+  max-width:none!important;
+  margin:0!important;
+}
+.x-layout .x-side{width:88px!important}
+.x-layout .pro-center,.x-layout .sn-home{flex:1!important;max-width:none!important}
+
 </style>
 
 
@@ -2114,14 +2226,14 @@ svg.orbye-verified::after{
       <div id="page-home" class="page wide on">
         <div class="sn-home">
           <div class="sn-tabs">
-            <button type="button" class="sn-tab on" data-sn-tab="foryou">Para ti</button>
-            <button type="button" class="sn-tab" data-sn-tab="following">Siguiendo</button>
+            <button type="button" class="sn-tab on" data-sn-tab="foryou">Destacado</button>
+            <button type="button" class="sn-tab" data-sn-tab="following">Amigos</button>
           </div>
           <div class="sn-composer">
             <div class="sn-comp-row">
               <div class="sn-av" id="snCompAv">D</div>
               <div class="sn-comp-body">
-                <textarea id="snCompText" placeholder="¿Qué está pasando?" rows="2"></textarea>
+                <textarea id="snCompText" placeholder="¿Qué hay de nuevo en OrbyE?" rows="2"></textarea>
                 <div class="sn-comp-bar">
                   <div class="sn-comp-tools">
                     <button type="button" id="snGif" title="GIF">GIF</button>
@@ -2160,7 +2272,7 @@ svg.orbye-verified::after{
           <div id="emojiBar"></div>
           <div id="giphyDock"><input id="giphyQ" placeholder="Buscar GIF..."><div id="giphyResults"></div></div>
           <div class="onyx-compose" style="border:1px solid var(--line);border-radius:8px;padding:10px;background:#0e0e14">
-            <input id="onyxInput" placeholder="¿Qué está pasando?" maxlength="500" autocomplete="off" name="onyx_compose" style="border:0;background:transparent;flex:1">
+            <input id="onyxInput" placeholder="¿Qué hay de nuevo en OrbyE?" maxlength="500" autocomplete="off" name="onyx_compose" style="border:0;background:transparent;flex:1">
             <button type="button" id="btnEmoji">😀</button>
             <button type="button" id="btnGif" style="font-weight:800">GIF</button>
             <button type="button" id="btnPhoto">📷</button>
@@ -6272,7 +6384,7 @@ svg.orbye-verified::after{
           '<div id="emojiBar"></div>'+
           '<div id="giphyDock"><input id="giphyQ" placeholder="Buscar GIF..."><div id="giphyResults"></div></div>'+
           '<div class="onyx-compose" style="border:1px solid #333;border-radius:10px;padding:10px;background:rgba(14,14,20,.92)">'+
-            '<input id="onyxInput" placeholder="¿Qué está pasando?" maxlength="500" style="border:0;background:transparent;flex:1;color:#eee;min-width:180px">'+
+            '<input id="onyxInput" placeholder="¿Qué hay de nuevo en OrbyE?" maxlength="500" style="border:0;background:transparent;flex:1;color:#eee;min-width:180px">'+
             '<button type="button" id="btnEmoji">😀</button>'+
             '<button type="button" id="btnGif" style="font-weight:800">GIF</button>'+
             '<button type="button" id="btnPhoto">📷</button>'+
@@ -9505,13 +9617,13 @@ svg.orbye-verified::after{
       '<div id="orbyeProShell" style="display:grid;grid-template-columns:1fr;gap:0;max-width:600px;margin:0 auto;width:100%">'+
       '  <div class="pro-center">'+
       '    <div class="pro-tabs">'+
-      '      <div class="pro-tab on" data-tab="foryou">Para ti</div>'+
-      '      <div class="pro-tab" data-tab="siguiendo">Siguiendo</div>'+
+      '      <div class="pro-tab on" data-tab="foryou">Destacado</div>'+
+      '      <div class="pro-tab" data-tab="siguiendo">Amigos</div>'+
       '    </div>'+
       '    <div class="pro-composer">'+
       '      <div style="display:flex;gap:12px">'+avHtml+
       '        <div style="flex:1">'+
-      '          <textarea id="proTa" placeholder="¿Qué está pasando?"></textarea>'+
+      '          <textarea id="proTa" placeholder="¿Qué hay de nuevo en OrbyE?"></textarea>'+
       '          <div class="pro-composer-actions">'+
       '            <div style="display:flex;gap:14px;color:#1d9bf0;font-size:13px;font-weight:700">'+
       '              <span style="cursor:pointer" id="proGif">GIF</span>'+

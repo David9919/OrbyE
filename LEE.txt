@@ -1,15 +1,12 @@
-OrbyE Corp v6 — UI Premium estilo X.com
-======================================
-Archivos:
-- index.html (CSS inyectado al final de <style>)
-- orbye-x-premium.css (mismas reglas sueltas por si las pegas aparte)
+OrbyE Corp v7
+- Menú izquierdo compacto (iconos mismo tamaño, pegado a la izquierda)
+- Sin hueco negro enorme a la izquierda
+- Textos propios OrbyE (no "Para ti/Siguiendo/Qué está pasando" de X)
+- Feed ocupa el resto del ancho
+- WallPass tarjeta limpia
 
-Incluye:
-1. Paleta X (#000, #2f3336, #eff3f4, #71767b, #1d9bf0)
-2. Header compacto + buscador píldora
-3. Sidebar sin bloque azul; hover gris sutil
-4. Feed: tabs 50/50, underline azul bajo texto, composer sin caja
-5. WallPass tipo tarjeta Discover, botones píldora neutros
-6. Verificado círculo azul perfecto
-
-Sube ZIP completo → Redeploy → Ctrl+Shift+R
+Stripe producto:
+1. Nombre arriba si falta: WallPass
+2. Puntual + US$ 8,00 (como tienes)
+3. Cantidad por unidad en vista previa: pon 1 (no 0)
+4. Añadir producto → Crear enlace → copia buy.stripe.com/...
