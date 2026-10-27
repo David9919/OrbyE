@@ -1,16 +1,16 @@
-OrbyE Corp v4
-=============
-- Solo 2 columnas (sin barra derecha tipo X)
-- Verificado = círculo azul PERFECTO + check blanco (no dentado)
-- Botón flotante XeiE eliminado
-- Foto de perfil y banner → local + Supabase (profiles / valt_users)
-- WallPass solo visual
+OrbyE Corp v5 — red social profesional
+=====================================
+- Home real: tabs Para ti / Siguiendo, composer, feed
+- Solo 2 columnas (feed centrado)
+- Verificado = círculo azul perfecto (SVG dentado reemplazado)
+- WallPass botones listos para Stripe Payment Links
+- Versión visible: Beta 1.11.0 · Corp · Stripe-ready
 
-1) Supabase → SQL Editor → pega SUPABASE_PROFILES.sql → Run
-2) Sube ZIP a Vercel → Redeploy → Ctrl+Shift+R
+Stripe:
+1. dashboard.stripe.com → Payment Links
+2. Crea 3 productos ($8, $20, $14)
+3. Copia los links buy.stripe.com/...
+4. Dímelos y los dejo fijos en el código
 
-Monetización (cuentas, sin código en la app todavía):
-- Lemon Squeezy (digital, impuestos) https://lemonsqueezy.com
-- Gumroad https://gumroad.com
-- Mercado Pago ( LatAm ) https://www.mercadopago.com
-Casi todos piden 18+ para cuenta de vendedor.
+Redeploy + Ctrl+Shift+R
+Si NO ves Beta 1.11.0 arriba, el deploy no aplicó el ZIP nuevo.
