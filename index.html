@@ -2560,6 +2560,114 @@ svg.orbye-verified::after{
 }
 .lead,.muted{color:var(--oe-muted)!important}
 
+
+/* === OrbyE v11 — negro puro + menú Más + profesional === */
+html,body,#app,.app-root{
+  background:#000000!important;
+  color:#f0f2f5!important;
+}
+.topbar,header.top,.app-header,header{
+  background:#000000!important;
+  border-bottom:1px solid #222!important;
+  backdrop-filter:none!important;
+}
+/* dock lateral negro */
+.side,.sidebar,nav.left,aside.nav,.left-nav{
+  background:#0a0a0a!important;
+  border:1px solid #222!important;
+  box-shadow:none!important;
+  left:10px!important;
+  top:66px!important;
+  bottom:10px!important;
+  width:60px!important;
+  padding:8px 6px!important;
+  border-radius:18px!important;
+  justify-content:flex-start!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  z-index:50!important;
+}
+.side button[data-go],
+.sidebar button[data-go]{
+  width:42px!important;
+  height:42px!important;
+  border-radius:12px!important;
+  color:#c8cdd4!important;
+  flex-shrink:0!important;
+}
+.side button[data-go].on{
+  background:rgba(91,141,239,.2)!important;
+  color:#7eb0ff!important;
+}
+/* MAIN full black */
+.main,.content,#main,main,.pages{
+  margin-left:80px!important;
+  width:calc(100% - 80px)!important;
+  background:#000!important;
+  padding:16px 20px 48px!important;
+}
+#page-home,#page-home.page{background:#000!important}
+/* feed card on pure black */
+.sn-home{
+  background:#0a0a0a!important;
+  border:1px solid #222!important;
+  border-radius:18px!important;
+  max-width:680px!important;
+  margin:0 auto!important;
+  box-shadow:none!important;
+}
+.sn-tabs{background:#0a0a0a!important;border-bottom:1px solid #222!important}
+.sn-tab.on{background:rgba(91,141,239,.18)!important;color:#8ab4ff!important}
+.sn-composer{background:#0a0a0a!important;border-bottom:1px solid #222!important}
+.sn-wallpass{
+  background:#111!important;
+  border:1px solid #222!important;
+  border-radius:14px!important;
+}
+.sn-tier{
+  background:#000!important;
+  border:1px solid #333!important;
+  border-radius:10px!important;
+}
+.sn-tier:hover{border-color:#5b8def!important;background:#0d1520!important}
+.panel,.card,.modal-card{background:#0a0a0a!important;border:1px solid #222!important}
+
+/* Menú MÁS — panel visible y scrolleable */
+#moreMenu,.more-menu,.oe-more-panel{
+  position:fixed!important;
+  left:78px!important;
+  bottom:24px!important;
+  width:220px!important;
+  max-height:min(70vh,420px)!important;
+  overflow-y:auto!important;
+  background:#0c0c0c!important;
+  border:1px solid #2a2a2a!important;
+  border-radius:14px!important;
+  padding:8px!important;
+  z-index:9999!important;
+  box-shadow:0 12px 40px rgba(0,0,0,.65)!important;
+}
+#moreMenu button,.more-menu button,.oe-more-panel button,
+#moreMenu a,.more-menu a{
+  display:flex!important;
+  width:100%!important;
+  text-align:left!important;
+  align-items:center!important;
+  gap:10px!important;
+  padding:11px 12px!important;
+  border:0!important;
+  background:transparent!important;
+  color:#e8eaed!important;
+  font-size:14px!important;
+  font-weight:500!important;
+  border-radius:10px!important;
+  cursor:pointer!important;
+}
+#moreMenu button:hover,.more-menu button:hover{background:#1a1a1a!important}
+
+/* hide stray bottom mini dock if any */
+.side-bottom,.dock-bottom,.float-calls{display:none!important}
+
 </style>
 
 
@@ -10445,6 +10553,80 @@ svg.orbye-verified::after{
   });
   setTimeout(function(){ wireHome(); fixBadges(); }, 500);
   setInterval(fixBadges, 2000);
+})();
+</script>
+
+
+<script>
+(function(){
+  function ensureMore(){
+    var side = document.querySelector(".side, .sidebar, nav.left, aside.nav");
+    if(!side) return;
+    var btn = side.querySelector("[data-more], #btnMore, button.more");
+    if(!btn){
+      // find last "Más" text button or create
+      var all = side.querySelectorAll("button");
+      for(var i=0;i<all.length;i++){
+        if(/m[aá]s/i.test(all[i].textContent||"") || (all[i].textContent||"").indexOf("•••")>=0 || (all[i].textContent||"").indexOf("...")>=0){
+          btn = all[i]; break;
+        }
+      }
+    }
+    if(!btn){
+      btn = document.createElement("button");
+      btn.type="button";
+      btn.id="btnMore";
+      btn.setAttribute("data-more","1");
+      btn.innerHTML="•••";
+      btn.style.cssText="width:42px;height:42px;border-radius:12px;border:0;background:transparent;color:#c8cdd4;font-size:16px;cursor:pointer;flex-shrink:0";
+      side.appendChild(btn);
+    }
+    var panel = document.getElementById("oeMorePanel");
+    if(!panel){
+      panel = document.createElement("div");
+      panel.id="oeMorePanel";
+      panel.className="oe-more-panel";
+      panel.style.display="none";
+      panel.innerHTML =
+        '<button type="button" data-go="news">Noticias</button>'+
+        '<button type="button" data-go="calendar">Calendario</button>'+
+        '<button type="button" data-go="staff">Staff</button>'+
+        '<button type="button" data-go="links">Links</button>'+
+        '<button type="button" data-go="stats">Estadísticas</button>'+
+        '<button type="button" data-go="info">Info / Legal</button>'+
+        '<button type="button" data-go="settings">Ajustes</button>'+
+        '<button type="button" id="oeMoreClose">Cerrar</button>';
+      document.body.appendChild(panel);
+    }
+    btn.onclick = function(e){
+      e.preventDefault(); e.stopPropagation();
+      panel.style.display = panel.style.display==="none" || !panel.style.display ? "block" : "none";
+    };
+    panel.querySelector("#oeMoreClose").onclick = function(){ panel.style.display="none"; };
+    panel.querySelectorAll("button[data-go]").forEach(function(b){
+      b.onclick = function(){
+        panel.style.display="none";
+        var id = b.getAttribute("data-go");
+        var target = document.querySelector('.side button[data-go="'+id+'"], .sidebar button[data-go="'+id+'"]');
+        if(target) target.click();
+        else {
+          var page = document.getElementById("page-"+id);
+          if(page){
+            document.querySelectorAll(".page").forEach(function(p){ p.style.display="none"; });
+            page.style.display="block";
+          }
+        }
+      };
+    });
+    document.addEventListener("click", function(ev){
+      if(panel.style.display==="block" && !panel.contains(ev.target) && ev.target!==btn && !btn.contains(ev.target)){
+        panel.style.display="none";
+      }
+    });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", ensureMore);
+  else ensureMore();
+  setTimeout(ensureMore, 500);
 })();
 </script>
 

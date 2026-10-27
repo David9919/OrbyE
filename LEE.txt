@@ -1,11 +1,8 @@
-OrbyE Corp v10 — diseño propio
-================================
-NO es clon de X:
-- Fondo #0b0d10, superficies en tarjetas redondeadas
-- Menú lateral tipo “dock” flotante (no rail X)
-- Pestañas en píldoras (sin underline azul X)
-- Verificado = cuadrado redondeado (no círculo X)
-- Composer y feed dentro de una tarjeta central
-- Acento azul suave propio (#5b8def)
+OrbyE Corp v11
+- Fondo #000 negro puro
+- Tarjetas #0a0a0a con borde #222
+- Menú Más (•••): panel con Noticias, Calendario, Staff, Links, Stats, Info, Ajustes — scrolleable
+- Dock lateral sin cortar botones
 
-Sube ZIP → Redeploy → Ctrl+Shift+R
+Redeploy + Ctrl+Shift+R
+Clic en ••• o Más → debe abrir panel a la derecha del menú
