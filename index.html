@@ -2248,6 +2248,318 @@ header .orbye-verified::after,
   background:none!important;
 }
 
+
+/* =========================================================
+   OrbyE Design System v10 — identidad propia
+   Profesional · moderno · cómodo · NO estilo X/Twitter
+   ========================================================= */
+:root{
+  --oe-bg:#0b0d10;
+  --oe-surface:#12151a;
+  --oe-surface2:#1a1e26;
+  --oe-border:#2a3038;
+  --oe-text:#f2f4f7;
+  --oe-muted:#8b93a1;
+  --oe-accent:#5b8def;
+  --oe-accent-soft:rgba(91,141,239,.14);
+  --oe-success:#3dd68c;
+  --oe-radius:16px;
+  --oe-radius-sm:12px;
+  --oe-font:"Segoe UI",system-ui,-apple-system,Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+html,body{
+  background:var(--oe-bg)!important;
+  color:var(--oe-text)!important;
+  font-family:var(--oe-font)!important;
+  margin:0!important;
+}
+
+/* ---- HEADER ---- */
+.topbar,header.top,.app-header,header{
+  height:56px!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:14px!important;
+  padding:0 20px!important;
+  background:rgba(11,13,16,.92)!important;
+  border-bottom:1px solid var(--oe-border)!important;
+  backdrop-filter:blur(16px)!important;
+  box-shadow:none!important;
+}
+.topbar .logo,header .logo{
+  font-weight:800!important;
+  font-size:17px!important;
+  letter-spacing:-.02em!important;
+  color:var(--oe-text)!important;
+}
+.topbar input[type="search"],
+.topbar input[placeholder*="Buscar"],
+#searchInput,.search-input{
+  height:38px!important;
+  border-radius:12px!important;
+  background:var(--oe-surface)!important;
+  border:1px solid var(--oe-border)!important;
+  color:var(--oe-text)!important;
+  padding:0 14px!important;
+  font-size:14px!important;
+  width:min(280px,30vw)!important;
+  box-shadow:none!important;
+}
+.topbar input::placeholder{color:var(--oe-muted)!important}
+.topbar button,#btnLogout{
+  height:34px!important;
+  border-radius:10px!important;
+  border:1px solid var(--oe-border)!important;
+  background:var(--oe-surface)!important;
+  color:var(--oe-text)!important;
+  font-weight:600!important;
+  font-size:13px!important;
+  padding:0 12px!important;
+}
+.topbar button:hover{background:var(--oe-surface2)!important}
+#netBadge,.online-badge{
+  background:rgba(61,214,140,.12)!important;
+  color:var(--oe-success)!important;
+  border:1px solid rgba(61,214,140,.25)!important;
+  border-radius:8px!important;
+  font-size:11px!important;
+  padding:3px 8px!important;
+  opacity:1!important;
+}
+.beta,.version-badge,.top-meta{display:none!important}
+
+/* ---- SIDE NAV (vertical card rail, not X icons) ---- */
+.side,.sidebar,nav.left,aside.nav,.left-nav{
+  position:fixed!important;
+  left:12px!important;
+  top:68px!important;
+  bottom:12px!important;
+  width:64px!important;
+  min-width:64px!important;
+  padding:10px 6px!important;
+  margin:0!important;
+  background:var(--oe-surface)!important;
+  border:1px solid var(--oe-border)!important;
+  border-radius:20px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:6px!important;
+  z-index:40!important;
+  height:auto!important;
+  box-shadow:0 8px 32px rgba(0,0,0,.35)!important;
+}
+.side button[data-go],
+.sidebar button[data-go],
+.side a.nav-item{
+  width:44px!important;
+  height:44px!important;
+  border-radius:12px!important;
+  padding:0!important;
+  margin:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:transparent!important;
+  border:0!important;
+  color:var(--oe-muted)!important;
+  font-size:0!important;
+  transition:all .15s ease!important;
+}
+.side button[data-go] span{display:none!important}
+.side button[data-go] svg{width:20px!important;height:20px!important}
+.side button[data-go]:hover{
+  background:var(--oe-surface2)!important;
+  color:var(--oe-text)!important;
+}
+.side button[data-go].on,
+.side button[data-go].active{
+  background:var(--oe-accent-soft)!important;
+  color:var(--oe-accent)!important;
+}
+
+/* ---- MAIN ---- */
+.main,.content,#main,main,.pages{
+  margin-left:88px!important;
+  width:calc(100% - 88px)!important;
+  max-width:none!important;
+  padding:20px 24px 40px!important;
+  box-sizing:border-box!important;
+}
+#page-home,#page-home.page{
+  max-width:720px!important;
+  margin:0 auto!important;
+  border:0!important;
+  background:transparent!important;
+}
+
+/* ---- FEED shell (card, not infinite X column) ---- */
+.sn-home{
+  max-width:720px!important;
+  margin:0 auto!important;
+  background:var(--oe-surface)!important;
+  border:1px solid var(--oe-border)!important;
+  border-radius:20px!important;
+  overflow:hidden!important;
+  box-shadow:0 4px 24px rgba(0,0,0,.25)!important;
+}
+/* tabs as soft pills row */
+.sn-tabs{
+  display:flex!important;
+  gap:8px!important;
+  padding:14px 16px 0!important;
+  border-bottom:1px solid var(--oe-border)!important;
+  background:var(--oe-surface)!important;
+  position:static!important;
+  backdrop-filter:none!important;
+}
+.sn-tab{
+  flex:0 1 auto!important;
+  padding:8px 16px!important;
+  border-radius:999px!important;
+  border:0!important;
+  background:transparent!important;
+  color:var(--oe-muted)!important;
+  font-size:14px!important;
+  font-weight:600!important;
+  cursor:pointer!important;
+  position:relative!important;
+}
+.sn-tab:hover{background:var(--oe-surface2)!important;color:var(--oe-text)!important}
+.sn-tab.on{
+  background:var(--oe-accent-soft)!important;
+  color:var(--oe-accent)!important;
+  font-weight:700!important;
+}
+.sn-tab.on::after{display:none!important} /* no X underline */
+
+/* composer card inside */
+.sn-composer{
+  padding:16px!important;
+  border:0!important;
+  border-bottom:1px solid var(--oe-border)!important;
+  background:var(--oe-surface)!important;
+  border-radius:0!important;
+}
+.sn-comp-body textarea{
+  font-size:16px!important;
+  min-height:48px!important;
+  color:var(--oe-text)!important;
+  background:transparent!important;
+  border:0!important;
+}
+.sn-comp-bar{
+  border-top:0!important;
+  margin-top:8px!important;
+  padding-top:8px!important;
+}
+.sn-comp-tools button{
+  color:var(--oe-accent)!important;
+  font-weight:600!important;
+  border-radius:8px!important;
+}
+.sn-post-btn{
+  background:var(--oe-accent)!important;
+  color:#fff!important;
+  border-radius:10px!important;
+  padding:9px 18px!important;
+  font-weight:700!important;
+  border:0!important;
+  box-shadow:0 2px 12px rgba(91,141,239,.35)!important;
+}
+.sn-post-btn:hover{filter:brightness(1.08)!important}
+
+/* empty state */
+.sn-feed{
+  padding:28px 16px!important;
+  text-align:center!important;
+  color:var(--oe-muted)!important;
+  font-size:14px!important;
+}
+
+/* posts */
+.sn-item{
+  padding:14px 16px!important;
+  border-bottom:1px solid var(--oe-border)!important;
+  gap:12px!important;
+}
+.sn-item:hover{background:rgba(255,255,255,.02)!important}
+.sn-av{border-radius:12px!important} /* squircle, not pure circle X */
+
+/* ---- WallPass card ---- */
+.sn-wallpass{
+  margin:16px!important;
+  padding:18px!important;
+  background:var(--oe-surface2)!important;
+  border:1px solid var(--oe-border)!important;
+  border-radius:var(--oe-radius)!important;
+  max-width:none!important;
+}
+.sn-wp-title{font-size:18px!important;font-weight:800!important;color:var(--oe-text)!important}
+.sn-wp-sub,.sn-wp-note{color:var(--oe-muted)!important;font-size:13px!important}
+.sn-tier{
+  background:var(--oe-bg)!important;
+  border:1px solid var(--oe-border)!important;
+  border-radius:12px!important;
+  color:var(--oe-text)!important;
+  font-weight:600!important;
+  padding:11px 14px!important;
+}
+.sn-tier:hover{
+  border-color:var(--oe-accent)!important;
+  background:var(--oe-accent-soft)!important;
+}
+/* demo notice */
+.sn-wp-note{
+  margin-top:10px!important;
+  padding:8px 10px!important;
+  background:rgba(91,141,239,.08)!important;
+  border-radius:8px!important;
+  border:1px solid rgba(91,141,239,.15)!important;
+}
+
+/* ---- Verified badge unique ---- */
+span.user-verified,.user-verified,.verified,
+svg.orbye-verified,.orbye-verified{
+  display:inline-flex!important;
+  width:16px!important;height:16px!important;
+  min-width:16px!important;min-height:16px!important;
+  border-radius:5px!important; /* rounded square, not X circle */
+  background:var(--oe-accent)!important;
+  margin-left:4px!important;
+  vertical-align:middle!important;
+  position:relative!important;
+  overflow:hidden!important;
+  border:0!important;
+  box-shadow:none!important;
+  clip-path:none!important;
+  padding:0!important;
+  font-size:0!important;
+}
+svg.orbye-verified *{display:none!important}
+span.user-verified::after,.user-verified::after,.verified::after,
+svg.orbye-verified::after{
+  content:""!important;
+  width:7px!important;height:4px!important;
+  border-left:1.8px solid #fff!important;
+  border-bottom:1.8px solid #fff!important;
+  transform:rotate(-45deg)!important;
+  display:block!important;
+  margin:0 auto!important;
+}
+
+/* pages */
+.page{background:transparent!important;color:var(--oe-text)!important}
+.page h2{font-weight:800!important;letter-spacing:-.02em!important}
+.panel,.card,.modal-card{
+  background:var(--oe-surface)!important;
+  border:1px solid var(--oe-border)!important;
+  border-radius:var(--oe-radius)!important;
+  box-shadow:0 4px 20px rgba(0,0,0,.2)!important;
+}
+.lead,.muted{color:var(--oe-muted)!important}
+
 </style>
 
 
@@ -2372,7 +2684,7 @@ header .orbye-verified::after,
           <div id="snFeed" class="sn-feed"></div>
           <div class="sn-wallpass">
             <div class="sn-wp-title">WallPass</div>
-            <p class="sn-wp-sub">Microtransacciones · Stripe modo prueba</p>
+            <p class="sn-wp-sub">Membresías (demo) · disponible más adelante</p>
             <div class="sn-wp-tiers">
               <button type="button" class="sn-tier" data-tier="wallpass" data-price="8" data-stripe="https://buy.stripe.com/test_dRmcN4apNgli2fff3ugrS00">WallPass · $8</button>
               <button type="button" class="sn-tier gold" data-tier="ultimate" data-price="20">Ultimate · $20</button>
@@ -10066,7 +10378,7 @@ header .orbye-verified::after,
     if(!box) return;
     var posts=loadPosts();
     if(!posts.length){
-      box.innerHTML='<div style="padding:32px 16px;text-align:center;color:#71767b;font-size:15px">Todavía no hay publicaciones.<br>Sé el primero en publicar.</div>';
+      box.innerHTML='<div style="padding:32px 16px;text-align:center;color:#71767b;font-size:15px">Tu inicio está listo.<br>Comparte algo cuando quieras.</div>';
       return;
     }
     box.innerHTML=posts.map(function(p){
