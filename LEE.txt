@@ -1,7 +1,1 @@
-OrbyE Corp v12
-- OrbyPload: botones de archivo modernos (no el blanco del navegador)
-- Feed más ancho (hasta ~920px) — menos hueco negro
-- Verificado: cuadrado redondeado #5b8def en header y todo el sitio
-
-Redeploy + Ctrl+Shift+R
-Abre Editar perfil → debe decir OrbyPload · elegir archivo
+OrbyE v13: feed ancho completo + clic en verificado explica CEO/Mod
