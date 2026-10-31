@@ -1,20 +1,15 @@
-OrbyE PRO v1 — diseño limpio profesional
+OrbyE PRO v2
 
-FIREBASE (crear proyecto):
-https://console.firebase.google.com/
+- WallPass ya NO está en la columna derecha: menú ★ o enlace "Ver WallPass"
+- Veltx Studio tipo YouTube + CapCut:
+  · Preview grande
+  · Timeline con seek
+  · Play / Pausa / Audio
+  · Texto en video (posición + color)
+  · Recorte inicio/fin (campos)
+  · OrbyPload drag & drop
 
-Docs Firebase:
-https://firebase.google.com/docs
-
-NO uses WorkOS para esto (esa página es otra cosa).
-
-Cuentas:
-- Crear cuenta / login local (localStorage)
-- CEO: @davidavila (verificado automático)
-
-Veltx Studio: arrastrar o elegir video y publicar
-Posts: texto + foto/GIF
-Spaces: crear comunidades
-
-Nota: videos usan blob local (se ven en esta sesión).
-Para que se vean en todos los dispositivos hay que conectar Firebase Storage o similar.
+Cloudflare R2:
+1. Add R2 subscription ($0)
+2. Create bucket
+3. También crea D1 (Storage & databases → D1)
