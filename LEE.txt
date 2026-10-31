@@ -1,1 +1,20 @@
-OrbyE v13: feed ancho completo + clic en verificado explica CEO/Mod
+OrbyE PRO v1 — diseño limpio profesional
+
+FIREBASE (crear proyecto):
+https://console.firebase.google.com/
+
+Docs Firebase:
+https://firebase.google.com/docs
+
+NO uses WorkOS para esto (esa página es otra cosa).
+
+Cuentas:
+- Crear cuenta / login local (localStorage)
+- CEO: @davidavila (verificado automático)
+
+Veltx Studio: arrastrar o elegir video y publicar
+Posts: texto + foto/GIF
+Spaces: crear comunidades
+
+Nota: videos usan blob local (se ven en esta sesión).
+Para que se vean en todos los dispositivos hay que conectar Firebase Storage o similar.
