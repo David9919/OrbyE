@@ -1,15 +1,15 @@
-OrbyE PRO v2
+OrbyE PRO v3
 
-- WallPass ya NO está en la columna derecha: menú ★ o enlace "Ver WallPass"
-- Veltx Studio tipo YouTube + CapCut:
-  · Preview grande
-  · Timeline con seek
-  · Play / Pausa / Audio
-  · Texto en video (posición + color)
-  · Recorte inicio/fin (campos)
-  · OrbyPload drag & drop
+SESIÓN: se guarda en el dispositivo. No hace falta crear cuenta cada vez.
+- Crear cuenta 1 vez
+- Cerrar sesión solo si quieres
+- Al volver, Iniciar sesión con el mismo @ y contraseña
 
-Cloudflare R2:
-1. Add R2 subscription ($0)
-2. Create bucket
-3. También crea D1 (Storage & databases → D1)
+VIDEOS:
+- Se guardan en IndexedDB (este navegador/dispositivo)
+- Sobreviven al refrescar la página
+- Toca un video en "Tus videos" para reproducirlo
+
+D1 Cloudflare (OrbyE):
+Nombre de la base: orbye-db
+Location: la más cercana (WNAM si estás en Texas/USA)

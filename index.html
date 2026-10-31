@@ -5,11 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>OrbyE</title>
 <style>
-:root{
-  --bg:#000;--panel:#0a0a0a;--card:#121212;--line:#2f3336;
-  --text:#e7e9ea;--muted:#71767b;--blue:#1d9bf0;--green:#00ba7c;--red:#f4212e;
-  --radius:16px;--side:72px;--right:300px;
-}
+:root{--bg:#000;--panel:#0a0a0a;--card:#121212;--line:#2f3336;--text:#e7e9ea;--muted:#71767b;--blue:#1d9bf0;--green:#00ba7c;--red:#f4212e;--radius:16px;--side:72px;--right:300px}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
 button,input,textarea,select{font:inherit;color:inherit}
@@ -18,14 +14,12 @@ button{cursor:pointer;border:0;background:none}
 .app{display:grid;grid-template-columns:var(--side) minmax(0,1fr) var(--right);height:100dvh;max-width:1480px;margin:0 auto}
 @media(max-width:1100px){.app{grid-template-columns:var(--side) 1fr}.right{display:none}}
 @media(max-width:720px){.app{grid-template-columns:1fr}.side{display:none}.mobile-nav{display:flex!important}}
-
 .side{border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding:12px 0;gap:6px;background:var(--panel)}
 .side .logo{width:40px;height:40px;border-radius:50%;background:#111;border:1px solid var(--line);display:grid;place-items:center;font-weight:800;margin-bottom:8px;font-size:11px}
 .side button{width:48px;height:48px;border-radius:14px;color:var(--muted);display:grid;place-items:center;transition:.15s;font-size:16px}
 .side button:hover,.side button.on{background:#16181c;color:var(--text)}
 .side .grow{flex:1}
-.side .avatar-btn{width:40px;height:40px;border-radius:50%;overflow:hidden;border:2px solid var(--line);margin-top:8px;font-size:14px;font-weight:700}
-
+.side .avatar-btn{width:40px;height:40px;border-radius:50%;border:2px solid var(--line);margin-top:8px;font-size:14px;font-weight:700}
 .main{display:flex;flex-direction:column;min-width:0;border-right:1px solid var(--line)}
 .top{height:56px;display:flex;align-items:center;gap:12px;padding:0 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);z-index:5}
 .top .brand{font-weight:800}
@@ -39,23 +33,19 @@ button{cursor:pointer;border:0;background:none}
 .user-chip .ph{width:28px;height:28px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-size:12px;font-weight:700}
 .verified{display:inline-flex;width:14px;height:14px;border-radius:4px;background:var(--blue);align-items:center;justify-content:center;margin-left:3px}
 .verified:after{content:"";width:6px;height:3px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg);margin-top:-2px}
-
 .tabs{display:flex;border-bottom:1px solid var(--line)}
 .tabs button{flex:1;padding:14px;color:var(--muted);font-weight:600;position:relative}
 .tabs button.on{color:var(--text)}
 .tabs button.on:after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:56px;height:3px;background:var(--blue);border-radius:999px}
-
 .feed{flex:1;overflow:auto;padding:0 0 80px}
 .compose{padding:16px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:48px 1fr;gap:12px}
 .compose .ph{width:48px;height:48px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-weight:800}
 .compose textarea{width:100%;min-height:64px;background:transparent;border:0;outline:0;resize:none;font-size:17px;color:var(--text)}
 .compose-actions{display:flex;align-items:center;gap:8px;margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
 .compose-actions .tools button{padding:8px 12px;border-radius:999px;color:var(--blue);font-weight:600;font-size:13px}
-.compose-actions .tools button:hover{background:rgba(29,155,240,.1)}
 .btn-post{margin-left:auto;background:var(--blue);color:#fff;font-weight:700;padding:8px 18px;border-radius:999px}
 .empty{padding:48px 24px;text-align:center;color:var(--muted)}
 .empty h3{color:var(--text);margin-bottom:8px;font-size:20px}
-
 .card{padding:16px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:48px 1fr;gap:12px}
 .card .meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px}
 .card .name{font-weight:700}
@@ -64,70 +54,61 @@ button{cursor:pointer;border:0;background:none}
 .card .media{margin-top:10px;border-radius:16px;overflow:hidden;border:1px solid var(--line);max-height:360px}
 .card .media img,.card .media video{width:100%;display:block;max-height:360px;object-fit:cover}
 .card .actions{display:flex;gap:16px;margin-top:10px;color:var(--muted);font-size:13px}
-.card .actions button{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border-radius:999px}
+.card .actions button{padding:6px 8px;border-radius:999px}
 .card .actions button:hover{background:#16181c;color:var(--blue)}
-
-.right{padding:12px;overflow:auto;background:var(--bg)}
+.right{padding:12px;overflow:auto}
 .widget{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin-bottom:12px}
 .widget h3{font-size:16px;margin-bottom:10px}
 .widget p{color:var(--muted);font-size:13px;line-height:1.4;margin-bottom:8px}
 .link-row{display:flex;flex-direction:column;gap:8px;font-size:13px}
 .link-row a{color:var(--muted)}
-.link-row a:hover{color:var(--blue)}
-
 .view{display:none;flex:1;flex-direction:column;min-height:0}
 .view.on{display:flex}
-.page-head{padding:16px;border-bottom:1px solid var(--line);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:space-between}
+.page-head{padding:16px;border-bottom:1px solid var(--line);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .page-body{padding:16px;overflow:auto;flex:1}
-
-/* ===== VELTX STUDIO (YouTube + CapCut style) ===== */
-.studio{display:grid;grid-template-columns:1fr 320px;gap:0;flex:1;min-height:0}
+.studio{display:grid;grid-template-columns:1fr 300px;gap:0;flex:1;min-height:0}
 @media(max-width:900px){.studio{grid-template-columns:1fr}}
 .studio-preview{background:#000;display:flex;flex-direction:column;border-right:1px solid var(--line);min-height:0}
-.studio-preview .stage{flex:1;display:flex;align-items:center;justify-content:center;position:relative;background:#0a0a0a;min-height:280px}
-.studio-preview video{max-width:100%;max-height:100%;width:auto;height:auto;background:#000}
+.studio-preview .stage{flex:1;display:flex;align-items:center;justify-content:center;position:relative;background:#0a0a0a;min-height:260px}
+.studio-preview video{max-width:100%;max-height:55vh;background:#000}
 .studio-preview .placeholder{color:var(--muted);text-align:center;padding:24px}
-.studio-preview .placeholder .dropzone{border:2px dashed var(--line);border-radius:16px;padding:40px 24px;cursor:pointer;transition:.15s}
-.studio-preview .placeholder .dropzone:hover,.studio-preview .placeholder .dropzone.over{border-color:var(--blue);color:var(--blue)}
+.dropzone{border:2px dashed var(--line);border-radius:16px;padding:36px 20px;cursor:pointer}
+.dropzone:hover,.dropzone.over{border-color:var(--blue);color:var(--blue)}
 .timeline-wrap{border-top:1px solid var(--line);padding:10px 12px;background:#0a0a0a}
 .timeline-bar{height:8px;background:#222;border-radius:4px;position:relative;cursor:pointer;margin:8px 0}
-.timeline-fill{height:100%;background:var(--blue);border-radius:4px;width:0%;pointer-events:none}
+.timeline-fill{height:100%;background:var(--blue);border-radius:4px;width:0%}
 .timeline-times{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
-.studio-controls{display:flex;align-items:center;gap:8px;padding:8px 0}
+.studio-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .studio-controls button{padding:8px 12px;border-radius:8px;background:#1a1a1a;border:1px solid var(--line);font-size:13px}
 .studio-controls button:hover{border-color:var(--blue)}
-.studio-controls button.primary{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700}
 .studio-side{background:var(--panel);overflow:auto;padding:14px;display:flex;flex-direction:column;gap:12px}
-.studio-side h4{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+.studio-side h4{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
 .studio-side label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
-.studio-side input[type=text],.studio-side textarea,.studio-side select{
-  width:100%;background:#202327;border:1px solid var(--line);border-radius:10px;padding:10px;outline:0;margin-bottom:8px
-}
-.studio-side textarea{min-height:72px;resize:vertical}
+.studio-side input[type=text],.studio-side textarea,.studio-side select{width:100%;background:#202327;border:1px solid var(--line);border-radius:10px;padding:10px;outline:0;margin-bottom:8px}
+.studio-side textarea{min-height:70px;resize:vertical}
 .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .tool-grid button{padding:12px 8px;border-radius:12px;background:#16181c;border:1px solid var(--line);font-size:12px;font-weight:600}
-.tool-grid button:hover,.tool-grid button.on{border-color:var(--blue);color:var(--blue)}
-.text-layer-list{display:flex;flex-direction:column;gap:6px;max-height:120px;overflow:auto}
-.text-layer-item{display:flex;align-items:center;justify-content:space-between;padding:8px;background:#16181c;border-radius:8px;font-size:12px}
-.overlay-text{position:absolute;color:#fff;font-weight:800;font-size:22px;text-shadow:0 2px 8px #000;pointer-events:none;white-space:pre-wrap;text-align:center;max-width:90%}
-.veltx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;padding:16px}
+.tool-grid button:hover{border-color:var(--blue);color:var(--blue)}
+.overlay-text{position:absolute;color:#fff;font-weight:800;font-size:22px;text-shadow:0 2px 8px #000;pointer-events:none;text-align:center;max-width:90%;left:50%;transform:translateX(-50%)}
+.veltx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;padding:16px}
 .vcard{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer}
-.vcard .thumb{aspect-ratio:9/14;background:#111;display:grid;place-items:center;color:var(--muted)}
+.vcard .thumb{aspect-ratio:9/14;background:#111;display:grid;place-items:center;color:var(--muted);position:relative}
 .vcard .thumb video,.vcard .thumb img{width:100%;height:100%;object-fit:cover}
-.vcard .info{padding:10px;font-size:13px}
-
-/* WallPass page (hidden from home) */
+.vcard .info{padding:10px;font-size:12px}
+.vcard .info b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.watch-modal{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:80;display:none;align-items:center;justify-content:center;padding:16px}
+.watch-modal.on{display:flex}
+.watch-box{width:min(720px,100%);background:#0a0a0a;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.watch-box video{width:100%;max-height:70vh;background:#000;display:block}
+.watch-box .meta{padding:14px}
 .pass-grid{display:grid;gap:12px;max-width:480px}
 .pass-card{border:1px solid var(--line);border-radius:16px;padding:18px;background:var(--card)}
-.pass-card h4{font-size:18px;margin-bottom:6px}
 .pass-card .price{font-size:28px;font-weight:800;margin:8px 0}
 .pass-card ul{color:var(--muted);font-size:13px;padding-left:18px;margin:10px 0}
 .pass-card button{margin-top:10px;width:100%;padding:12px;border-radius:999px;background:var(--blue);color:#fff;font-weight:700}
-
 .space-list{display:grid;gap:10px}
 .space-item{display:flex;gap:12px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
 .space-item .ico{width:48px;height:48px;border-radius:12px;background:#1a1a1a;display:grid;place-items:center;font-weight:800}
-
 #gate{position:fixed;inset:0;background:#000;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
 #gate.on{display:flex}
 .gate-card{width:min(400px,100%);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
@@ -139,9 +120,8 @@ button{cursor:pointer;border:0;background:none}
 .gate-card .btn-ghost{width:100%;padding:12px;border-radius:999px;border:1px solid var(--line);margin-top:8px;font-weight:600}
 .gate-card .terms{font-size:12px;color:var(--muted);margin:12px 0;display:flex;gap:8px;align-items:flex-start}
 .gate-card .foot{margin-top:18px;font-size:11px;color:var(--muted);text-align:center}
-
 .mobile-nav{display:none;position:fixed;bottom:0;left:0;right:0;height:56px;background:rgba(0,0,0,.92);border-top:1px solid var(--line);z-index:20;justify-content:space-around;align-items:center}
-.mobile-nav button{color:var(--muted);font-size:11px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.mobile-nav button{color:var(--muted);font-size:11px}
 .mobile-nav button.on{color:var(--text)}
 #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:600;display:none;z-index:200}
 .btn-blue{background:var(--blue);color:#fff;font-weight:700;padding:10px 18px;border-radius:999px}
@@ -151,9 +131,9 @@ button{cursor:pointer;border:0;background:none}
 <div id="gate" class="on">
   <div class="gate-card">
     <h1>OrbyE</h1>
-    <p class="sub">Entra a tu cuenta · OrbyE Corporation</p>
+    <p class="sub">Tu sesión se guarda en este dispositivo</p>
     <div class="err" id="gateErr"></div>
-    <input id="gUser" placeholder="@usuario" autocomplete="username"/>
+    <input id="gUser" placeholder="@usuario (sin espacios)" autocomplete="username"/>
     <input id="gPass" type="password" placeholder="Contraseña (mín. 4)" autocomplete="current-password"/>
     <label class="terms"><input type="checkbox" id="gTerms"/> Acepto términos y privacidad</label>
     <button class="btn-main" id="btnLogin" type="button">Iniciar sesión</button>
@@ -164,7 +144,7 @@ button{cursor:pointer;border:0;background:none}
 
 <div class="app" id="app" style="display:none">
   <aside class="side">
-    <div class="logo" title="OrbyE">OE</div>
+    <div class="logo">OE</div>
     <button type="button" data-view="home" class="on" title="Inicio">⌂</button>
     <button type="button" data-view="veltx" title="Veltx Studio">▶</button>
     <button type="button" data-view="spaces" title="Spaces">◎</button>
@@ -172,24 +152,23 @@ button{cursor:pointer;border:0;background:none}
     <button type="button" data-view="wallpass" title="WallPass">★</button>
     <button type="button" data-view="notif" title="Alertas">◔</button>
     <div class="grow"></div>
-    <button type="button" data-view="profile" class="avatar-btn" id="sideAv" title="Perfil"><span id="sidePh">U</span></button>
+    <button type="button" data-view="profile" class="avatar-btn" id="sideAv"><span id="sidePh">U</span></button>
   </aside>
-
   <section class="main">
     <header class="top">
       <span class="brand">OrbyE</span>
-      <span class="badge-on" id="netBadge">Local</span>
+      <span class="badge-on">Local+</span>
       <span class="clock" id="clock">--:--</span>
-      <div class="search"><input id="search" placeholder="Buscar usuarios, posts..."/></div>
-      <button class="icon-btn" id="btnBell" type="button" title="Notificaciones">◔</button>
+      <div class="search"><input id="search" placeholder="Buscar..."/></div>
+      <button class="icon-btn" type="button" id="btnBell">◔</button>
       <div class="user-chip"><span class="ph" id="topPh">U</span><span id="topName">Usuario</span></div>
-      <button class="icon-btn" id="btnLogout" type="button" title="Salir">⎋</button>
+      <button class="icon-btn" type="button" id="btnLogout" title="Salir">⎋</button>
     </header>
 
     <div class="view on" id="view-home">
       <div class="tabs">
-        <button type="button" class="on" data-tab="dest">Destacado</button>
-        <button type="button" data-tab="friends">Amigos</button>
+        <button type="button" class="on">Destacado</button>
+        <button type="button">Amigos</button>
       </div>
       <div class="feed">
         <div class="compose">
@@ -211,7 +190,6 @@ button{cursor:pointer;border:0;background:none}
       </div>
     </div>
 
-    <!-- VELTX STUDIO -->
     <div class="view" id="view-veltx">
       <div class="page-head">
         <span>Veltx Studio</span>
@@ -224,7 +202,7 @@ button{cursor:pointer;border:0;background:none}
               <div class="dropzone" id="veltxDrop">
                 <div style="font-size:28px;margin-bottom:8px">▶</div>
                 <div><b>OrbyPload</b></div>
-                <div style="font-size:13px;margin-top:6px">Arrastra un video o toca para elegir<br/>MP4 · WebM · MOV</div>
+                <div style="font-size:13px;margin-top:6px">Arrastra o toca · el video se guarda en este dispositivo</div>
               </div>
             </div>
             <video id="veltxVideo" style="display:none" playsinline></video>
@@ -246,24 +224,20 @@ button{cursor:pointer;border:0;background:none}
           <div>
             <h4>Archivo</h4>
             <input type="file" id="veltxFile" accept="video/*" hidden/>
-            <button type="button" class="btn-blue" id="btnPickVid" style="width:100%;margin-bottom:8px">Elegir video</button>
+            <button type="button" class="btn-blue" id="btnPickVid" style="width:100%">Elegir / cambiar video</button>
           </div>
           <div>
             <h4>Detalles</h4>
             <label>Título</label>
             <input type="text" id="veltxTitle" placeholder="Título del video" maxlength="120"/>
             <label>Descripción</label>
-            <textarea id="veltxDesc" placeholder="Qué trata el video..."></textarea>
+            <textarea id="veltxDesc" placeholder="Descripción..."></textarea>
           </div>
           <div>
-            <h4>Texto en video (estilo CapCut)</h4>
-            <input type="text" id="textContent" placeholder="Escribe el texto..."/>
+            <h4>Texto en video</h4>
+            <input type="text" id="textContent" placeholder="Texto..."/>
             <label>Posición</label>
-            <select id="textPos">
-              <option value="center">Centro</option>
-              <option value="top">Arriba</option>
-              <option value="bottom">Abajo</option>
-            </select>
+            <select id="textPos"><option value="center">Centro</option><option value="top">Arriba</option><option value="bottom">Abajo</option></select>
             <label>Color</label>
             <select id="textColor">
               <option value="#ffffff">Blanco</option>
@@ -274,17 +248,9 @@ button{cursor:pointer;border:0;background:none}
             </select>
             <div class="tool-grid" style="margin-top:8px">
               <button type="button" id="btnAddText">+ Texto</button>
-              <button type="button" id="btnClearText">Quitar texto</button>
+              <button type="button" id="btnClearText">Quitar</button>
             </div>
           </div>
-          <div>
-            <h4>Recorte (inicio / fin)</h4>
-            <label>Inicio (seg)</label>
-            <input type="text" id="trimStart" placeholder="0" value="0"/>
-            <label>Fin (seg, vacío = final)</label>
-            <input type="text" id="trimEnd" placeholder="auto"/>
-          </div>
-          <p style="font-size:11px;color:var(--muted);line-height:1.4">Preview local. Al publicar se guarda en este dispositivo (demo). Nube: Cloudflare R2 / D1 cuando lo conectemos.</p>
         </div>
       </div>
       <div class="page-head" style="border-top:1px solid var(--line)">Tus videos</div>
@@ -301,50 +267,30 @@ button{cursor:pointer;border:0;background:none}
         <div class="space-list" id="spaceList"></div>
       </div>
     </div>
-
     <div class="view" id="view-onyx">
       <div class="page-head">Onyx Feed</div>
       <div class="feed" id="onyxFeed"><div class="empty"><h3>Onyx</h3><p>Mismos posts del inicio.</p></div></div>
     </div>
-
-    <!-- WALLPASS oculto en apartado propio -->
     <div class="view" id="view-wallpass">
       <div class="page-head">WallPass</div>
       <div class="page-body">
-        <p style="color:var(--muted);margin-bottom:16px;max-width:480px">Membresías de OrbyE Corporation. Pagos en producción más adelante. Esto es solo la vitrina.</p>
+        <p style="color:var(--muted);margin-bottom:16px">Membresías (demo). Pagos más adelante.</p>
         <div class="pass-grid">
-          <div class="pass-card">
-            <h4>WallPass</h4>
-            <div class="price">$8</div>
-            <ul><li>Insignia en perfil</li><li>Más alcance en posts</li><li>Prioridad en Spaces</li></ul>
-            <button type="button" data-pass="8">Próximamente</button>
-          </div>
-          <div class="pass-card">
-            <h4>Ultimate</h4>
-            <div class="price">$20</div>
-            <ul><li>Todo WallPass</li><li>Extras en Veltx</li><li>Soporte prioritario</li></ul>
-            <button type="button" data-pass="20">Próximamente</button>
-          </div>
-          <div class="pass-card">
-            <h4>Verify Space</h4>
-            <div class="price">$14</div>
-            <ul><li>Verificar una comunidad</li><li>Marca oficial Space</li></ul>
-            <button type="button" data-pass="14">Próximamente</button>
-          </div>
+          <div class="pass-card"><h4>WallPass</h4><div class="price">$8</div><ul><li>Insignia</li><li>Más alcance</li></ul><button type="button" data-pass>Próximamente</button></div>
+          <div class="pass-card"><h4>Ultimate</h4><div class="price">$20</div><ul><li>Todo WallPass</li><li>Extras Veltx</li></ul><button type="button" data-pass>Próximamente</button></div>
+          <div class="pass-card"><h4>Verify Space</h4><div class="price">$14</div><ul><li>Verificar comunidad</li></ul><button type="button" data-pass>Próximamente</button></div>
         </div>
       </div>
     </div>
-
     <div class="view" id="view-notif">
       <div class="page-head">Notificaciones</div>
-      <div class="page-body" id="notifList"><p style="color:var(--muted)">Sin notificaciones aún.</p></div>
+      <div class="page-body"><p style="color:var(--muted)">Sin notificaciones aún.</p></div>
     </div>
-
     <div class="view" id="view-profile">
       <div class="page-head">Perfil</div>
       <div class="page-body">
         <div style="display:flex;gap:16px;align-items:center;margin-bottom:16px">
-          <div class="ph" id="profPh" style="width:72px;height:72px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-size:24px;font-weight:800">U</div>
+          <div id="profPh" style="width:72px;height:72px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-size:24px;font-weight:800">U</div>
           <div>
             <div style="font-size:22px;font-weight:800" id="profName">Usuario</div>
             <div style="color:var(--muted)" id="profHandle">@user</div>
@@ -356,7 +302,6 @@ button{cursor:pointer;border:0;background:none}
       </div>
     </div>
   </section>
-
   <aside class="right">
     <div class="widget">
       <h3>Ecosistema</h3>
@@ -368,10 +313,21 @@ button{cursor:pointer;border:0;background:none}
     </div>
     <div class="widget">
       <h3>OrbyE Corporation</h3>
-      <p>Creado por David Avila. Beta profesional.</p>
+      <p>David Avila · Beta</p>
       <p style="margin-top:8px"><button type="button" id="goWallpass" style="color:var(--blue);font-size:13px">Ver WallPass →</button></p>
     </div>
   </aside>
+</div>
+
+<div class="watch-modal" id="watchModal">
+  <div class="watch-box">
+    <video id="watchVideo" controls playsinline></video>
+    <div class="meta">
+      <b id="watchTitle"></b>
+      <div style="color:var(--muted);font-size:13px" id="watchUser"></div>
+      <button type="button" class="btn-blue" id="watchClose" style="margin-top:12px">Cerrar</button>
+    </div>
+  </div>
 </div>
 
 <nav class="mobile-nav">
@@ -384,23 +340,63 @@ button{cursor:pointer;border:0;background:none}
 
 <script>
 (function(){
-  const KEY="orbye_pro_v2";
+  const KEY="orbye_pro_v3";
   const CREATOR="davidavila";
   let state={user:null,posts:[],videos:[],spaces:[],pendingImg:null};
-  let media={url:null,file:null,text:"",textPos:"center",textColor:"#ffffff"};
+  let media={blob:null,url:null,text:"",textPos:"center",textColor:"#ffffff"};
+  let db=null;
 
-  function load(){
-    try{const d=JSON.parse(localStorage.getItem(KEY)||"{}");state.posts=d.posts||[];state.videos=d.videos||[];state.spaces=d.spaces||[];}catch(e){}
-    try{const u=JSON.parse(localStorage.getItem(KEY+"_sess")||"null");if(u&&u.username)state.user=u;}catch(e){}
-  }
-  function save(){localStorage.setItem(KEY,JSON.stringify({posts:state.posts,videos:state.videos,spaces:state.spaces}));}
-  function saveSess(){localStorage.setItem(KEY+"_sess",JSON.stringify(state.user));}
   function toast(m){const t=document.getElementById("toast");t.textContent=m;t.style.display="block";setTimeout(()=>t.style.display="none",2200);}
-  function norm(u){return String(u||"").replace(/^@/,"").trim().toLowerCase();}
+  function norm(u){return String(u||"").replace(/^@/,"").trim().toLowerCase().replace(/[^a-z0-9._]/g,"");}
   function esc(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
   function uid(){return "id_"+Date.now()+"_"+Math.random().toString(36).slice(2,7);}
-  function isCEO(u){u=norm(u);return u===CREATOR||u.indexOf("avilarodriguez")>=0;}
+  function isCEO(u){u=norm(u);return u===CREATOR||u.indexOf("avilarodriguez")>=0||u.indexOf("davidavila")>=0;}
   function fmt(t){t=Math.max(0,t|0);return Math.floor(t/60)+":"+String(t%60).padStart(2,"0");}
+
+  function openDB(){
+    return new Promise((res,rej)=>{
+      const r=indexedDB.open("orbye_media_v3",1);
+      r.onupgradeneeded=function(){const d=r.result;if(!d.objectStoreNames.contains("videos"))d.createObjectStore("videos");};
+      r.onsuccess=function(){db=r.result;res(db);};
+      r.onerror=function(){rej(r.error);};
+    });
+  }
+  function idbPut(id,blob){
+    return new Promise((res,rej)=>{
+      if(!db)return res();
+      const tx=db.transaction("videos","readwrite");
+      tx.objectStore("videos").put(blob,id);
+      tx.oncomplete=()=>res();
+      tx.onerror=()=>rej(tx.error);
+    });
+  }
+  function idbGet(id){
+    return new Promise((res)=>{
+      if(!db)return res(null);
+      const tx=db.transaction("videos","readonly");
+      const q=tx.objectStore("videos").get(id);
+      q.onsuccess=()=>res(q.result||null);
+      q.onerror=()=>res(null);
+    });
+  }
+
+  function loadMeta(){
+    try{const d=JSON.parse(localStorage.getItem(KEY)||"{}");state.posts=d.posts||[];state.videos=d.videos||[];state.spaces=d.spaces||[];}catch(e){}
+    try{
+      const u=JSON.parse(localStorage.getItem(KEY+"_sess")||"null");
+      if(u&&u.username){state.user=u;}
+    }catch(e){}
+    // remember last username in login field
+    try{
+      const last=localStorage.getItem(KEY+"_lastuser");
+      if(last)document.getElementById("gUser").value=last;
+    }catch(e){}
+  }
+  function saveMeta(){localStorage.setItem(KEY,JSON.stringify({posts:state.posts,videos:state.videos,spaces:state.spaces}));}
+  function saveSess(){
+    localStorage.setItem(KEY+"_sess",JSON.stringify(state.user));
+    if(state.user)localStorage.setItem(KEY+"_lastuser",state.user.username);
+  }
 
   function showApp(){document.getElementById("gate").classList.remove("on");document.getElementById("app").style.display="grid";paintUser();renderPosts();renderVideos();renderSpaces();}
   function showGate(){document.getElementById("app").style.display="none";document.getElementById("gate").classList.add("on");}
@@ -424,7 +420,7 @@ button{cursor:pointer;border:0;background:none}
       const letter=(p.name||p.user||"U").charAt(0).toUpperCase();
       const ver=isCEO(p.user)?'<span class="verified"></span>':"";
       const media=p.img?`<div class="media"><img src="${p.img}" alt=""/></div>`:"";
-      return `<article class="card"><div class="ph" style="width:48px;height:48px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-weight:800">${letter}</div>
+      return `<article class="card"><div style="width:48px;height:48px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-weight:800">${letter}</div>
         <div><div class="meta"><span class="name">${esc(p.name||p.user)}${ver}</span><span class="handle">@${esc(p.user)}</span><span class="time">· ${esc(new Date(p.ts).toLocaleString())}</span></div>
         <div class="body">${esc(p.body)}</div>${media}
         <div class="actions"><button type="button" data-like="${p.id}">♥ ${p.likes||0}</button>
@@ -432,52 +428,88 @@ button{cursor:pointer;border:0;background:none}
     }).join("");
   }
 
-  function renderVideos(){
+  async function renderVideos(){
     const g=document.getElementById("veltxGrid");
     const list=state.videos.slice().sort((a,b)=>b.ts-a.ts);
-    if(!list.length){g.innerHTML='<div class="empty" style="grid-column:1/-1"><h3>Sin videos</h3><p>Publica el primero desde el Studio.</p></div>';return;}
-    g.innerHTML=list.map(v=>`<div class="vcard"><div class="thumb">${v.url?`<video src="${v.url}" muted playsinline></video>`:"▶"}</div>
-      <div class="info"><b>${esc(v.title||"Video")}</b><div style="color:var(--muted);font-size:12px">@${esc(v.user)}</div></div></div>`).join("");
+    if(!list.length){g.innerHTML='<div class="empty" style="grid-column:1/-1"><h3>Sin videos</h3><p>Publica desde el Studio.</p></div>';return;}
+    g.innerHTML="";
+    for(const v of list){
+      const card=document.createElement("div");
+      card.className="vcard";
+      card.dataset.vid=v.id;
+      const thumb=document.createElement("div");
+      thumb.className="thumb";
+      const blob=await idbGet(v.id);
+      if(blob){
+        const url=URL.createObjectURL(blob);
+        const vv=document.createElement("video");
+        vv.src=url;vv.muted=true;vv.playsInline=true;
+        thumb.appendChild(vv);
+      }else{
+        thumb.textContent="▶";
+      }
+      const info=document.createElement("div");
+      info.className="info";
+      info.innerHTML=`<b>${esc(v.title||"Video")}</b><div style="color:var(--muted);font-size:12px">@${esc(v.user)}</div>`;
+      card.appendChild(thumb);card.appendChild(info);
+      card.onclick=async function(){
+        const b=await idbGet(v.id);
+        if(!b){toast("Video no encontrado en este dispositivo");return;}
+        const url=URL.createObjectURL(b);
+        document.getElementById("watchVideo").src=url;
+        document.getElementById("watchTitle").textContent=v.title||"Video";
+        document.getElementById("watchUser").textContent="@"+v.user;
+        document.getElementById("watchModal").classList.add("on");
+      };
+      g.appendChild(card);
+    }
   }
 
   function renderSpaces(){
-    if(!state.spaces.length){state.spaces=[{id:"help",name:"Orby Help",desc:"Ayuda a nuevos usuarios",owner:CREATOR}];save();}
+    if(!state.spaces.length){state.spaces=[{id:"help",name:"Orby Help",desc:"Ayuda a nuevos",owner:CREATOR}];saveMeta();}
     document.getElementById("spaceList").innerHTML=state.spaces.map(s=>`<div class="space-item"><div class="ico">${esc((s.name||"S").charAt(0))}</div>
       <div><b>${esc(s.name)}</b><div style="color:var(--muted);font-size:13px">${esc(s.desc||"")}</div></div></div>`).join("");
   }
 
-  // Auth
   document.getElementById("btnLogin").onclick=function(){
     const err=document.getElementById("gateErr");err.textContent="";
     const u=norm(document.getElementById("gUser").value),p=document.getElementById("gPass").value;
     if(!u||p.length<4){err.textContent="Usuario y contraseña (mín. 4)";return;}
     const users=JSON.parse(localStorage.getItem(KEY+"_users")||"{}");
     if(!users[u]||users[u].pass!==p){err.textContent="Usuario o contraseña incorrectos";return;}
-    state.user={username:u,name:users[u].name||u,bio:users[u].bio||""};saveSess();showApp();
-    toast(isCEO(u)?"Bienvenido, señor David":"Bienvenido");
+    state.user={username:u,name:users[u].name||u,bio:users[u].bio||""};
+    saveSess();showApp();toast(isCEO(u)?"Bienvenido, señor David":"Sesión iniciada");
   };
   document.getElementById("btnRegister").onclick=function(){
     const err=document.getElementById("gateErr");err.textContent="";
     if(!document.getElementById("gTerms").checked){err.textContent="Acepta términos";return;}
     const u=norm(document.getElementById("gUser").value),p=document.getElementById("gPass").value;
     if(!u||p.length<4){err.textContent="Usuario y contraseña (mín. 4)";return;}
+    if(u.length<3){err.textContent="Usuario mínimo 3 caracteres";return;}
     const users=JSON.parse(localStorage.getItem(KEY+"_users")||"{}");
-    if(users[u]){err.textContent="Ese usuario ya existe";return;}
-    users[u]={pass:p,name:u,bio:""};localStorage.setItem(KEY+"_users",JSON.stringify(users));
-    state.user={username:u,name:u,bio:""};saveSess();showApp();toast("Cuenta creada");
+    if(users[u]){err.textContent="Ese usuario ya existe · inicia sesión";return;}
+    users[u]={pass:p,name:u,bio:""};
+    localStorage.setItem(KEY+"_users",JSON.stringify(users));
+    state.user={username:u,name:u,bio:""};
+    saveSess();showApp();toast("Cuenta creada y guardada");
   };
-  document.getElementById("btnLogout").onclick=function(){state.user=null;localStorage.removeItem(KEY+"_sess");showGate();};
+  document.getElementById("btnLogout").onclick=function(){
+    state.user=null;
+    localStorage.removeItem(KEY+"_sess");
+    showGate();
+    toast("Sesión cerrada · la cuenta sigue guardada");
+  };
 
   function go(view){
     document.querySelectorAll(".view").forEach(v=>v.classList.remove("on"));
     const el=document.getElementById("view-"+view);if(el)el.classList.add("on");
     document.querySelectorAll(".side button[data-view], .mobile-nav button[data-view]").forEach(b=>b.classList.toggle("on",b.getAttribute("data-view")===view));
     if(view==="profile")renderProfPosts();
+    if(view==="veltx")renderVideos();
   }
   document.querySelectorAll(".side button[data-view], .mobile-nav button[data-view]").forEach(b=>b.addEventListener("click",()=>go(b.getAttribute("data-view"))));
   document.getElementById("goWallpass").onclick=()=>go("wallpass");
 
-  // Compose
   document.getElementById("btnFoto").onclick=()=>document.getElementById("fotoInput").click();
   document.getElementById("fotoInput").onchange=function(){
     const f=this.files&&this.files[0];if(!f)return;
@@ -494,26 +526,26 @@ button{cursor:pointer;border:0;background:none}
     if(!body&&!state.pendingImg){toast("Escribe algo");return;}
     state.posts.unshift({id:uid(),user:state.user.username,name:state.user.name,body:body,img:state.pendingImg,likes:0,ts:Date.now()});
     state.pendingImg=null;document.getElementById("composeText").value="";document.getElementById("composePreview").innerHTML="";
-    save();renderPosts();toast("Publicado");
+    saveMeta();renderPosts();toast("Publicado");
   };
   document.getElementById("posts").onclick=function(ev){
     const like=ev.target.closest("[data-like]"),del=ev.target.closest("[data-del]");
-    if(like){const p=state.posts.find(x=>x.id===like.getAttribute("data-like"));if(p){p.likes=(p.likes||0)+1;save();renderPosts();}}
-    if(del){state.posts=state.posts.filter(x=>x.id!==del.getAttribute("data-del"));save();renderPosts();toast("Eliminado");}
+    if(like){const p=state.posts.find(x=>x.id===like.getAttribute("data-like"));if(p){p.likes=(p.likes||0)+1;saveMeta();renderPosts();}}
+    if(del){state.posts=state.posts.filter(x=>x.id!==del.getAttribute("data-del"));saveMeta();renderPosts();}
   };
 
-  // Veltx Studio
   const vid=document.getElementById("veltxVideo");
   const drop=document.getElementById("veltxDrop");
   const file=document.getElementById("veltxFile");
   function loadVideo(f){
-    if(!f||!f.type.startsWith("video/")){toast("Solo video");return;}
-    if(f.size>50*1024*1024){toast("Máx 50MB en demo");return;}
+    if(!f||!String(f.type).startsWith("video/")){toast("Solo video");return;}
+    if(f.size>80*1024*1024){toast("Máx 80MB");return;}
     if(media.url)URL.revokeObjectURL(media.url);
-    media.url=URL.createObjectURL(f);media.file=f;
+    media.blob=f;media.url=URL.createObjectURL(f);
     vid.src=media.url;vid.style.display="block";
     document.getElementById("vidPlaceholder").style.display="none";
     vid.onloadedmetadata=function(){document.getElementById("tDur").textContent=fmt(vid.duration);};
+    toast("Video cargado · listo para publicar");
   }
   drop.onclick=()=>file.click();
   document.getElementById("btnPickVid").onclick=()=>file.click();
@@ -521,15 +553,14 @@ button{cursor:pointer;border:0;background:none}
   drop.ondragover=e=>{e.preventDefault();drop.classList.add("over");};
   drop.ondragleave=()=>drop.classList.remove("over");
   drop.ondrop=e=>{e.preventDefault();drop.classList.remove("over");if(e.dataTransfer.files[0])loadVideo(e.dataTransfer.files[0]);};
-
   document.getElementById("btnPlay").onclick=()=>vid.play();
   document.getElementById("btnPause").onclick=()=>vid.pause();
-  document.getElementById("btnMute").onclick=()=>{vid.muted=!vid.muted;toast(vid.muted?"Silencio":"Audio on");};
+  document.getElementById("btnMute").onclick=()=>{vid.muted=!vid.muted;};
   document.getElementById("btnClearVid").onclick=function(){
-    vid.pause();vid.removeAttribute("src");vid.style.display="none";
+    vid.pause();vid.removeAttribute("src");vid.load();vid.style.display="none";
     document.getElementById("vidPlaceholder").style.display="";
-    if(media.url)URL.revokeObjectURL(media.url);media={url:null,file:null,text:media.text,textPos:media.textPos,textColor:media.textColor};
-    document.getElementById("timelineFill").style.width="0%";document.getElementById("tCur").textContent="0:00";document.getElementById("tDur").textContent="0:00";
+    if(media.url)URL.revokeObjectURL(media.url);
+    media.blob=null;media.url=null;
   };
   vid.ontimeupdate=function(){
     document.getElementById("tCur").textContent=fmt(vid.currentTime);
@@ -540,12 +571,10 @@ button{cursor:pointer;border:0;background:none}
     const r=this.getBoundingClientRect();
     vid.currentTime=((e.clientX-r.left)/r.width)*vid.duration;
   };
-
   function applyText(){
     const ov=document.getElementById("textOverlay");
     if(!media.text){ov.style.display="none";return;}
     ov.style.display="block";ov.textContent=media.text;ov.style.color=media.textColor;
-    ov.style.left="50%";ov.style.transform="translateX(-50%)";
     if(media.textPos==="top"){ov.style.top="12%";ov.style.bottom="auto";}
     else if(media.textPos==="bottom"){ov.style.top="auto";ov.style.bottom="14%";}
     else{ov.style.top="45%";ov.style.bottom="auto";}
@@ -554,50 +583,63 @@ button{cursor:pointer;border:0;background:none}
     media.text=document.getElementById("textContent").value.trim();
     media.textPos=document.getElementById("textPos").value;
     media.textColor=document.getElementById("textColor").value;
-    applyText();toast(media.text?"Texto añadido":"Escribe texto");
+    applyText();
   };
   document.getElementById("btnClearText").onclick=function(){media.text="";document.getElementById("textContent").value="";applyText();};
 
-  document.getElementById("veltxPublish").onclick=function(){
+  document.getElementById("veltxPublish").onclick=async function(){
     if(!state.user)return;
-    if(!media.url){toast("Elige un video");return;}
-    const title=document.getElementById("veltxTitle").value.trim()||"Video sin título";
+    if(!media.blob){toast("Elige un video primero");return;}
+    const title=(document.getElementById("veltxTitle").value.trim()||"Video sin título");
+    const id=uid();
+    try{
+      await idbPut(id,media.blob);
+    }catch(e){toast("No se pudo guardar el archivo");return;}
     state.videos.unshift({
-      id:uid(),user:state.user.username,title:title,
+      id:id,user:state.user.username,title:title,
       desc:document.getElementById("veltxDesc").value.trim(),
-      url:media.url,text:media.text,textPos:media.textPos,textColor:media.textColor,
-      trimStart:parseFloat(document.getElementById("trimStart").value)||0,
-      trimEnd:document.getElementById("trimEnd").value?parseFloat(document.getElementById("trimEnd").value):null,
-      ts:Date.now()
+      text:media.text,textPos:media.textPos,textColor:media.textColor,ts:Date.now()
     });
-    save();renderVideos();toast("Publicado en Veltx");
+    saveMeta();
+    await renderVideos();
+    toast("Video guardado · se verá al refrescar");
+    document.getElementById("veltxTitle").value="";
+    document.getElementById("veltxDesc").value="";
   };
+
+  document.getElementById("watchClose").onclick=function(){
+    document.getElementById("watchModal").classList.remove("on");
+    const w=document.getElementById("watchVideo");w.pause();w.removeAttribute("src");w.load();
+  };
+  document.getElementById("watchModal").onclick=function(e){if(e.target===this)document.getElementById("watchClose").click();};
 
   document.getElementById("spaceCreate").onclick=function(){
     if(!state.user)return;
     const name=document.getElementById("spaceName").value.trim();if(!name)return;
     state.spaces.unshift({id:uid(),name:name,desc:"Creado por @"+state.user.username,owner:state.user.username});
-    document.getElementById("spaceName").value="";save();renderSpaces();toast("Space creado");
+    document.getElementById("spaceName").value="";saveMeta();renderSpaces();
   };
-
   document.getElementById("profSave").onclick=function(){
     if(!state.user)return;
     state.user.bio=document.getElementById("profBio").value.slice(0,300);
     const users=JSON.parse(localStorage.getItem(KEY+"_users")||"{}");
-    if(users[state.user.username]){users[state.user.username].bio=state.user.bio;localStorage.setItem(KEY+"_users",JSON.stringify(users));}
+    if(users[state.user.username]){users[state.user.username].bio=state.user.bio;users[state.user.username].name=state.user.name;localStorage.setItem(KEY+"_users",JSON.stringify(users));}
     saveSess();toast("Perfil guardado");
   };
   function renderProfPosts(){
     const mine=state.posts.filter(p=>norm(p.user)===norm(state.user&&state.user.username));
-    document.getElementById("profPosts").innerHTML=mine.length?mine.map(p=>`<div style="padding:10px 0;border-bottom:1px solid var(--line)">${esc(p.body||"(media)")}</div>`).join(""):"<p style='color:var(--muted)'>Sin posts aún.</p>";
+    document.getElementById("profPosts").innerHTML=mine.length?mine.map(p=>`<div style="padding:10px 0;border-bottom:1px solid var(--line)">${esc(p.body||"(media)")}</div>`).join(""):"<p style='color:var(--muted)'>Sin posts.</p>";
   }
-
-  document.querySelectorAll("[data-pass]").forEach(b=>b.onclick=()=>toast("Pagos en producción · pronto"));
-
+  document.querySelectorAll("[data-pass]").forEach(b=>b.onclick=()=>toast("Pagos pronto"));
   setInterval(function(){document.getElementById("clock").textContent=new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit",second:"2-digit"});},1000);
 
-  load();
-  if(state.user)showApp();else showGate();
+  openDB().then(function(){
+    loadMeta();
+    if(state.user)showApp();else showGate();
+  }).catch(function(){
+    loadMeta();
+    if(state.user)showApp();else showGate();
+  });
 })();
 </script>
 </body>
