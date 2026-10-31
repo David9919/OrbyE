@@ -1,15 +1,9 @@
-OrbyE PRO v3
+OrbyE PRO v4
+- Colores ámbar / marrón oscuro (menos azul)
+- Veltx: lista de videos + botón "＋ Crear" (editor en modal)
+- Worker API: https://orbye-api.avilarodriguezdavid13.workers.dev
 
-SESIÓN: se guarda en el dispositivo. No hace falta crear cuenta cada vez.
-- Crear cuenta 1 vez
-- Cerrar sesión solo si quieres
-- Al volver, Iniciar sesión con el mismo @ y contraseña
-
-VIDEOS:
-- Se guardan en IndexedDB (este navegador/dispositivo)
-- Sobreviven al refrescar la página
-- Toca un video en "Tus videos" para reproducirlo
-
-D1 Cloudflare (OrbyE):
-Nombre de la base: orbye-db
-Location: la más cercana (WNAM si estás en Texas/USA)
+WORKER:
+1. Editar código → pegar worker.js
+2. Ajustes → Enlaces → D1 → variable DB → orbye-db
+3. Guardar y desplegar
